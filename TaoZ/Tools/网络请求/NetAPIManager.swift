@@ -1,0 +1,278 @@
+//
+//  NetAPIManager.swift
+//  NN110
+//
+//  Created by 陈亦海 on 2017/5/12.
+//  Copyright © 2017年 陈亦海. All rights reserved.
+//
+
+import Foundation
+import Moya
+
+
+let json_BODY_REUEST = "com.ailk.gx.mapp.model.req.%@Request"
+
+let json_TEMP = "{\"@class\":\"com.ailk.gx.mapp.model.GXCDatapackage\",\"header\":{%@},\"body\":%@}"
+
+let json_HEADER = "\"@class\":\"com.ailk.gx.mapp.model.GXCHeader\",\"bizCode\":\"%@\",\"identityId\":null,\"respCode\":null,\"respMsg\":null,\"mode\":\"1\",\"sign\":null"
+
+
+#if DEBUG
+    let HOSTURL = "http://192.168.5.24:8000"
+    let HOSTWEBURL = "http://221.7.181.199:19301"
+
+#else
+    let HOSTURL = "http://221.7.181.199:19303"
+    let HOSTWEBURL = "http://221.7.181.199:19303"
+#endif
+
+
+enum NetAPIManager {
+    case upload(APIName: String ,isTouch: Bool, body:[String: Any]?,filePath: String,fileType: String,isShow: Bool,title: String?)
+    case download
+    case getRequest(APIName: String ,isTouch: Bool, body: Dictionary<String, Any>? ,isShow: Bool,title: String?)
+    case postRequest(APIName: String ,isTouch: Bool, body: Dictionary<String, Any>? ,isShow: Bool,title: String?)
+}
+
+
+extension NetAPIManager: TargetType {
+    var headers: [String : String]? {
+     
+       
+        return [
+            "Content-Type" : "application/x-www-form-urlencoded;charset=UTF-8",
+            //application/x-www-form-urlencoded;charset=UTF-8
+            "Accept": "application/json;application/octet-stream;text/html,text/json;text/plain;text/javascript;text/xml;application/x-www-form-urlencoded;image/png;image/jpeg;image/jpg;image/gif;image/bmp;image/*",
+//            "authorization":(UserDefaults.standard.object(forKey: Auth) as? String) ?? ""
+        ]
+    }
+    
+    var baseURL: URL {
+        
+        return URL(string: HOSTURL)!
+
+//        switch self {
+//        case .postRequest(_, _, _, _, _):
+//
+//            return URL(string: HOSTURL)!
+//
+//        case .request(_, _, _, _, _):
+//             #if DEBUG
+//                return URL(string: "http://ws.gx10010.com/mobileservice")!
+//             #else
+//                return URL(string: "http://ws.gx10010.com/mobileservice")!
+//             #endif
+//        case .Show:
+//            #if DEBUG
+//                return URL(string: "http://10.37.242.23:8080")!
+//            #else
+//                return URL(string: "http://ws.gx10010.com/mobileservice")!
+//            #endif
+//
+//        default:
+//            #if DEBUG
+//                return URL(string: "http://133.0.191.9:24311/mobile-service")!
+//            #else
+//                return URL(string: "http://ws.gx10010.com/mobileservice")!
+//            #endif
+//        }
+        
+        
+    }
+    
+    var path: String {
+        switch self {
+        
+        case .upload(let apiName, _, _, _, _, _,_):
+            return apiName
+        case .getRequest(let apiName,_, _, _, _):
+            return apiName
+        case .postRequest(let apiName, _, _, _, _):
+            return  apiName
+        case .download:
+            return ""
+       
+        }
+    }
+    
+    var method: Moya.Method {
+        switch self {
+       
+        case .getRequest(_,_, _, _, _):
+            return .get
+        case .postRequest(_,_, _, _, _):
+            return .post
+        default:
+            return .post
+        }
+    }
+    
+    var parameters: [String: Any]? {
+        switch self {
+        
+        case .upload(_,_,  let postDict,_, _, _, _):
+                       
+            return postDict
+        case .postRequest(_, _, let postDict, _, _):
+            return postDict
+            
+        case .getRequest(_, _, let postDict, _, _):
+                        
+            return postDict
+            
+        default:
+            return nil
+        
+        }
+    }
+    
+    var sampleData: Data {
+       return "{}".data(using: String.Encoding.utf8)!
+    }
+    
+    var task: Task {
+        switch self {
+            
+            // **********  两种方式都可以  ********** //
+            
+//            let gifData = MultipartFormData(provider: .data(data), name: "file", fileName: "gif.gif", mimeType: "image/gif")
+//            let descriptionData = MultipartFormData(provider: .data(description.data(using: .utf8)!), name: "description")
+//            let multipartData = [gifData, descriptionData]
+//            
+//            return .uploadMultipart(multipartData)
+        
+//        case .upload(let data):
+//        return .uploadMultipart([MultipartFormData(provider: .data(data), name: "file", fileName: "gif.gif", mimeType: "image/gif")])
+        case .upload(_,_, let postDic, let filePath, let fileType, _, _):
+            
+            let url = URL(string: filePath)
+            let fileName = url?.lastPathComponent
+            
+            do {
+               let data = try Data(contentsOf: url!)
+                if postDic == nil {
+                    
+                    return .uploadMultipart([MultipartFormData(provider: .data(data), name: "file", fileName: fileName, mimeType: fileType)])
+                   
+                }else{
+                    
+                    var datas = [MultipartFormData(provider: .data(data), name: "file", fileName: fileName, mimeType: fileType)]
+                    
+                    for (key, value) in postDic! {
+                        
+                        let vStr = value as! String
+                        let vData = vStr.data(using: String.Encoding.utf8)!
+                        let mData = MultipartFormData(provider: .data(vData), name: key)
+                        datas.append(mData)
+                    }
+                    
+                    return .uploadMultipart(datas)
+//                    return .uploadCompositeMultipart([MultipartFormData(provider: .data(data), name: "file", fileName: fileName, mimeType: fileType)], urlParameters: postDic!)
+                    
+                }
+                
+            } catch {
+                
+                return .requestPlain
+            }
+            
+
+            
+            
+       
+        case  .postRequest(_, _, let postDict, _, _):
+            
+            guard postDict != nil else {
+                           
+                           return .requestPlain
+                       }
+            return .requestParameters(parameters: postDict!, encoding: JSONEncoding.default)
+        case  .getRequest(_, _, let postDict, _, _):
+//
+//            let myClass = NSClassFromString("_iAide."+apiName) as! APIBasicClass.Type
+//            var postString = myClass.getRequest(postDict) as String
+//
+//            postString = postString.replacingOccurrences(of: "\n", with: "")
+//
+//            //加密
+//            let md5String = APIMessage.desHexString(postString, withEncrypt: true) as String
+//            //压缩
+//            let gzipString = APIMessage.getBase64String(md5String) as String
+            
+//            let jsonDic = ["msg":"gzipString"] as [String: Any]
+            
+            
+            guard postDict != nil else {
+                
+                return .requestPlain
+            }
+   
+            return .requestParameters(parameters: postDict!, encoding: JSONEncoding.default)
+            
+        default:
+            let string = "{\"@class\":\"com.ailk.gx.mapp.model.GXCDatapackage\",\"header\":{\"@class\":\"com.ailk.gx.mapp.model.GXCHeader\",\"bizCode\":\"cg0004\",\"identityId\":null,\"respCode\":null,\"respMsg\":null,\"mode\":\"1\",\"sign\":null},\"body\":{\n  \"expand\" : null,\n  \"@class\" : \"com.ailk.gx.mapp.model.req.CG0004Request\",\n  \"phoneNo\" : \"13213451345\"\n}}"
+            
+            let jsonDic = ["msg":string]
+            let data = try? JSONSerialization.data(withJSONObject: jsonDic, options: [])
+            return .requestData(data!)
+
+       }
+
+     }
+    
+    var parameterEncoding: ParameterEncoding {
+        switch self {
+        case .upload(_, _, body: _, filePath: _, fileType: _, isShow: _, title: _):
+            return URLEncoding.default
+        case .getRequest(_,_, _, _, _):
+            return URLEncoding.default
+            
+        case .postRequest(_,_, _, _, _):
+            return URLEncoding.default
+        default:
+            return URLEncoding.default
+        }
+        
+    }
+    
+
+    var touch: Bool { //是否可以操作 默认是可以的
+        
+        switch self {
+        case .getRequest(_,let isTouch, _, _, _):
+            return isTouch
+        case .postRequest(_,let isTouch, _, _, _):
+            return isTouch
+        default:
+            return true
+        }
+        
+    }
+    
+    var show: Bool { //是否显示转圈提示
+        
+        switch self {
+        case .getRequest( _, _, _, let isShow, _):
+            return isShow
+        case .postRequest( _, _, _, let isShow, _):
+            return isShow
+        default:
+            return true
+        }
+        
+    }
+    
+    var title: String? { //转圈提示语句
+        
+        switch self {
+        case .postRequest(_, _, _, _, let hudTitle):
+            return hudTitle
+        case .getRequest(_, _, _, _, let hudTitle):
+            return hudTitle
+        default:
+            return nil
+        }
+        
+    }
+    
+}

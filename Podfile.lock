@@ -1,0 +1,118 @@
+PODS:
+  - Alamofire (4.8.1)
+  - AlamofireLogbook (0.1.1):
+    - Alamofire
+  - DZNEmptyDataSet (1.8.1)
+  - ESTabBarController-swift (2.8.0)
+  - FSPagerView (0.8.3)
+  - HandyJSON (5.0.0)
+  - IQKeyboardManagerSwift (6.5.2)
+  - JXPagingView/Paging (2.0.1)
+  - JXSegmentedView (1.0.5)
+  - Kingfisher (5.3.0)
+  - LXFProtocolTool/AssociatedObjectStore (1.1.3)
+  - LXFProtocolTool/Base (1.1.3)
+  - LXFProtocolTool/EmptyDataSetable (1.1.3):
+    - DZNEmptyDataSet (>= 1.8.1)
+    - LXFProtocolTool/AssociatedObjectStore
+    - LXFProtocolTool/Base
+  - MJRefresh (3.3.1)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
+    - Alamofire (~> 4.1)
+    - Result (~> 4.1)
+  - ReachabilitySwift (5.0.0)
+  - Result (4.1.0)
+  - RxCocoa (5.1.0):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.0)
+  - SDAutoLayout (2.1.9)
+  - SnapKit (5.0.1)
+  - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.0)
+  - TextAttributes (2.0.2)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - Alamofire (= 4.8.1)
+  - AlamofireLogbook
+  - ESTabBarController-swift
+  - FSPagerView
+  - HandyJSON (= 5.0.0)
+  - IQKeyboardManagerSwift (= 6.5.2)
+  - JXPagingView/Paging
+  - JXSegmentedView
+  - Kingfisher (= 5.3.0)
+  - LXFProtocolTool/EmptyDataSetable
+  - MJRefresh
+  - Moya
+  - ReachabilitySwift
+  - RxCocoa
+  - RxSwift
+  - SDAutoLayout (~> 2.1.3)
+  - SnapKit
+  - SVProgressHUD
+  - SwiftyJSON
+  - TextAttributes
+  - YYText
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireLogbook
+    - DZNEmptyDataSet
+    - ESTabBarController-swift
+    - FSPagerView
+    - HandyJSON
+    - IQKeyboardManagerSwift
+    - JXPagingView
+    - JXSegmentedView
+    - Kingfisher
+    - LXFProtocolTool
+    - MJRefresh
+    - Moya
+    - ReachabilitySwift
+    - Result
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SDAutoLayout
+    - SnapKit
+    - SVProgressHUD
+    - SwiftyJSON
+    - TextAttributes
+    - YYText
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  AlamofireLogbook: 7e18aa9c6ab7c0c75e2a4a294a2c390c1d6335d9
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
+  IQKeyboardManagerSwift: c75366f1f19590e8caeae45fcd5815c9289d6099
+  JXPagingView: cacaf7512d223e21133bd71ca245126acc5f535a
+  JXSegmentedView: 46262e0ec86c951fd1be4a0b91de3d9b10cb9fff
+  Kingfisher: 4692c783ffb99e9e2e40a6eb3e518c3b96c6fa8c
+  LXFProtocolTool: 107e5dcd7b9567cbe6dce9b75a8453a06a58f505
+  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
+  RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
+  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  SDAutoLayout: 6b6f4db0d009dfc46cef14ef710dbb164e86616c
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+  TextAttributes: 89905fb52c36de587010f335bd4071463d9c6d9b
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 986bc54f801aa058f16692f5fb15260fc4c24ab6
+
+COCOAPODS: 1.9.1
