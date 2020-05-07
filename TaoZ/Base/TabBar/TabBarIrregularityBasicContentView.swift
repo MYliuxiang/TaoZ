@@ -28,7 +28,7 @@ class TabBarIrregularityBasicContentView: TabBarBouncesContentView {
             
         self.imageView.sizeToFit()
         self.imageView.center = CGPoint.init(x: self.bounds.size.width / 2.0, y: self.bounds.size.height / 2.0 - 2)
-        self.titleLabel.font = UIFont.customName("SemiBold", size: 9)
+//        self.titleLabel.font = UIFont.customName("SemiBold", size: 9)
 
     }
 
@@ -53,7 +53,7 @@ class TabBarIrregularityContentView: ESTabBarItemContentView {
         //        iconColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
 //        highlightIconColor = UIColor.init(white: 255.0 / 255.0, alpha: 1.0)
         self.renderingMode = UIImage.RenderingMode.alwaysOriginal //设置按原始图片来显示
-        backdropColor = .clear
+        backdropColor = .white
         highlightBackdropColor = .clear
         
     }

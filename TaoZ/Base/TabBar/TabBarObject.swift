@@ -27,26 +27,28 @@ class TabBarObject: NSObject {
      func setupTabBarStyle(delegate: UITabBarControllerDelegate?) -> ESTabBarController  {
         
         tabBarController.delegate = delegate
-//        tabBarController.tabBar.shadowImage = UIImage(named: "transparent")
-//        tabBarController.tabBar.backgroundImage = UIImage(named: "tabbar_background")
+        tabBarController.tabBar.shadowImage = UIImage.init(color: .red, size: CGSize(width: ScreenWidth, height: 100))
+        tabBarController.tabBar.backgroundImage = UIImage.init(color: .white, size: CGSize(width: ScreenWidth, height: 100))
         
-        let lessonsVC = LessonsVC()
-        let diaiogueVC = DiaiogueVC()
-        let skillsVC = SkillsVC()
+        tabBarController.tabBar.backgroundColor = .white
+        
+        let homeVC = HomeVC()
+        let discoverVC = DiscoverVC()
+        let messagesVC = MessagesVC()
         let meVC = MeVC()
         
-         lessonsVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "Lessons", image: UIImage(named: "lesson_未选中"), selectedImage: UIImage(named: "lesson_选中"))
-         diaiogueVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "Dialogue", image: UIImage(named: "Dialogue_未选中"), selectedImage: UIImage(named: "Dialogue_选中"))
+         homeVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "lesson_未选中"), selectedImage: UIImage(named: "lesson_选中"))
+         discoverVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "Dialogue_未选中"), selectedImage: UIImage(named: "Dialogue_选中"))
         
-         skillsVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "Skills", image: UIImage(named: "Skills_未选中"), selectedImage: UIImage(named: "Skills_选中"))
-         meVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "Me", image: UIImage(named: "me_未选中"), selectedImage: UIImage(named: "me_选中"))
+         messagesVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "Skills_未选中"), selectedImage: UIImage(named: "Skills_选中"))
+         meVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "me_未选中"), selectedImage: UIImage(named: "me_选中"))
         
-          let homeNav = BaseNavigationController.init(rootViewController: lessonsVC)
-          let lifeCircleNav = BaseNavigationController.init(rootViewController: diaiogueVC)
+          let homeNav = BaseNavigationController.init(rootViewController: homeVC)
+          let discoverNav = BaseNavigationController.init(rootViewController: discoverVC)
         
-          let cityMerchantsNav = BaseNavigationController.init(rootViewController: skillsVC)
+          let messagesNav = BaseNavigationController.init(rootViewController: messagesVC)
           let myNav = BaseNavigationController.init(rootViewController: meVC)
-          tabBarController.viewControllers = [homeNav,lifeCircleNav,cityMerchantsNav,myNav]
+          tabBarController.viewControllers = [homeNav,discoverNav,messagesNav,myNav]
         
         //当前item是否需要被劫持
         tabBarController.shouldHijackHandler = {

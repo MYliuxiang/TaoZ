@@ -34,7 +34,25 @@ target 'TaoZ' do
   #model对象
   pod 'HandyJSON', '5.0.0'
   
+  pod 'AlipaySDK-iOS','15.5.9' #支付宝支付(手动在pod里面替换成了NO_UTDID的SDK,解决与AlicloudPush冲突问题)
+  pod 'WechatOpenSDK','1.8.3'  #微信支付和登录
  
+#友盟
+  pod 'UMCCommon'
+  pod 'UMCShare/UI'
+  pod 'UMCShare/Social/ReducedWeChat'
+  pod 'UMCShare/Social/ReducedQQ'
+  pod 'UMCShare/Social/ReducedSina'
+  pod 'UMCAnalytics' #统计
+
+#图片选择器
+  pod 'TZImagePickerController','3.2.9'
+
+  pod 'Bugly'
+#机光
+  pod 'JCore', '2.1.4-noidfa'
+  pod 'JPush', '3.2.4-noidfa'
+
   #RxSwift框架
   pod 'RxSwift'
   pod 'RxCocoa'
@@ -42,6 +60,9 @@ target 'TaoZ' do
   pod 'LXFProtocolTool/EmptyDataSetable'
   #NSAttributedString的框架
   pod 'TextAttributes'
+
+pod 'RongCloudIM/IMKit', '~> 2.10.4'
+pod 'RongCloudIM/IMLib', '~> 2.10.4'
 
 
   target 'TaoZTests' do

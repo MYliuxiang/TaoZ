@@ -34,7 +34,7 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         automaticallyAdjustsScrollViewInsets = false
         self.view.addSubview(self.bottomView)
-        self.view.backgroundColor = UIColor.colorWithHex(hexColor:0xECECEC)
+        self.view.backgroundColor = UIColor.white
         setupNavBar()
         add_noNetView()
 
@@ -48,7 +48,7 @@ class BaseViewController: UIViewController {
         view.addSubview(navBar)
         // 设置自定义导航栏背景图片
         // 设置自定义导航栏背景颜色
-         navBar.barBackgroundColor = .clear
+        navBar.barBackgroundColor = .white
         navBar.wr_setBottomLineHidden(true)
         
         

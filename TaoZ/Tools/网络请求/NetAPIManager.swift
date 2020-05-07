@@ -10,11 +10,6 @@ import Foundation
 import Moya
 
 
-let json_BODY_REUEST = "com.ailk.gx.mapp.model.req.%@Request"
-
-let json_TEMP = "{\"@class\":\"com.ailk.gx.mapp.model.GXCDatapackage\",\"header\":{%@},\"body\":%@}"
-
-let json_HEADER = "\"@class\":\"com.ailk.gx.mapp.model.GXCHeader\",\"bizCode\":\"%@\",\"identityId\":null,\"respCode\":null,\"respMsg\":null,\"mode\":\"1\",\"sign\":null"
 
 
 #if DEBUG
@@ -50,33 +45,6 @@ extension NetAPIManager: TargetType {
     var baseURL: URL {
         
         return URL(string: HOSTURL)!
-
-//        switch self {
-//        case .postRequest(_, _, _, _, _):
-//
-//            return URL(string: HOSTURL)!
-//
-//        case .request(_, _, _, _, _):
-//             #if DEBUG
-//                return URL(string: "http://ws.gx10010.com/mobileservice")!
-//             #else
-//                return URL(string: "http://ws.gx10010.com/mobileservice")!
-//             #endif
-//        case .Show:
-//            #if DEBUG
-//                return URL(string: "http://10.37.242.23:8080")!
-//            #else
-//                return URL(string: "http://ws.gx10010.com/mobileservice")!
-//            #endif
-//
-//        default:
-//            #if DEBUG
-//                return URL(string: "http://133.0.191.9:24311/mobile-service")!
-//            #else
-//                return URL(string: "http://ws.gx10010.com/mobileservice")!
-//            #endif
-//        }
-        
         
     }
     
@@ -167,7 +135,7 @@ extension NetAPIManager: TargetType {
                     }
                     
                     return .uploadMultipart(datas)
-//                    return .uploadCompositeMultipart([MultipartFormData(provider: .data(data), name: "file", fileName: fileName, mimeType: fileType)], urlParameters: postDic!)
+
                     
                 }
                 

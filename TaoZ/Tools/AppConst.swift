@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 ///MARK:TODO 定义常用的类库信息, 使用@_exported关键字，就可以全局引入对应的包
-//@_exported import JXSegmentedView
-//@_exported import JXPagingView
+@_exported import JXSegmentedView
+@_exported import JXPagingView
 //@_exported import ActiveLabel
 //@_exported import HandyJSON
 //@_exported import Kingfisher
@@ -29,6 +29,31 @@ import UIKit
 
 let versionString = "1.0"
 
+//融云id
+let RcimKey = "bmdehs6pba6vs"
+
+let RcimToken = "27bfb33270"
+
+
+
+//bugglyID
+let BuglyID = "27bfb33270"
+
+//极光的appKeyA
+let JPAppKey = "f7d12a0061cf620500fe2f43"
+
+
+//友盟
+let UMShareKey = "5e53d0597ba7e954e9f6a681"
+
+//微信AppID
+let WXAppid = "wx3b553e6a9c1d0f8f"
+let WXSecret = "44d114bb2cad851dbb496031ce0bfebe"
+
+let QQKey = "1109929039"//未有  tencent1109929039  QQ42282c4f
+let SinaKey = "152014725"//未有
+let SinaSecret = "f721b8a668775b6b72209587ea5099a4"//未有
+let RedirectURL = "redirectURL"
 
 
 //基本属性
@@ -51,4 +76,9 @@ let NotiCenter = NotificationCenter.default
 //UserDefaults
 let UserDefaultsStandard = UserDefaults.standard
 
+//颜色
 
+let color_theme = UIColor.colorWithHexStr("#FF3366")
+let color_3 = UIColor.colorWithHexStr("#333333")
+let color_6 = UIColor.colorWithHexStr("#666666")
+let color_9 = UIColor.colorWithHexStr("#999999")

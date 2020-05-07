@@ -22,6 +22,22 @@ class AppService: NSObject {
     //注册相关服务
     func registerAppService(application: UIApplication,launchOptions: [UIApplication.LaunchOptionsKey: Any]?){
         
+        //注册融云
+        RCIM.shared()?.initWithAppKey(RcimKey)
+        //连接IM
+        RCIM.shared()?.connect(withToken: RcimToken, dbOpened: { (code) in
+        }, success: { (userID) in
+            
+        }, error: { (status) in
+            
+        }, tokenIncorrect: {
+            
+        })
+        
+        
+        //注册buggly
+        Bugly.start(withAppId: BuglyID)
+        
         ///注册keyboardManager
         register_keyboardManager()
         
@@ -31,9 +47,26 @@ class AppService: NSObject {
         ///设置导航栏
         setNavBarAppearence()
         
+        ///注册微信
+        WXApi.registerApp(WXAppid)
+        
+        ///注册友盟
+        register_UMSocial()
+        
+        ///注册极光推送
+               
+        JPushHelper.defaultIAPHelper.register(application: application, launchOptions: launchOptions)
+        
         ///设置字体适配大小
 //        SwiftyFitsize.reference(width: 375, iPadFitMultiple: 0.5)
-        
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.custom)
+        SVProgressHUD.setErrorImage(UIImage(named: "") ?? UIImage())
+        SVProgressHUD.setSuccessImage(UIImage(named: "") ?? UIImage())
+
+        SVProgressHUD.setBackgroundColor(UIColor(white: 0, alpha: 0.6))
+        SVProgressHUD.setForegroundColor(UIColor.white)
+        SVProgressHUD.setMaximumDismissTimeInterval(1)
+        SVProgressHUD.setMinimumDismissTimeInterval(0.35)
         
         DispatchQueue.main.asyncAfter(deadline: .now()+0.35, execute:
             {
@@ -41,6 +74,28 @@ class AppService: NSObject {
                 self.UpdataAppStoreVersion()
         })
     }
+    
+    //*******************************  注册友盟  **********************************
+     private func register_UMSocial() {
+          
+          UMSocialManager.default().openLog(false)
+          UMConfigure.initWithAppkey(UMShareKey, channel: "App Store")
+          
+          UMSocialGlobal.shareInstance().isUsingHttpsWhenShareContent = false//可以用非https的图片
+          
+          UMSocialManager.default().setPlaform(.wechatSession, appKey: WXAppid, appSecret: WXSecret, redirectURL:RedirectURL)
+          UMSocialManager.default().setPlaform(.wechatTimeLine, appKey:WXAppid, appSecret: WXSecret, redirectURL:RedirectURL)
+          UMSocialManager.default().setPlaform(UMSocialPlatformType.QQ, appKey: QQKey, appSecret: nil, redirectURL:nil)
+          UMSocialManager.default().setPlaform(UMSocialPlatformType.sina, appKey: SinaKey, appSecret: SinaSecret, redirectURL: "http://weibo.com/")
+      
+          //统计
+          UMConfigure.initWithAppkey(UMShareKey, channel: "App Store")
+          UMConfigure.setLogEnabled(false)
+          UMConfigure.setEncryptEnabled(true)
+          MobClick.setScenarioType(eScenarioType.E_UM_NORMAL)
+          
+      }
+      
     
      private func register_keyboardManager(){
             
@@ -96,6 +151,9 @@ class AppService: NSObject {
 //            WRNavigationBar.wr_setDefaultNavBarTitleColor(color_2D2E36)//设置导航栏标题默认颜色
             WRNavigationBar.wr_setDefaultStatusBarStyle(.default)//设置状态栏样式
             WRNavigationBar.wr_setDefaultNavBarShadowImageHidden(false)//如果需要设置导航栏底部分割线隐藏，可以在这里统一设置
+            
+            UITabBar.appearance().layer.borderWidth = 1
+            UITabBar.appearance().clipsToBounds = true
             
         }
         
