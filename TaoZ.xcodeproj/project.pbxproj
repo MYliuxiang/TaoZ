@@ -24,6 +24,12 @@
 		225A6E602462FE9400E4DE93 /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5C2462FE9100E4DE93 /* NetAPIManager.swift */; };
 		225A6E612462FE9400E4DE93 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5D2462FE9300E4DE93 /* NetworkHelper.swift */; };
 		225A6E622462FE9400E4DE93 /* MyNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5E2462FE9300E4DE93 /* MyNetworkActivityPlugin.swift */; };
+		225F7C65246503D1001B15E2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F7C63246503D1001B15E2 /* PhotoCell.swift */; };
+		225F7C66246503D1001B15E2 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225F7C64246503D1001B15E2 /* PhotoCell.xib */; };
+		225F7C69246503E1001B15E2 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F7C67246503E1001B15E2 /* VideoCell.swift */; };
+		225F7C6A246503E1001B15E2 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225F7C68246503E1001B15E2 /* VideoCell.xib */; };
+		225F7C6D24651023001B15E2 /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F7C6B24651023001B15E2 /* FollowCell.swift */; };
+		225F7C6E24651023001B15E2 /* FollowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225F7C6C24651023001B15E2 /* FollowCell.xib */; };
 		226EA09124504D1200DE3640 /* VolumeCongit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EA09024504D1200DE3640 /* VolumeCongit.swift */; };
 		229FE1A6243F07EB003160CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FE1A5243F07EB003160CF /* AppDelegate.swift */; };
 		229FE1AD243F07EB003160CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229FE1AB243F07EB003160CF /* Main.storyboard */; };
@@ -63,6 +69,12 @@
 		229FE233243F1114003160CF /* TabBarBouncesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FE22F243F1114003160CF /* TabBarBouncesContentView.swift */; };
 		229FE234243F1114003160CF /* TabBarObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FE230243F1114003160CF /* TabBarObject.swift */; };
 		229FE25F243F2FEF003160CF /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FE25E243F2FEF003160CF /* UIFont+Extension.swift */; };
+		22B5034E246535DF00348E05 /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B5034C246535DF00348E05 /* DiscoverCell.swift */; };
+		22B5034F246535DF00348E05 /* DiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B5034D246535DF00348E05 /* DiscoverCell.xib */; };
+		22B50351246537DC00348E05 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B50350246537DC00348E05 /* ContainerView.swift */; };
+		22B503532465382500348E05 /* DiscoverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B503522465382500348E05 /* DiscoverModel.swift */; };
+		22B5035624654A1C00348E05 /* DiscoverSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B5035424654A1C00348E05 /* DiscoverSubVC.swift */; };
+		22B5035724654A1C00348E05 /* DiscoverSubVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B5035524654A1C00348E05 /* DiscoverSubVC.xib */; };
 		22CA05F9244FFE1F0067EF6A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CA05F8244FFE1F0067EF6A /* libc++.tbd */; };
 		22D068872463AABF002BBBB5 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D068852463AABF002BBBB5 /* HomeVC.swift */; };
 		22D068882463AABF002BBBB5 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D068862463AABF002BBBB5 /* HomeVC.xib */; };
@@ -119,6 +131,12 @@
 		225A6E5C2462FE9100E4DE93 /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
 		225A6E5D2462FE9300E4DE93 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		225A6E5E2462FE9300E4DE93 /* MyNetworkActivityPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNetworkActivityPlugin.swift; sourceTree = "<group>"; };
+		225F7C63246503D1001B15E2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		225F7C64246503D1001B15E2 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
+		225F7C67246503E1001B15E2 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		225F7C68246503E1001B15E2 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		225F7C6B24651023001B15E2 /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
+		225F7C6C24651023001B15E2 /* FollowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowCell.xib; sourceTree = "<group>"; };
 		226EA09024504D1200DE3640 /* VolumeCongit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeCongit.swift; sourceTree = "<group>"; };
 		229FE1A2243F07EB003160CF /* TaoZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaoZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229FE1A5243F07EB003160CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +185,12 @@
 		229FE22F243F1114003160CF /* TabBarBouncesContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarBouncesContentView.swift; sourceTree = "<group>"; };
 		229FE230243F1114003160CF /* TabBarObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarObject.swift; sourceTree = "<group>"; };
 		229FE25E243F2FEF003160CF /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		22B5034C246535DF00348E05 /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
+		22B5034D246535DF00348E05 /* DiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverCell.xib; sourceTree = "<group>"; };
+		22B50350246537DC00348E05 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		22B503522465382500348E05 /* DiscoverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverModel.swift; sourceTree = "<group>"; };
+		22B5035424654A1C00348E05 /* DiscoverSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverSubVC.swift; sourceTree = "<group>"; };
+		22B5035524654A1C00348E05 /* DiscoverSubVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverSubVC.xib; sourceTree = "<group>"; };
 		22CA05F8244FFE1F0067EF6A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		22D068852463AABF002BBBB5 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		22D068862463AABF002BBBB5 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
@@ -233,6 +257,19 @@
 				225A6E5B2462FE9100E4DE93 /* NetServiceManager.swift */,
 			);
 			path = "网络请求";
+			sourceTree = "<group>";
+		};
+		225F7C62246503B0001B15E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				225F7C63246503D1001B15E2 /* PhotoCell.swift */,
+				225F7C64246503D1001B15E2 /* PhotoCell.xib */,
+				225F7C67246503E1001B15E2 /* VideoCell.swift */,
+				225F7C68246503E1001B15E2 /* VideoCell.xib */,
+				225F7C6B24651023001B15E2 /* FollowCell.swift */,
+				225F7C6C24651023001B15E2 /* FollowCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		229FE199243F07EB003160CF = {
@@ -394,6 +431,7 @@
 				223771792464041700C5AFDF /* VideoVC.xib */,
 				2237718024640EE100C5AFDF /* VideoSubVC.swift */,
 				2237718124640EE100C5AFDF /* VideoSubVC.xib */,
+				225F7C62246503B0001B15E2 /* Views */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -413,8 +451,12 @@
 		229FE20D243F0DD4003160CF /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				22B5034B246535CA00348E05 /* Views */,
+				22B5034A246535C400348E05 /* Model */,
 				22D068892463AAD2002BBBB5 /* DiscoverVC.swift */,
 				22D0688A2463AAD2002BBBB5 /* DiscoverVC.xib */,
+				22B5035424654A1C00348E05 /* DiscoverSubVC.swift */,
+				22B5035524654A1C00348E05 /* DiscoverSubVC.xib */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -446,6 +488,24 @@
 				229FE230243F1114003160CF /* TabBarObject.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		22B5034A246535C400348E05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22B503522465382500348E05 /* DiscoverModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22B5034B246535CA00348E05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22B5034C246535DF00348E05 /* DiscoverCell.swift */,
+				22B5034D246535DF00348E05 /* DiscoverCell.xib */,
+				22B50350246537DC00348E05 /* ContainerView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		22D068922463F6D8002BBBB5 /* Helpers */ = {
@@ -648,9 +708,14 @@
 				229FE1B2243F07ED003160CF /* LaunchScreen.storyboard in Resources */,
 				229FE229243F10C2003160CF /* MeVC.xib in Resources */,
 				22D068882463AABF002BBBB5 /* HomeVC.xib in Resources */,
+				225F7C6E24651023001B15E2 /* FollowCell.xib in Resources */,
+				225F7C66246503D1001B15E2 /* PhotoCell.xib in Resources */,
+				225F7C6A246503E1001B15E2 /* VideoCell.xib in Resources */,
 				2237717F24640BB100C5AFDF /* PriVatePhotoSubVC.xib in Resources */,
+				22B5035724654A1C00348E05 /* DiscoverSubVC.xib in Resources */,
 				2237718324640EE100C5AFDF /* VideoSubVC.xib in Resources */,
 				229FE215243F0E81003160CF /* BaseViewController.xib in Resources */,
+				22B5034F246535DF00348E05 /* DiscoverCell.xib in Resources */,
 				22377177246403FB00C5AFDF /* PrivatePhotoVC.xib in Resources */,
 				229FE1AF243F07ED003160CF /* Assets.xcassets in Resources */,
 				229FE1AD243F07EB003160CF /* Main.storyboard in Resources */,
@@ -843,6 +908,7 @@
 				22377172246403DC00C5AFDF /* RecommendVC.swift in Sources */,
 				229FE1F0243F0D56003160CF /* UIView+Extension.swift in Sources */,
 				229FE1F3243F0D56003160CF /* YMKDvice.swift in Sources */,
+				225F7C65246503D1001B15E2 /* PhotoCell.swift in Sources */,
 				229FE231243F1114003160CF /* TabBarIrregularityBasicContentView.swift in Sources */,
 				229FE234243F1114003160CF /* TabBarObject.swift in Sources */,
 				22377176246403FB00C5AFDF /* PrivatePhotoVC.swift in Sources */,
@@ -857,8 +923,10 @@
 				229FE200243F0D5D003160CF /* LLog.swift in Sources */,
 				229FE233243F1114003160CF /* TabBarBouncesContentView.swift in Sources */,
 				229FE1F2243F0D56003160CF /* Bundle+Extension.swift in Sources */,
+				22B5034E246535DF00348E05 /* DiscoverCell.swift in Sources */,
 				229FE218243F1080003160CF /* LoginVC.swift in Sources */,
 				229FE209243F0D79003160CF /* WRCustomNavigationBar.m in Sources */,
+				22B5035624654A1C00348E05 /* DiscoverSubVC.swift in Sources */,
 				22D068872463AABF002BBBB5 /* HomeVC.swift in Sources */,
 				229FE1F1243F0D56003160CF /* UIImage+Extension.swift in Sources */,
 				225A6E622462FE9400E4DE93 /* MyNetworkActivityPlugin.swift in Sources */,
@@ -867,11 +935,14 @@
 				22D068A82463F856002BBBB5 /* ShareSheetCell.swift in Sources */,
 				22D0689B2463F6F3002BBBB5 /* ThirdloginHelper.swift in Sources */,
 				229FE1EF243F0D56003160CF /* UIButton+Extension.swift in Sources */,
+				22B50351246537DC00348E05 /* ContainerView.swift in Sources */,
 				22D068982463F6EA002BBBB5 /* ShareHelper.swift in Sources */,
 				225A6E5F2462FE9400E4DE93 /* NetServiceManager.swift in Sources */,
 				229FE1DF243F0D4B003160CF /* LxCustomAlert.swift in Sources */,
+				225F7C6D24651023001B15E2 /* FollowCell.swift in Sources */,
 				229FE208243F0D79003160CF /* WRNavigationBar.m in Sources */,
 				229FE1D8243F0ABC003160CF /* AppConst.swift in Sources */,
+				225F7C69246503E1001B15E2 /* VideoCell.swift in Sources */,
 				229FE1F6243F0D56003160CF /* YMKBasicTool.swift in Sources */,
 				229FE1A6243F07EB003160CF /* AppDelegate.swift in Sources */,
 				225A6E612462FE9400E4DE93 /* NetworkHelper.swift in Sources */,
@@ -885,6 +956,7 @@
 				229FE211243F0E4D003160CF /* BaseNavigationController.swift in Sources */,
 				225A6E602462FE9400E4DE93 /* NetAPIManager.swift in Sources */,
 				229FE1EE243F0D56003160CF /* Date+Extension.swift in Sources */,
+				22B503532465382500348E05 /* DiscoverModel.swift in Sources */,
 				229FE232243F1114003160CF /* TabBarBasicContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

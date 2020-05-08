@@ -10,8 +10,12 @@ import UIKit
 
 class PriVatePhotoSubVC: BaseViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        navBar.isHidden = true
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
 
         // Do any additional setup after loading the view.
     }
@@ -36,8 +40,62 @@ extension PriVatePhotoSubVC: JXSegmentedListContainerViewListDelegate {
     }
 
    
-//    func listScrollView() -> UIScrollView {
-//        return self.tableView
-//    }
+    func listScrollView() -> UIScrollView {
+        return self.tableView
+    }
 
 }
+
+extension PriVatePhotoSubVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+            let indentifier = "PhotoCellID"
+            var cell:PhotoCell! = tableView.dequeueReusableCell(withIdentifier: indentifier) as? PhotoCell
+            if cell == nil {
+                cell = Bundle.main.loadNibNamed("PhotoCell", owner: nil, options: nil)?.last as? PhotoCell
+                cell.selectionStyle = .none
+                
+            }
+            return cell
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+      
+                
+        return view
+    }
+    
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView.init()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0.1
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("点击了")
+        
+    }
+}
+

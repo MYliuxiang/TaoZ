@@ -17,7 +17,6 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <Bugly/Bugly.h>
 #import <TZImagePickerController/TZImagePickerController.h>//图片选择器
-
 //#import "test.h"
 
 //极光推送
@@ -32,6 +31,7 @@
 #import <UMShare/UMShare.h>
 #import <UShareUI/UShareUI.h>
 #import <UMAnalytics/MobClick.h>
+
 
 #import <AlipaySDK/AlipaySDK.h> //支付宝
 #import "WXApi.h"//微信

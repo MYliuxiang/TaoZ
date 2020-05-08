@@ -21,7 +21,8 @@ import UIKit
 @_exported import RxSwift
 @_exported import RxCocoa
 //@_exported import CommonCrypto
-
+import Kingfisher
+import SKPhotoBrowser
 
 
 
@@ -47,10 +48,11 @@ let JPAppKey = "f7d12a0061cf620500fe2f43"
 let UMShareKey = "5e53d0597ba7e954e9f6a681"
 
 //微信AppID
-let WXAppid = "wx3b553e6a9c1d0f8f"
-let WXSecret = "44d114bb2cad851dbb496031ce0bfebe"
+let WXAppid = "wxc807937e1003402a"
+let WXSecret = "05b9c5cd53e186dbef325bf772e2409c"
 
-let QQKey = "1109929039"//未有  tencent1109929039  QQ42282c4f
+let QQKey = "yvitPLV3Erb31mxN"//未有  tencent1109929039  QQ42282c4f
+let QQAPPID = "1108218079"
 let SinaKey = "152014725"//未有
 let SinaSecret = "f721b8a668775b6b72209587ea5099a4"//未有
 let RedirectURL = "redirectURL"
