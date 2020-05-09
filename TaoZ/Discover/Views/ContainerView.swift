@@ -8,7 +8,7 @@
 
 import UIKit
 import Kingfisher
-import SKPhotoBrowser
+
 
 
 @objcMembers class ContainerView: UIView {
@@ -149,13 +149,11 @@ import SKPhotoBrowser
     
     @objc func tapImageView(tap:UITapGestureRecognizer){
         
-        let browser = SKPhotoBrowser(photos: createWebPhotos())
+        let browser = LxBrowser(photos: createWebPhotos())
         browser.initializePageIndex(tap.view?.tag ?? 0)
         browser.delegate = self
 
-        ex_viewController?.present(browser, animated: true, completion: {})
-        
-        
+        ex_viewController?.present(browser, animated: true, completion: {})        
         
         
     }

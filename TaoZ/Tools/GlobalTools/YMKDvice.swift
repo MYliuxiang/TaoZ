@@ -13,6 +13,7 @@ class YMKDvice {
     
     //MARK:判断是否是刘海设备
     static func isIphoneX() -> Bool {
+        
      return UIApplication.shared.statusBarFrame.size.height == 44
     }
     

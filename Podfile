@@ -47,7 +47,7 @@ target 'TaoZ' do
 
 #图片选择器
   pod 'TZImagePickerController','3.2.9'
-  pod 'SKPhotoBrowser'
+  #pod 'SKPhotoBrowser'
 
   pod 'Bugly'
 #机光

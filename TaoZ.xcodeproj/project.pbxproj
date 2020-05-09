@@ -30,6 +30,33 @@
 		225F7C6A246503E1001B15E2 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225F7C68246503E1001B15E2 /* VideoCell.xib */; };
 		225F7C6D24651023001B15E2 /* FollowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F7C6B24651023001B15E2 /* FollowCell.swift */; };
 		225F7C6E24651023001B15E2 /* FollowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225F7C6C24651023001B15E2 /* FollowCell.xib */; };
+		2266B36324664DAF009675D8 /* LxBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B36124664DAF009675D8 /* LxBrowser.swift */; };
+		2266B36424664DAF009675D8 /* LxBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2266B36224664DAF009675D8 /* LxBrowser.xib */; };
+		2266B38324665B19009675D8 /* SKPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B36924665B19009675D8 /* SKPhotoBrowser.swift */; };
+		2266B38424665B19009675D8 /* SKMesurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B36A24665B19009675D8 /* SKMesurement.swift */; };
+		2266B38524665B19009675D8 /* SKZoomingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B36B24665B19009675D8 /* SKZoomingScrollView.swift */; };
+		2266B38624665B19009675D8 /* SKPaginationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B36C24665B19009675D8 /* SKPaginationView.swift */; };
+		2266B38724665B19009675D8 /* SKIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B36D24665B19009675D8 /* SKIndicatorView.swift */; };
+		2266B38824665B19009675D8 /* SKAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B36E24665B19009675D8 /* SKAnimator.swift */; };
+		2266B38924665B19009675D8 /* SKPhotoBrowserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B36F24665B19009675D8 /* SKPhotoBrowserOptions.swift */; };
+		2266B38A24665B19009675D8 /* SKDetectingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37024665B19009675D8 /* SKDetectingImageView.swift */; };
+		2266B38B24665B19009675D8 /* UIApplication+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37124665B19009675D8 /* UIApplication+UIWindow.swift */; };
+		2266B38C24665B19009675D8 /* SKPagingScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37224665B19009675D8 /* SKPagingScrollView.swift */; };
+		2266B38D24665B19009675D8 /* SKDetectingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37324665B19009675D8 /* SKDetectingView.swift */; };
+		2266B38E24665B19009675D8 /* SKCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37424665B19009675D8 /* SKCache.swift */; };
+		2266B38F24665B19009675D8 /* UIImage+Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37624665B19009675D8 /* UIImage+Rotation.swift */; };
+		2266B39024665B19009675D8 /* UIView+Radius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37724665B19009675D8 /* UIView+Radius.swift */; };
+		2266B39124665B19009675D8 /* SKCaptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37824665B19009675D8 /* SKCaptionView.swift */; };
+		2266B39224665B19009675D8 /* SKLocalPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37924665B19009675D8 /* SKLocalPhoto.swift */; };
+		2266B39324665B19009675D8 /* SKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37A24665B19009675D8 /* SKPhoto.swift */; };
+		2266B39424665B19009675D8 /* SKActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37B24665B19009675D8 /* SKActionView.swift */; };
+		2266B39524665B19009675D8 /* SKToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37C24665B19009675D8 /* SKToolbar.swift */; };
+		2266B39624665B19009675D8 /* SKPhotoBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37D24665B19009675D8 /* SKPhotoBrowserDelegate.swift */; };
+		2266B39724665B19009675D8 /* SKCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B37E24665B19009675D8 /* SKCacheable.swift */; };
+		2266B39824665B19009675D8 /* SKPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2266B37F24665B19009675D8 /* SKPhotoBrowser.bundle */; };
+		2266B39924665B19009675D8 /* SKButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B38024665B19009675D8 /* SKButtons.swift */; };
+		2266B39A24665B19009675D8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2266B38124665B19009675D8 /* LICENSE */; };
+		2266B39B24665B19009675D8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2266B38224665B19009675D8 /* README.md */; };
 		226EA09124504D1200DE3640 /* VolumeCongit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EA09024504D1200DE3640 /* VolumeCongit.swift */; };
 		229FE1A6243F07EB003160CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FE1A5243F07EB003160CF /* AppDelegate.swift */; };
 		229FE1AD243F07EB003160CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229FE1AB243F07EB003160CF /* Main.storyboard */; };
@@ -137,6 +164,34 @@
 		225F7C68246503E1001B15E2 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
 		225F7C6B24651023001B15E2 /* FollowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowCell.swift; sourceTree = "<group>"; };
 		225F7C6C24651023001B15E2 /* FollowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowCell.xib; sourceTree = "<group>"; };
+		2266B36124664DAF009675D8 /* LxBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LxBrowser.swift; sourceTree = "<group>"; };
+		2266B36224664DAF009675D8 /* LxBrowser.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LxBrowser.xib; sourceTree = "<group>"; };
+		2266B36824665B19009675D8 /* SKPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPhotoBrowser.h; sourceTree = "<group>"; };
+		2266B36924665B19009675D8 /* SKPhotoBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowser.swift; sourceTree = "<group>"; };
+		2266B36A24665B19009675D8 /* SKMesurement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMesurement.swift; sourceTree = "<group>"; };
+		2266B36B24665B19009675D8 /* SKZoomingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKZoomingScrollView.swift; sourceTree = "<group>"; };
+		2266B36C24665B19009675D8 /* SKPaginationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPaginationView.swift; sourceTree = "<group>"; };
+		2266B36D24665B19009675D8 /* SKIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKIndicatorView.swift; sourceTree = "<group>"; };
+		2266B36E24665B19009675D8 /* SKAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAnimator.swift; sourceTree = "<group>"; };
+		2266B36F24665B19009675D8 /* SKPhotoBrowserOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowserOptions.swift; sourceTree = "<group>"; };
+		2266B37024665B19009675D8 /* SKDetectingImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKDetectingImageView.swift; sourceTree = "<group>"; };
+		2266B37124665B19009675D8 /* UIApplication+UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+UIWindow.swift"; sourceTree = "<group>"; };
+		2266B37224665B19009675D8 /* SKPagingScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPagingScrollView.swift; sourceTree = "<group>"; };
+		2266B37324665B19009675D8 /* SKDetectingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKDetectingView.swift; sourceTree = "<group>"; };
+		2266B37424665B19009675D8 /* SKCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCache.swift; sourceTree = "<group>"; };
+		2266B37624665B19009675D8 /* UIImage+Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Rotation.swift"; sourceTree = "<group>"; };
+		2266B37724665B19009675D8 /* UIView+Radius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Radius.swift"; sourceTree = "<group>"; };
+		2266B37824665B19009675D8 /* SKCaptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCaptionView.swift; sourceTree = "<group>"; };
+		2266B37924665B19009675D8 /* SKLocalPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLocalPhoto.swift; sourceTree = "<group>"; };
+		2266B37A24665B19009675D8 /* SKPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhoto.swift; sourceTree = "<group>"; };
+		2266B37B24665B19009675D8 /* SKActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKActionView.swift; sourceTree = "<group>"; };
+		2266B37C24665B19009675D8 /* SKToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKToolbar.swift; sourceTree = "<group>"; };
+		2266B37D24665B19009675D8 /* SKPhotoBrowserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowserDelegate.swift; sourceTree = "<group>"; };
+		2266B37E24665B19009675D8 /* SKCacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKCacheable.swift; sourceTree = "<group>"; };
+		2266B37F24665B19009675D8 /* SKPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SKPhotoBrowser.bundle; sourceTree = "<group>"; };
+		2266B38024665B19009675D8 /* SKButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButtons.swift; sourceTree = "<group>"; };
+		2266B38124665B19009675D8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2266B38224665B19009675D8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		226EA09024504D1200DE3640 /* VolumeCongit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeCongit.swift; sourceTree = "<group>"; };
 		229FE1A2243F07EB003160CF /* TaoZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaoZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229FE1A5243F07EB003160CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -272,6 +327,55 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2266B36624665B19009675D8 /* SKPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				2266B36724665B19009675D8 /* SKPhotoBrowser */,
+				2266B38124665B19009675D8 /* LICENSE */,
+				2266B38224665B19009675D8 /* README.md */,
+			);
+			path = SKPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		2266B36724665B19009675D8 /* SKPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				2266B36824665B19009675D8 /* SKPhotoBrowser.h */,
+				2266B36924665B19009675D8 /* SKPhotoBrowser.swift */,
+				2266B36A24665B19009675D8 /* SKMesurement.swift */,
+				2266B36B24665B19009675D8 /* SKZoomingScrollView.swift */,
+				2266B36C24665B19009675D8 /* SKPaginationView.swift */,
+				2266B36D24665B19009675D8 /* SKIndicatorView.swift */,
+				2266B36E24665B19009675D8 /* SKAnimator.swift */,
+				2266B36F24665B19009675D8 /* SKPhotoBrowserOptions.swift */,
+				2266B37024665B19009675D8 /* SKDetectingImageView.swift */,
+				2266B37124665B19009675D8 /* UIApplication+UIWindow.swift */,
+				2266B37224665B19009675D8 /* SKPagingScrollView.swift */,
+				2266B37324665B19009675D8 /* SKDetectingView.swift */,
+				2266B37424665B19009675D8 /* SKCache.swift */,
+				2266B37524665B19009675D8 /* extensions */,
+				2266B37824665B19009675D8 /* SKCaptionView.swift */,
+				2266B37924665B19009675D8 /* SKLocalPhoto.swift */,
+				2266B37A24665B19009675D8 /* SKPhoto.swift */,
+				2266B37B24665B19009675D8 /* SKActionView.swift */,
+				2266B37C24665B19009675D8 /* SKToolbar.swift */,
+				2266B37D24665B19009675D8 /* SKPhotoBrowserDelegate.swift */,
+				2266B37E24665B19009675D8 /* SKCacheable.swift */,
+				2266B37F24665B19009675D8 /* SKPhotoBrowser.bundle */,
+				2266B38024665B19009675D8 /* SKButtons.swift */,
+			);
+			path = SKPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		2266B37524665B19009675D8 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2266B37624665B19009675D8 /* UIImage+Rotation.swift */,
+				2266B37724665B19009675D8 /* UIView+Radius.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		229FE199243F07EB003160CF = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +440,7 @@
 		229FE1D5243F0A61003160CF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2266B36624665B19009675D8 /* SKPhotoBrowser */,
 				2205BC1D24405B1900146C47 /* 网络请求 */,
 				229FE202243F0D6F003160CF /* lib */,
 				229FE1F7243F0D5D003160CF /* YMKTools */,
@@ -504,6 +609,8 @@
 				22B5034C246535DF00348E05 /* DiscoverCell.swift */,
 				22B5034D246535DF00348E05 /* DiscoverCell.xib */,
 				22B50350246537DC00348E05 /* ContainerView.swift */,
+				2266B36124664DAF009675D8 /* LxBrowser.swift */,
+				2266B36224664DAF009675D8 /* LxBrowser.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -706,18 +813,22 @@
 				229FE219243F1080003160CF /* LoginVC.xib in Resources */,
 				2237716F246403C700C5AFDF /* FollowVC.xib in Resources */,
 				229FE1B2243F07ED003160CF /* LaunchScreen.storyboard in Resources */,
+				2266B39B24665B19009675D8 /* README.md in Resources */,
 				229FE229243F10C2003160CF /* MeVC.xib in Resources */,
 				22D068882463AABF002BBBB5 /* HomeVC.xib in Resources */,
 				225F7C6E24651023001B15E2 /* FollowCell.xib in Resources */,
 				225F7C66246503D1001B15E2 /* PhotoCell.xib in Resources */,
 				225F7C6A246503E1001B15E2 /* VideoCell.xib in Resources */,
 				2237717F24640BB100C5AFDF /* PriVatePhotoSubVC.xib in Resources */,
+				2266B36424664DAF009675D8 /* LxBrowser.xib in Resources */,
+				2266B39A24665B19009675D8 /* LICENSE in Resources */,
 				22B5035724654A1C00348E05 /* DiscoverSubVC.xib in Resources */,
 				2237718324640EE100C5AFDF /* VideoSubVC.xib in Resources */,
 				229FE215243F0E81003160CF /* BaseViewController.xib in Resources */,
 				22B5034F246535DF00348E05 /* DiscoverCell.xib in Resources */,
 				22377177246403FB00C5AFDF /* PrivatePhotoVC.xib in Resources */,
 				229FE1AF243F07ED003160CF /* Assets.xcassets in Resources */,
+				2266B39824665B19009675D8 /* SKPhotoBrowser.bundle in Resources */,
 				229FE1AD243F07EB003160CF /* Main.storyboard in Resources */,
 				2237717B2464041700C5AFDF /* VideoVC.xib in Resources */,
 			);
@@ -898,31 +1009,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2266B38724665B19009675D8 /* SKIndicatorView.swift in Sources */,
 				22D0689E2463F6F9002BBBB5 /* PayHelper.swift in Sources */,
 				229FE1F5243F0D56003160CF /* YMKJSONString.swift in Sources */,
 				22D068AA2463F856002BBBB5 /* ShareView.swift in Sources */,
 				2237717A2464041700C5AFDF /* VideoVC.swift in Sources */,
+				2266B38E24665B19009675D8 /* SKCache.swift in Sources */,
 				229FE1FF243F0D5D003160CF /* YMKDataTool.swift in Sources */,
+				2266B38924665B19009675D8 /* SKPhotoBrowserOptions.swift in Sources */,
+				2266B38324665B19009675D8 /* SKPhotoBrowser.swift in Sources */,
 				229FE201243F0D5D003160CF /* YMKPushTool.swift in Sources */,
+				2266B38C24665B19009675D8 /* SKPagingScrollView.swift in Sources */,
 				2237716E246403C700C5AFDF /* FollowVC.swift in Sources */,
+				2266B38A24665B19009675D8 /* SKDetectingImageView.swift in Sources */,
 				22377172246403DC00C5AFDF /* RecommendVC.swift in Sources */,
 				229FE1F0243F0D56003160CF /* UIView+Extension.swift in Sources */,
 				229FE1F3243F0D56003160CF /* YMKDvice.swift in Sources */,
 				225F7C65246503D1001B15E2 /* PhotoCell.swift in Sources */,
+				2266B39224665B19009675D8 /* SKLocalPhoto.swift in Sources */,
 				229FE231243F1114003160CF /* TabBarIrregularityBasicContentView.swift in Sources */,
 				229FE234243F1114003160CF /* TabBarObject.swift in Sources */,
 				22377176246403FB00C5AFDF /* PrivatePhotoVC.swift in Sources */,
+				2266B39624665B19009675D8 /* SKPhotoBrowserDelegate.swift in Sources */,
 				226EA09124504D1200DE3640 /* VolumeCongit.swift in Sources */,
 				22D068A92463F856002BBBB5 /* ShareItem.swift in Sources */,
 				229FE1EC243F0D56003160CF /* UIColor+Extension.swift in Sources */,
 				22D068AB2463F856002BBBB5 /* ShareItemCell.swift in Sources */,
+				2266B39424665B19009675D8 /* SKActionView.swift in Sources */,
 				2237718224640EE100C5AFDF /* VideoSubVC.swift in Sources */,
+				2266B38D24665B19009675D8 /* SKDetectingView.swift in Sources */,
 				22D0688B2463AAD2002BBBB5 /* DiscoverVC.swift in Sources */,
 				229FE25F243F2FEF003160CF /* UIFont+Extension.swift in Sources */,
 				22D068952463F6E1002BBBB5 /* JPushHelper.swift in Sources */,
 				229FE200243F0D5D003160CF /* LLog.swift in Sources */,
 				229FE233243F1114003160CF /* TabBarBouncesContentView.swift in Sources */,
 				229FE1F2243F0D56003160CF /* Bundle+Extension.swift in Sources */,
+				2266B38824665B19009675D8 /* SKAnimator.swift in Sources */,
 				22B5034E246535DF00348E05 /* DiscoverCell.swift in Sources */,
 				229FE218243F1080003160CF /* LoginVC.swift in Sources */,
 				229FE209243F0D79003160CF /* WRCustomNavigationBar.m in Sources */,
@@ -931,25 +1053,35 @@
 				229FE1F1243F0D56003160CF /* UIImage+Extension.swift in Sources */,
 				225A6E622462FE9400E4DE93 /* MyNetworkActivityPlugin.swift in Sources */,
 				229FE214243F0E81003160CF /* BaseViewController.swift in Sources */,
+				2266B39324665B19009675D8 /* SKPhoto.swift in Sources */,
 				229FE1ED243F0D56003160CF /* YMKReachability.swift in Sources */,
 				22D068A82463F856002BBBB5 /* ShareSheetCell.swift in Sources */,
 				22D0689B2463F6F3002BBBB5 /* ThirdloginHelper.swift in Sources */,
 				229FE1EF243F0D56003160CF /* UIButton+Extension.swift in Sources */,
+				2266B38624665B19009675D8 /* SKPaginationView.swift in Sources */,
 				22B50351246537DC00348E05 /* ContainerView.swift in Sources */,
 				22D068982463F6EA002BBBB5 /* ShareHelper.swift in Sources */,
+				2266B36324664DAF009675D8 /* LxBrowser.swift in Sources */,
 				225A6E5F2462FE9400E4DE93 /* NetServiceManager.swift in Sources */,
 				229FE1DF243F0D4B003160CF /* LxCustomAlert.swift in Sources */,
 				225F7C6D24651023001B15E2 /* FollowCell.swift in Sources */,
 				229FE208243F0D79003160CF /* WRNavigationBar.m in Sources */,
+				2266B39124665B19009675D8 /* SKCaptionView.swift in Sources */,
 				229FE1D8243F0ABC003160CF /* AppConst.swift in Sources */,
+				2266B39024665B19009675D8 /* UIView+Radius.swift in Sources */,
+				2266B39524665B19009675D8 /* SKToolbar.swift in Sources */,
 				225F7C69246503E1001B15E2 /* VideoCell.swift in Sources */,
 				229FE1F6243F0D56003160CF /* YMKBasicTool.swift in Sources */,
 				229FE1A6243F07EB003160CF /* AppDelegate.swift in Sources */,
 				225A6E612462FE9400E4DE93 /* NetworkHelper.swift in Sources */,
 				229FE22B243F10F5003160CF /* AppService.swift in Sources */,
+				2266B39724665B19009675D8 /* SKCacheable.swift in Sources */,
 				2237717E24640BB100C5AFDF /* PriVatePhotoSubVC.swift in Sources */,
 				22D068A22463F80A002BBBB5 /* BaseModel.swift in Sources */,
+				2266B38B24665B19009675D8 /* UIApplication+UIWindow.swift in Sources */,
+				2266B39924665B19009675D8 /* SKButtons.swift in Sources */,
 				229FE228243F10C2003160CF /* MeVC.swift in Sources */,
+				2266B38F24665B19009675D8 /* UIImage+Rotation.swift in Sources */,
 				229FE1DE243F0D4B003160CF /* NibView.swift in Sources */,
 				22D0688F2463AAEB002BBBB5 /* MessagesVC.swift in Sources */,
 				229FE1F4243F0D56003160CF /* String+Extension.swift in Sources */,
@@ -958,6 +1090,8 @@
 				229FE1EE243F0D56003160CF /* Date+Extension.swift in Sources */,
 				22B503532465382500348E05 /* DiscoverModel.swift in Sources */,
 				229FE232243F1114003160CF /* TabBarBasicContentView.swift in Sources */,
+				2266B38424665B19009675D8 /* SKMesurement.swift in Sources */,
+				2266B38524665B19009675D8 /* SKZoomingScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

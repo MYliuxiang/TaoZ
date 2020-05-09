@@ -17,6 +17,7 @@ open class SKPhotoBrowser: UIViewController {
     open var initPageIndex: Int = 0
     open var activityItemProvider: UIActivityItemProvider?
     open var photos: [SKPhotoProtocol] = []
+    open var canScrollerIndex:Int?
     
     internal lazy var pagingScrollView: SKPagingScrollView = SKPagingScrollView(frame: self.view.frame, browser: self)
     
@@ -26,8 +27,8 @@ open class SKPhotoBrowser: UIViewController {
     let animator: SKAnimator = .init()
     
     // child component
-    fileprivate var actionView: SKActionView!
-    fileprivate(set) var paginationView: SKPaginationView!
+    var actionView: SKActionView!
+    var paginationView: SKPaginationView!
     var toolbar: SKToolbar!
 
     // actions
@@ -332,7 +333,7 @@ public extension SKPhotoBrowser {
     }
     
     func hideControls() {
-        setControlsHidden(true, animated: true, permanent: false)
+//        setControlsHidden(true, animated: true, permanent: false)
     }
     
     @objc func hideControls(_ timer: Timer) {
@@ -391,12 +392,12 @@ internal extension SKPhotoBrowser {
     func frameForToolbarAtOrientation() -> CGRect {
         let offset: CGFloat = {
             if #available(iOS 11.0, *) {
-                return view.safeAreaInsets.bottom
+                return view.safeAreaInsets.top
             } else {
                 return 15
             }
         }()
-        return view.bounds.divided(atDistance: 44, from: .maxYEdge).slice.offsetBy(dx: 0, dy: -offset)
+        return view.bounds.divided(atDistance: 44, from: .minYEdge).slice.offsetBy(dx: 0, dy: offset)
     }
     
     func frameForToolbarHideAtOrientation() -> CGRect {
@@ -404,9 +405,16 @@ internal extension SKPhotoBrowser {
     }
     
     func frameForPaginationAtOrientation() -> CGRect {
-        let offset = UIDevice.current.orientation.isLandscape ? 35 : 44
+//        let offset = UIDevice.current.orientation.isLandscape ? 35 : 44
+        let offset: CGFloat = {
+            if #available(iOS 11.0, *) {
+                return view.safeAreaInsets.top
+            } else {
+                return 20
+            }
+        }()
         
-        return CGRect(x: 0, y: self.view.bounds.size.height - CGFloat(offset), width: self.view.bounds.size.width, height: CGFloat(offset))
+        return CGRect(x: 0, y: offset, width: self.view.bounds.size.width, height: 44)
     }
     
     func frameForPageAtIndex(_ index: Int) -> CGRect {
@@ -549,6 +557,7 @@ private extension SKPhotoBrowser {
     func configurePagingScrollView() {
         pagingScrollView.delegate = self
         view.addSubview(pagingScrollView)
+        
     }
 
     func configureGestureControl() {
@@ -571,11 +580,12 @@ private extension SKPhotoBrowser {
     func configurePaginationView() {
         paginationView = SKPaginationView(frame: view.frame, browser: self)
         view.addSubview(paginationView)
+       
     }
     
     func configureToolbar() {
         toolbar = SKToolbar(frame: frameForToolbarAtOrientation(), browser: self)
-        view.addSubview(toolbar)
+//        view.addSubview(toolbar)
     }
 
     func setControlsHidden(_ hidden: Bool, animated: Bool, permanent: Bool) {
@@ -601,10 +611,26 @@ private extension SKPhotoBrowser {
 // MARK: - UIScrollView Delegate
 
 extension SKPhotoBrowser: UIScrollViewDelegate {
+    
+//    public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+//        let wcanScrollerIndex = 2
+//         if scrollView.contentOffset.x >= CGFloat(wcanScrollerIndex) * scrollView.width {
+//                    //不能滑动了
+//
+//            scrollView.setContentOffset(CGPoint(x: CGFloat(wcanScrollerIndex) * scrollView.width, y: 0), animated: false)
+////            scrollView.bounces = (scrollView.contentOffset.x >= CGFloat(wcanScrollerIndex) * scrollView.width) ? false:true;
+//            scrollView.contentSize = CGSize(width: CGFloat(wcanScrollerIndex) * scrollView.width, height: scrollView.height)
+//
+//
+//        }
+//    }
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard isViewActive else { return }
         guard !isPerformingLayout else { return }
-        
+     
+        print(scrollView.contentOffset.x)
+
+
         // tile page
         pagingScrollView.tilePages()
         
@@ -617,6 +643,15 @@ extension SKPhotoBrowser: UIScrollViewDelegate {
             delegate?.didShowPhotoAtIndex?(self, index: currentPageIndex)
             paginationView.update(currentPageIndex)
         }
+        
+        if currentPageIndex > previousCurrentPage {
+            //显示
+            setControlsHidden(false, animated: true, permanent: false)
+
+        }
+        
+          
+        
     }
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

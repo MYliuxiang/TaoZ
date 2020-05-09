@@ -47,6 +47,7 @@ class HomeVC: BaseViewController {
                  
         segmentedView.listContainer = listContainerView
                view.addSubview(listContainerView)
+        
     }
     
     override func viewDidLayoutSubviews() {

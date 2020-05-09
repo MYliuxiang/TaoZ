@@ -39,7 +39,6 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.0)
   - SDAutoLayout (2.1.9)
-  - SKPhotoBrowser (6.1.0)
   - SnapKit (5.0.1)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
@@ -88,7 +87,6 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SDAutoLayout (~> 2.1.3)
-  - SKPhotoBrowser
   - SnapKit
   - SVProgressHUD
   - SwiftyJSON
@@ -129,7 +127,6 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SDAutoLayout
-    - SKPhotoBrowser
     - SnapKit
     - SVProgressHUD
     - SwiftyJSON
@@ -166,7 +163,6 @@ SPEC CHECKSUMS:
   RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
   RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   SDAutoLayout: 6b6f4db0d009dfc46cef14ef710dbb164e86616c
-  SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
@@ -178,6 +174,6 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 3117412f8aafde4758cac1e8d20b93c67cafcfef
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 86d89c1cceebfe8dfa3b9826ae8d8f2170654a2b
+PODFILE CHECKSUM: 6fe3d0d3bf313bc360b6780eacef9f049d41c295
 
 COCOAPODS: 1.9.1

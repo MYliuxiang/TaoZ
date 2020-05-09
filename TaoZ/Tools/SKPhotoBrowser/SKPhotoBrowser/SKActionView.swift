@@ -12,6 +12,7 @@ class SKActionView: UIView {
     internal weak var browser: SKPhotoBrowser?
     internal var closeButton: SKCloseButton!
     internal var deleteButton: SKDeleteButton!
+    var navView:UIView!
     
     // Action
     fileprivate var cancelTitle = "Cancel"
@@ -27,6 +28,16 @@ class SKActionView: UIView {
     convenience init(frame: CGRect, browser: SKPhotoBrowser) {
         self.init(frame: frame)
         self.browser = browser
+        let offset: CGFloat = {
+                          if #available(iOS 11.0, *) {
+                              return self.safeAreaInsets.top
+                          } else {
+                              return 20
+                          }
+                      }()
+        navView = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: YMKDvice.navBarHeight()))
+        navView.backgroundColor = .red
+        self.addSubview(navView)
 
         configureCloseButton()
         configureDeleteButton()
@@ -58,11 +69,26 @@ class SKActionView: UIView {
     func animate(hidden: Bool) {
         let closeFrame: CGRect = hidden ? closeButton.hideFrame : closeButton.showFrame
         let deleteFrame: CGRect = hidden ? deleteButton.hideFrame : deleteButton.showFrame
+        
+        var offset: CGFloat = 20
+        if UIScreen.main.bounds.height == 812 || UIScreen.main.bounds.height == 896{
+            offset = 44
+        }
+
+        
+        let closenavFrame: CGRect = hidden ? CGRect(x: 0, y: -(offset + 44), width: ScreenWidth, height: offset + 44):CGRect(x: 0, y: 0, width: ScreenWidth, height: offset + 44)
+        
+
         UIView.animate(withDuration: 0.35,
                        animations: { () -> Void in
-                        let alpha: CGFloat = hidden ? 0.0 : 1.0
+//                        let alpha: CGFloat = hidden ? 0.0 : 1.0
+                        let alpha: CGFloat = 1.0
 
+                        self.navView.alpha = alpha
+                        self.navView.frame = closenavFrame
+                        
                         if SKPhotoBrowserOptions.displayCloseButton {
+                            
                             self.closeButton.alpha = alpha
                             self.closeButton.frame = closeFrame
                         }
@@ -96,7 +122,7 @@ extension SKActionView {
         }
 
         if let size = size {
-            closeButton.setFrameSize(size)
+            closeButton.setFramesksize(size)
         }
         
         if let image = image {
@@ -113,7 +139,7 @@ extension SKActionView {
         }
         
         if let size = size {
-            deleteButton.setFrameSize(size)
+            deleteButton.setFramesksize(size)
         }
         
         if let image = image {
