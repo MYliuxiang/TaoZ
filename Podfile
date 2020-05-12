@@ -62,8 +62,11 @@ target 'TaoZ' do
   #NSAttributedString的框架
   pod 'TextAttributes'
 
+  pod 'InputKitSwift', '~> 1.1.16'
+
 pod 'RongCloudIM/IMKit', '~> 2.10.4'
 pod 'RongCloudIM/IMLib', '~> 2.10.4'
+pod 'BRPickerView'
 
 
   target 'TaoZTests' do

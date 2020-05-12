@@ -17,8 +17,7 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <Bugly/Bugly.h>
 #import <TZImagePickerController/TZImagePickerController.h>//图片选择器
-//#import "test.h"
-
+#import <BRPickerView.h>
 //极光推送
 #import "JPUSHService.h"
 // iOS10注册APNs所需头文件

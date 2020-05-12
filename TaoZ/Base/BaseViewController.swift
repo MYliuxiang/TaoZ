@@ -14,10 +14,12 @@ class BaseViewController: UIViewController {
     
     var rightButton:UIButton?
     var onClickRightButton:(()->Void)?
+    let dispossBag = DisposeBag()
+
 //    lazy var appNoNetView:AppNoNetView = AppNoNetView(frame: CGRect.init(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight))
     
 
-      private lazy var bottomView : UIView = {
+    lazy var bottomView : UIView = {
         let bottomView = UIView(frame: CGRect(x: 0, y: ScreenHeight - YMKDvice.bottomOffset(), width: ScreenWidth, height: YMKDvice.bottomOffset()))
         bottomView.backgroundColor = UIColor.white
           return bottomView
@@ -34,7 +36,7 @@ class BaseViewController: UIViewController {
         navigationController?.navigationBar.isHidden = true
         automaticallyAdjustsScrollViewInsets = false
         self.view.addSubview(self.bottomView)
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = UIColor.colorWithHexStr("#F7F7F7")
         setupNavBar()
         add_noNetView()
 

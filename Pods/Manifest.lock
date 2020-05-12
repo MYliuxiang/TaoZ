@@ -3,11 +3,24 @@ PODS:
   - AlamofireLogbook (0.1.1):
     - Alamofire
   - AlipaySDK-iOS (15.5.9)
+  - BRPickerView (2.6.0):
+    - BRPickerView/AddressPickerView (= 2.6.0)
+    - BRPickerView/Base (= 2.6.0)
+    - BRPickerView/DatePickerView (= 2.6.0)
+    - BRPickerView/StringPickerView (= 2.6.0)
+  - BRPickerView/AddressPickerView (2.6.0):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.6.0)
+  - BRPickerView/DatePickerView (2.6.0):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.6.0):
+    - BRPickerView/Base
   - Bugly (2.5.2)
   - DZNEmptyDataSet (1.8.1)
   - ESTabBarController-swift (2.8.0)
   - FSPagerView (0.8.3)
   - HandyJSON (5.0.0)
+  - InputKitSwift (1.1.19)
   - IQKeyboardManagerSwift (6.5.2)
   - JCore (2.1.4-noidfa)
   - JPush (3.2.4-noidfa):
@@ -68,10 +81,12 @@ DEPENDENCIES:
   - Alamofire (= 4.8.1)
   - AlamofireLogbook
   - AlipaySDK-iOS (= 15.5.9)
+  - BRPickerView
   - Bugly
   - ESTabBarController-swift
   - FSPagerView
   - HandyJSON (= 5.0.0)
+  - InputKitSwift (~> 1.1.16)
   - IQKeyboardManagerSwift (= 6.5.2)
   - JCore (= 2.1.4-noidfa)
   - JPush (= 3.2.4-noidfa)
@@ -106,11 +121,13 @@ SPEC REPOS:
     - Alamofire
     - AlamofireLogbook
     - AlipaySDK-iOS
+    - BRPickerView
     - Bugly
     - DZNEmptyDataSet
     - ESTabBarController-swift
     - FSPagerView
     - HandyJSON
+    - InputKitSwift
     - IQKeyboardManagerSwift
     - JCore
     - JPush
@@ -142,11 +159,13 @@ SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   AlamofireLogbook: 7e18aa9c6ab7c0c75e2a4a294a2c390c1d6335d9
   AlipaySDK-iOS: 1c5283b30977a24acecc0114662697f7dc78f618
+  BRPickerView: 3c7bb7ccaefec74ba0ef8d2c771b9be769f5c81b
   Bugly: dbac48b55ad469a97cc4321045cd50df8f63d44f
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
+  InputKitSwift: ceaf0ab41d0dad15537f43f027c6af62a9ebf7e4
   IQKeyboardManagerSwift: c75366f1f19590e8caeae45fcd5815c9289d6099
   JCore: 2f15311e6889ab43ed5d629802ef793cac566465
   JPush: 2ff11d3013b360bc1b7da16741027e88f12fe3e6
@@ -174,6 +193,6 @@ SPEC CHECKSUMS:
   WechatOpenSDK: 3117412f8aafde4758cac1e8d20b93c67cafcfef
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: 6fe3d0d3bf313bc360b6780eacef9f049d41c295
+PODFILE CHECKSUM: f8c2ba4cfd747d01d7cabafeef74a7652438d913
 
 COCOAPODS: 1.9.1

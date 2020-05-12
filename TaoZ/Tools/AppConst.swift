@@ -20,6 +20,9 @@ import UIKit
 //@_exported import TextAttributes
 @_exported import RxSwift
 @_exported import RxCocoa
+@_exported import InputKitSwift
+
+
 //@_exported import CommonCrypto
 import Kingfisher
 

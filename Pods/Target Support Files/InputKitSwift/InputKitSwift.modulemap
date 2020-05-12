@@ -1,0 +1,6 @@
+framework module InputKitSwift {
+  umbrella header "InputKitSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
