@@ -24,7 +24,11 @@ target 'TaoZ' do
   #分类切换滚动视图
   pod 'JXSegmentedView'
   pod 'JXPagingView/Paging'
-  
+
+
+  pod 'ZFPlayer/ControlView', '~> 3.0'  
+  pod 'ZFPlayer/AVPlayer', '~> 3.0'
+
   # 轮播
   pod 'FSPagerView'
  #键盘
@@ -57,6 +61,7 @@ target 'TaoZ' do
   #RxSwift框架
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'NSObject+Rx'
   #空白视图
   pod 'LXFProtocolTool/EmptyDataSetable'
   #NSAttributedString的框架

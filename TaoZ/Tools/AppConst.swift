@@ -21,6 +21,8 @@ import UIKit
 @_exported import RxSwift
 @_exported import RxCocoa
 @_exported import InputKitSwift
+@_exported import NSObject_Rx
+
 
 
 //@_exported import CommonCrypto
@@ -80,9 +82,14 @@ let NotiCenter = NotificationCenter.default
 //UserDefaults
 let UserDefaultsStandard = UserDefaults.standard
 
+let isLogin = "islogin"
+
 //颜色
 
 let color_theme = UIColor.colorWithHexStr("#FF3366")
 let color_3 = UIColor.colorWithHexStr("#333333")
 let color_6 = UIColor.colorWithHexStr("#666666")
 let color_9 = UIColor.colorWithHexStr("#999999")
+
+
+

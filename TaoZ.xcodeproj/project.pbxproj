@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		05D3BECA3CD723D22B0EAD54 /* Pods_TaoZTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86EFC1DE6D9995D801FA6318 /* Pods_TaoZTests.framework */; };
+		22209E52246BD3520001ED6A /* VideoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22209E50246BD3520001ED6A /* VideoDetailVC.swift */; };
+		22209E53246BD3520001ED6A /* VideoDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22209E51246BD3520001ED6A /* VideoDetailVC.xib */; };
+		22209E55246BE5840001ED6A /* LxPlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22209E54246BE5840001ED6A /* LxPlayerControlView.swift */; };
+		22209E5D246BF1A70001ED6A /* MobileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22209E5C246BF1A70001ED6A /* MobileView.swift */; };
+		22209E5F246BF1B80001ED6A /* MobileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22209E5E246BF1B80001ED6A /* MobileView.xib */; };
 		2237716E246403C700C5AFDF /* FollowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237716C246403C700C5AFDF /* FollowVC.swift */; };
 		2237716F246403C700C5AFDF /* FollowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2237716D246403C700C5AFDF /* FollowVC.xib */; };
 		22377172246403DC00C5AFDF /* RecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22377170246403DC00C5AFDF /* RecommendVC.swift */; };
@@ -175,6 +180,11 @@
 
 /* Begin PBXFileReference section */
 		0EE030BDA16FFECB1E8D47C9 /* Pods_TaoZ.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaoZ.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22209E50246BD3520001ED6A /* VideoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailVC.swift; sourceTree = "<group>"; };
+		22209E51246BD3520001ED6A /* VideoDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoDetailVC.xib; sourceTree = "<group>"; };
+		22209E54246BE5840001ED6A /* LxPlayerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LxPlayerControlView.swift; sourceTree = "<group>"; };
+		22209E5C246BF1A70001ED6A /* MobileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileView.swift; sourceTree = "<group>"; };
+		22209E5E246BF1B80001ED6A /* MobileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MobileView.xib; sourceTree = "<group>"; };
 		2237716C246403C700C5AFDF /* FollowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowVC.swift; sourceTree = "<group>"; };
 		2237716D246403C700C5AFDF /* FollowVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowVC.xib; sourceTree = "<group>"; };
 		22377170246403DC00C5AFDF /* RecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendVC.swift; sourceTree = "<group>"; };
@@ -378,6 +388,26 @@
 				225A6E5B2462FE9100E4DE93 /* NetServiceManager.swift */,
 			);
 			path = "网络请求";
+			sourceTree = "<group>";
+		};
+		22209E58246BEEA20001ED6A /* 播放器 */ = {
+			isa = PBXGroup;
+			children = (
+				22209E59246BEEB00001ED6A /* Views */,
+				22209E50246BD3520001ED6A /* VideoDetailVC.swift */,
+				22209E51246BD3520001ED6A /* VideoDetailVC.xib */,
+			);
+			path = "播放器";
+			sourceTree = "<group>";
+		};
+		22209E59246BEEB00001ED6A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22209E54246BE5840001ED6A /* LxPlayerControlView.swift */,
+				22209E5C246BF1A70001ED6A /* MobileView.swift */,
+				22209E5E246BF1B80001ED6A /* MobileView.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		225F7C62246503B0001B15E2 /* Views */ = {
@@ -699,6 +729,7 @@
 		229FE20B243F0DB0003160CF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				22209E58246BEEA20001ED6A /* 播放器 */,
 				22D068852463AABF002BBBB5 /* HomeVC.swift */,
 				22D068862463AABF002BBBB5 /* HomeVC.xib */,
 				2237716C246403C700C5AFDF /* FollowVC.swift */,
@@ -1011,6 +1042,7 @@
 				225F7C6E24651023001B15E2 /* FollowCell.xib in Resources */,
 				225F7C66246503D1001B15E2 /* PhotoCell.xib in Resources */,
 				225F7C6A246503E1001B15E2 /* VideoCell.xib in Resources */,
+				22209E53246BD3520001ED6A /* VideoDetailVC.xib in Resources */,
 				2283A939246A58EF001A5B65 /* PersonalVC.xib in Resources */,
 				2283A935246A54B6001A5B65 /* MeCell.xib in Resources */,
 				2237717F24640BB100C5AFDF /* PriVatePhotoSubVC.xib in Resources */,
@@ -1028,6 +1060,7 @@
 				229FE215243F0E81003160CF /* BaseViewController.xib in Resources */,
 				22B5034F246535DF00348E05 /* DiscoverCell.xib in Resources */,
 				22377177246403FB00C5AFDF /* PrivatePhotoVC.xib in Resources */,
+				22209E5F246BF1B80001ED6A /* MobileView.xib in Resources */,
 				2283A94D246A7974001A5B65 /* TextViewCell.xib in Resources */,
 				229FE1AF243F07ED003160CF /* Assets.xcassets in Resources */,
 				2266B39824665B19009675D8 /* SKPhotoBrowser.bundle in Resources */,
@@ -1219,6 +1252,7 @@
 				2237717A2464041700C5AFDF /* VideoVC.swift in Sources */,
 				2266B38E24665B19009675D8 /* SKCache.swift in Sources */,
 				229FE1FF243F0D5D003160CF /* YMKDataTool.swift in Sources */,
+				22209E55246BE5840001ED6A /* LxPlayerControlView.swift in Sources */,
 				2266B38924665B19009675D8 /* SKPhotoBrowserOptions.swift in Sources */,
 				2266B38324665B19009675D8 /* SKPhotoBrowser.swift in Sources */,
 				229FE201243F0D5D003160CF /* YMKPushTool.swift in Sources */,
@@ -1255,6 +1289,7 @@
 				229FE1F2243F0D56003160CF /* Bundle+Extension.swift in Sources */,
 				2266B38824665B19009675D8 /* SKAnimator.swift in Sources */,
 				2283A963246AACDA001A5B65 /* MyAlbumVC.swift in Sources */,
+				22209E52246BD3520001ED6A /* VideoDetailVC.swift in Sources */,
 				22B5034E246535DF00348E05 /* DiscoverCell.swift in Sources */,
 				229FE218243F1080003160CF /* LoginVC.swift in Sources */,
 				229FE209243F0D79003160CF /* WRCustomNavigationBar.m in Sources */,
@@ -1295,6 +1330,7 @@
 				2237717E24640BB100C5AFDF /* PriVatePhotoSubVC.swift in Sources */,
 				22D068A22463F80A002BBBB5 /* BaseModel.swift in Sources */,
 				2266B38B24665B19009675D8 /* UIApplication+UIWindow.swift in Sources */,
+				22209E5D246BF1A70001ED6A /* MobileView.swift in Sources */,
 				2266B39924665B19009675D8 /* SKButtons.swift in Sources */,
 				229FE228243F10C2003160CF /* MeVC.swift in Sources */,
 				2266B38F24665B19009675D8 /* UIImage+Rotation.swift in Sources */,

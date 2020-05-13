@@ -7,3 +7,4 @@ ${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist
 ${PODS_ROOT}/RongCloudIM/RongCloudIM/RCColor.plist
 ${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist
 ${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle
+${PODS_ROOT}/ZFPlayer/ZFPlayer/Classes/ControlView/ZFPlayer.bundle

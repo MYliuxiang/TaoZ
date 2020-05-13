@@ -21,7 +21,7 @@ class BaseViewController: UIViewController {
 
     lazy var bottomView : UIView = {
         let bottomView = UIView(frame: CGRect(x: 0, y: ScreenHeight - YMKDvice.bottomOffset(), width: ScreenWidth, height: YMKDvice.bottomOffset()))
-        bottomView.backgroundColor = UIColor.white
+        bottomView.backgroundColor = UIColor.clear
           return bottomView
       }()
     

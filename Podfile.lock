@@ -40,6 +40,8 @@ PODS:
   - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.1)
+  - "NSObject+Rx (5.1.0)":
+    - RxSwift (~> 5.1)
   - ReachabilitySwift (5.0.0)
   - Result (4.1.0)
   - RongCloudIM/IMKit (2.10.5):
@@ -76,6 +78,11 @@ PODS:
     - UMCShare/Core
   - WechatOpenSDK (1.8.3)
   - YYText (1.0.7)
+  - ZFPlayer/AVPlayer (3.3.1):
+    - ZFPlayer/Core
+  - ZFPlayer/ControlView (3.3.1):
+    - ZFPlayer/Core
+  - ZFPlayer/Core (3.3.1)
 
 DEPENDENCIES:
   - Alamofire (= 4.8.1)
@@ -96,6 +103,7 @@ DEPENDENCIES:
   - LXFProtocolTool/EmptyDataSetable
   - MJRefresh
   - Moya
+  - "NSObject+Rx"
   - ReachabilitySwift
   - RongCloudIM/IMKit (~> 2.10.4)
   - RongCloudIM/IMLib (~> 2.10.4)
@@ -115,6 +123,8 @@ DEPENDENCIES:
   - UMCShare/UI
   - WechatOpenSDK (= 1.8.3)
   - YYText
+  - ZFPlayer/AVPlayer (~> 3.0)
+  - ZFPlayer/ControlView (~> 3.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -137,6 +147,7 @@ SPEC REPOS:
     - LXFProtocolTool
     - MJRefresh
     - Moya
+    - "NSObject+Rx"
     - ReachabilitySwift
     - Result
     - RongCloudIM
@@ -154,6 +165,7 @@ SPEC REPOS:
     - UMCShare
     - WechatOpenSDK
     - YYText
+    - ZFPlayer
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -175,6 +187,7 @@ SPEC CHECKSUMS:
   LXFProtocolTool: 107e5dcd7b9567cbe6dce9b75a8453a06a58f505
   MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   RongCloudIM: 667bd00a302c84fe93ce63ef04fca4ffd28063b8
@@ -192,7 +205,8 @@ SPEC CHECKSUMS:
   UMCShare: a250203b34a56cde25cc4c28335449b542f0255d
   WechatOpenSDK: 3117412f8aafde4758cac1e8d20b93c67cafcfef
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+  ZFPlayer: 8a6021a3c45e281f2abd24dca5c88915af770a7e
 
-PODFILE CHECKSUM: f8c2ba4cfd747d01d7cabafeef74a7652438d913
+PODFILE CHECKSUM: 2f2a7b0f713e88187c65ee3b4d0e785e4941a2af
 
 COCOAPODS: 1.9.1

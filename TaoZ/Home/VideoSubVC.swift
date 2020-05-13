@@ -85,7 +85,7 @@ extension VideoSubVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("点击了")
+        navigationController?.pushViewController(VideoDetailVC(), animated: true)
         
     }
 }

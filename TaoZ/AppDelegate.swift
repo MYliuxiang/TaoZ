@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var isForceLandscape = false//是否允许横屏
+    var allowOrentitaionRotation:Bool! = false
     static let app: AppDelegate = (UIApplication.shared.delegate as? AppDelegate)!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -21,11 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppService.shareInstance.registerAppService(application: application, launchOptions: launchOptions)
        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-
+    
         let tabBar = TabBarObject.shareInstance.setupTabBarStyle(delegate: self as? UITabBarControllerDelegate)
-        
-        self.window?.rootViewController = tabBar
-        self.window?.backgroundColor = UIColor.red
+                self.window?.rootViewController = tabBar
+        if !UserDefaultsStandard.bool(forKey: isLogin) {
+           let nav = BaseNavigationController(rootViewController: LoginVC())
+            tabBar.present(nav, animated: false, completion: nil)
+        }
            
         self.window?.makeKeyAndVisible()
         
@@ -34,7 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: UISceneSession Lifecycle
 
-  
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if allowOrentitaionRotation! {
+            return .allButUpsideDown
+        }else{
+            return .portrait
+        }
+    }
 
 }
+
+
+
 

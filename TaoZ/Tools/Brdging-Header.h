@@ -18,6 +18,14 @@
 #import <Bugly/Bugly.h>
 #import <TZImagePickerController/TZImagePickerController.h>//图片选择器
 #import <BRPickerView.h>
+#import <YYText/YYText.h>
+
+#import <ZFPlayer/ZFPlayerControlView.h>
+#import <ZFPlayer/ZFPlayer.h>
+#import <ZFPlayer/ZFAVPlayerManager.h>
+#import <ZFPlayer/UIView+ZFFrame.h>
+#import <ZFPlayer/UIImageView+ZFCache.h>
+
 //极光推送
 #import "JPUSHService.h"
 // iOS10注册APNs所需头文件
