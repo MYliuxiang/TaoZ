@@ -20,6 +20,7 @@ PODS:
   - ESTabBarController-swift (2.8.0)
   - FSPagerView (0.8.3)
   - HandyJSON (5.0.0)
+  - HWPanModal (0.6.7)
   - InputKitSwift (1.1.19)
   - IQKeyboardManagerSwift (6.5.2)
   - JCore (2.1.4-noidfa)
@@ -93,6 +94,7 @@ DEPENDENCIES:
   - ESTabBarController-swift
   - FSPagerView
   - HandyJSON (= 5.0.0)
+  - HWPanModal (~> 0.6.0)
   - InputKitSwift (~> 1.1.16)
   - IQKeyboardManagerSwift (= 6.5.2)
   - JCore (= 2.1.4-noidfa)
@@ -137,6 +139,7 @@ SPEC REPOS:
     - ESTabBarController-swift
     - FSPagerView
     - HandyJSON
+    - HWPanModal
     - InputKitSwift
     - IQKeyboardManagerSwift
     - JCore
@@ -177,6 +180,7 @@ SPEC CHECKSUMS:
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
+  HWPanModal: 8ce3489c30e2268dafc50acdcde50d34f75f35aa
   InputKitSwift: ceaf0ab41d0dad15537f43f027c6af62a9ebf7e4
   IQKeyboardManagerSwift: c75366f1f19590e8caeae45fcd5815c9289d6099
   JCore: 2f15311e6889ab43ed5d629802ef793cac566465
@@ -207,6 +211,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFPlayer: 8a6021a3c45e281f2abd24dca5c88915af770a7e
 
-PODFILE CHECKSUM: 2f2a7b0f713e88187c65ee3b4d0e785e4941a2af
+PODFILE CHECKSUM: 539afa425843d2f2a9e6c054f4578ed2c6265b7f
 
 COCOAPODS: 1.9.1

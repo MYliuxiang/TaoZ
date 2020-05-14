@@ -13,6 +13,8 @@
 		22209E55246BE5840001ED6A /* LxPlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22209E54246BE5840001ED6A /* LxPlayerControlView.swift */; };
 		22209E5D246BF1A70001ED6A /* MobileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22209E5C246BF1A70001ED6A /* MobileView.swift */; };
 		22209E5F246BF1B80001ED6A /* MobileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22209E5E246BF1B80001ED6A /* MobileView.xib */; };
+		222FEB60246D462400B923D2 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FEB5E246D462400B923D2 /* CommentVC.swift */; };
+		222FEB61246D462400B923D2 /* CommentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222FEB5F246D462400B923D2 /* CommentVC.xib */; };
 		2237716E246403C700C5AFDF /* FollowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2237716C246403C700C5AFDF /* FollowVC.swift */; };
 		2237716F246403C700C5AFDF /* FollowVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2237716D246403C700C5AFDF /* FollowVC.xib */; };
 		22377172246403DC00C5AFDF /* RecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22377170246403DC00C5AFDF /* RecommendVC.swift */; };
@@ -185,6 +187,8 @@
 		22209E54246BE5840001ED6A /* LxPlayerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LxPlayerControlView.swift; sourceTree = "<group>"; };
 		22209E5C246BF1A70001ED6A /* MobileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileView.swift; sourceTree = "<group>"; };
 		22209E5E246BF1B80001ED6A /* MobileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MobileView.xib; sourceTree = "<group>"; };
+		222FEB5E246D462400B923D2 /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
+		222FEB5F246D462400B923D2 /* CommentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentVC.xib; sourceTree = "<group>"; };
 		2237716C246403C700C5AFDF /* FollowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowVC.swift; sourceTree = "<group>"; };
 		2237716D246403C700C5AFDF /* FollowVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowVC.xib; sourceTree = "<group>"; };
 		22377170246403DC00C5AFDF /* RecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendVC.swift; sourceTree = "<group>"; };
@@ -408,6 +412,15 @@
 				22209E5E246BF1B80001ED6A /* MobileView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		222FEB5D246D45FA00B923D2 /* 评论 */ = {
+			isa = PBXGroup;
+			children = (
+				222FEB5E246D462400B923D2 /* CommentVC.swift */,
+				222FEB5F246D462400B923D2 /* CommentVC.xib */,
+			);
+			path = "评论";
 			sourceTree = "<group>";
 		};
 		225F7C62246503B0001B15E2 /* Views */ = {
@@ -729,6 +742,7 @@
 		229FE20B243F0DB0003160CF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				222FEB5D246D45FA00B923D2 /* 评论 */,
 				22209E58246BEEA20001ED6A /* 播放器 */,
 				22D068852463AABF002BBBB5 /* HomeVC.swift */,
 				22D068862463AABF002BBBB5 /* HomeVC.xib */,
@@ -1057,6 +1071,7 @@
 				22B5035724654A1C00348E05 /* DiscoverSubVC.xib in Resources */,
 				2283A95C246AA927001A5B65 /* MyFollow.xib in Resources */,
 				2237718324640EE100C5AFDF /* VideoSubVC.xib in Resources */,
+				222FEB61246D462400B923D2 /* CommentVC.xib in Resources */,
 				229FE215243F0E81003160CF /* BaseViewController.xib in Resources */,
 				22B5034F246535DF00348E05 /* DiscoverCell.xib in Resources */,
 				22377177246403FB00C5AFDF /* PrivatePhotoVC.xib in Resources */,
@@ -1283,6 +1298,7 @@
 				2283A97B246AAD70001A5B65 /* CustomerVC.swift in Sources */,
 				2283A967246AACF5001A5B65 /* MyCollectionVC.swift in Sources */,
 				229FE25F243F2FEF003160CF /* UIFont+Extension.swift in Sources */,
+				222FEB60246D462400B923D2 /* CommentVC.swift in Sources */,
 				22D068952463F6E1002BBBB5 /* JPushHelper.swift in Sources */,
 				229FE200243F0D5D003160CF /* LLog.swift in Sources */,
 				229FE233243F1114003160CF /* TabBarBouncesContentView.swift in Sources */,

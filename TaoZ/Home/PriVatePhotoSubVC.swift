@@ -96,6 +96,8 @@ extension PriVatePhotoSubVC: UITableViewDataSource, UITableViewDelegate {
         
         print("点击了")
         
+        presentPanModal(CommentVC())
+        
     }
 }
 

@@ -29,6 +29,8 @@ target 'TaoZ' do
   pod 'ZFPlayer/ControlView', '~> 3.0'  
   pod 'ZFPlayer/AVPlayer', '~> 3.0'
 
+  pod 'HWPanModal', '~> 0.6.0'
+
   # 轮播
   pod 'FSPagerView'
  #键盘

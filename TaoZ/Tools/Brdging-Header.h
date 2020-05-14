@@ -26,6 +26,7 @@
 #import <ZFPlayer/UIView+ZFFrame.h>
 #import <ZFPlayer/UIImageView+ZFCache.h>
 
+#import "HWPanModal.h"
 //极光推送
 #import "JPUSHService.h"
 // iOS10注册APNs所需头文件
