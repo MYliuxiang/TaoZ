@@ -90,5 +90,14 @@ extension UIView {
         
     }
     
+    func addRoundedOrShadow(radius:CGFloat, shadowOpacity:CGFloat, shadowColor:UIColor)  {
+        self.layer.cornerRadius = radius
+        self.layer.shadowColor = shadowColor.cgColor
+        self.layer.shadowOpacity = Float(shadowOpacity)
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.layer.shadowRadius = 4
+        self.layer.masksToBounds = false
+    }
+    
 }
 

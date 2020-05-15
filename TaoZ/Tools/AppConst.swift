@@ -49,7 +49,7 @@ let JPAppKey = "f7d12a0061cf620500fe2f43"
 
 
 //友盟
-let UMShareKey = "5e53d0597ba7e954e9f6a681"
+let UMShareKey = "5ebe6bf4dbc2ec078b5be4ea"
 
 //微信AppID
 let WXAppid = "wxc807937e1003402a"
@@ -57,6 +57,8 @@ let WXSecret = "05b9c5cd53e186dbef325bf772e2409c"
 
 let QQKey = "yvitPLV3Erb31mxN"//未有  tencent1109929039  QQ42282c4f
 let QQAPPID = "1108218079"
+
+
 let SinaKey = "152014725"//未有
 let SinaSecret = "f721b8a668775b6b72209587ea5099a4"//未有
 let RedirectURL = "redirectURL"

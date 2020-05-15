@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,21 +43,27 @@
                         <action selector="loaginAC:" destination="-1" eventType="touchUpInside" id="BTW-IU-jud"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOC-I3-Axl">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOC-I3-Axl">
                     <rect key="frame" x="165" y="704" width="24" height="24"/>
                     <color key="backgroundColor" red="1" green="0.56862745100000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="P2O-db-4oH"/>
                         <constraint firstAttribute="width" constant="24" id="cUW-NE-A3G"/>
                     </constraints>
+                    <connections>
+                        <action selector="weiLoginAC:" destination="-1" eventType="touchUpInside" id="lor-u2-IUh"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFm-nE-ZYC">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFm-nE-ZYC">
                     <rect key="frame" x="225" y="704" width="24" height="24"/>
                     <color key="backgroundColor" red="1" green="0.56862745100000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="24" id="Ro5-y6-esG"/>
                         <constraint firstAttribute="height" constant="24" id="xMm-ZO-sGB"/>
                     </constraints>
+                    <connections>
+                        <action selector="qqLoginAC:" destination="-1" eventType="touchUpInside" id="7qe-qR-iZG"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="欢迎你，桃友！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILP-1B-PrH">
                     <rect key="frame" x="36" y="156" width="156.5" height="26.5"/>
@@ -87,7 +93,7 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bb7-yL-pV1" customClass="YYLabel">
                     <rect key="frame" x="52" y="777" width="310" height="21"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="text" value="登录或注册即同意《桃汁APP用户协议》"/>
                     </userDefinedRuntimeAttributes>
@@ -101,8 +107,10 @@
                 <constraint firstItem="IRL-0X-09a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="36" id="Hf4-Kq-KXb"/>
                 <constraint firstItem="DVj-1j-T3Y" firstAttribute="top" secondItem="IRL-0X-09a" secondAttribute="bottom" id="K8k-Mf-nQE"/>
                 <constraint firstItem="DVj-1j-T3Y" firstAttribute="trailing" secondItem="IRL-0X-09a" secondAttribute="trailing" id="Mhw-mk-AiA"/>
+                <constraint firstItem="Bb7-yL-pV1" firstAttribute="top" secondItem="HOC-I3-Axl" secondAttribute="bottom" constant="49" id="PxQ-qf-ohM"/>
                 <constraint firstItem="HOC-I3-Axl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-30" id="YAb-2E-1sr"/>
                 <constraint firstItem="IRL-0X-09a" firstAttribute="top" secondItem="ILP-1B-PrH" secondAttribute="bottom" constant="12" id="Zde-al-wzD"/>
+                <constraint firstItem="Bb7-yL-pV1" firstAttribute="top" secondItem="fFm-nE-ZYC" secondAttribute="bottom" constant="49" id="aWu-ed-jIU"/>
                 <constraint firstItem="ILP-1B-PrH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="36" id="eON-fV-Tvu"/>
                 <constraint firstItem="fFm-nE-ZYC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="30" id="enP-mL-0AK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IRL-0X-09a" secondAttribute="trailing" constant="36" id="fzH-t5-D2B"/>

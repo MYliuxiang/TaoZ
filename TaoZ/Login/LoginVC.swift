@@ -33,10 +33,10 @@ class LoginVC: BaseViewController {
         phonLoginBtn.layer.cornerRadius = 22
         phonLoginBtn.layer.masksToBounds = true
         
-        let text = NSMutableAttributedString(string: agreementLab.text ?? "")
+        let text = NSMutableAttributedString(string: agreeLab.text!)
         text.yy_color = UIColor.colorWithHexStr("#B6B4B4")
         text.yy_setTextHighlight(NSRange(location: 8,length: 11), color: color_theme, backgroundColor: .white) { (view, attrString, range, rect) in
-            
+
             print("点击了用户协议")
         }
         agreeLab.attributedText = text
@@ -45,7 +45,23 @@ class LoginVC: BaseViewController {
         
     }
 
-
-  
+    @IBAction func weiLoginAC(_ sender: Any) {
+        
+        ThirdloginHelper.defaultIAPHelper.loginGetUserInfo(loginType: .weixin, successHandler: { (response, iDCredential) in
+            
+        }) { (erroe) in
+            
+        }
+    }
+    
+    @IBAction func qqLoginAC(_ sender: Any) {
+        
+        ThirdloginHelper.defaultIAPHelper.loginGetUserInfo(loginType: .qq, successHandler: { (response, iDCredential) in
+                   
+               }) { (erroe) in
+                   
+               }
+    }
+    
 
 }

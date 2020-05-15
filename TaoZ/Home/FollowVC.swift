@@ -10,9 +10,12 @@ import UIKit
 
 class FollowVC: BaseViewController {
 
-    @IBOutlet weak var layout: UICollectionViewFlowLayout!
-    @IBOutlet weak var collectionView: UICollectionView!
+   
+    @IBOutlet weak var cView: UIView!
+//    @IBOutlet weak var layout: PageCollectionLayout!
+//    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    var collectionView: UICollectionView?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,18 +29,32 @@ class FollowVC: BaseViewController {
     }
     
     private func creatCollection(){
-        layout.itemSize = CGSize(width: 62, height: 106)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = (ScreenWidth - 30 - 186) / 4
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets.init(top:0, left: (ScreenWidth - 30 - 186) / 4, bottom: 0, right: (ScreenWidth - 30 - 186) / 4)
         
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib.init(nibName: "FollowCell", bundle: nil), forCellWithReuseIdentifier: "FollowCellID")
+      let  playout = PageCollectionLayout(itemSize: CGSize(width: ScreenWidth - 58 * 2, height: ScreenWidth / 375 * 340))
         
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.showsVerticalScrollIndicator = false
+       
+        
+        
+//        layout.itemSize = CGSize(width: ScreenWidth - 58 * 2, height: (ScreenWidth - 58 * 2) / 238 * 340)
+//        layout.minimumLineSpacing = 0
+//        layout.minimumInteritemSpacing = (ScreenWidth - 30 - 186) / 4
+//        layout.scrollDirection = .vertical
+        collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: playout)
+//
+        collectionView?.delegate = self
+        collectionView?.dataSource = self
+        collectionView?.register(UINib.init(nibName: "FollowCell", bundle: nil), forCellWithReuseIdentifier: "FollowCellID")
+        collectionView?.decelerationRate = UIScrollView.DecelerationRate.fast
+
+        collectionView?.showsHorizontalScrollIndicator = false
+        collectionView?.showsVerticalScrollIndicator = false
+        cView.addSubview(collectionView!)
+        collectionView?.snp.makeConstraints({ (make) in
+            make.edges.equalToSuperview()
+        })
+        collectionView?.backgroundColor = .clear
+        
+        
     }
     
 
