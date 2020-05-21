@@ -37,7 +37,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <state key="normal" title="验证码登录 / 注册">
-                        <color key="titleColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
                     </state>
                     <connections>
                         <action selector="loaginAC:" destination="-1" eventType="touchUpInside" id="BTW-IU-jud"/>
