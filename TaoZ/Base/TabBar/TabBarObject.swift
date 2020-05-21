@@ -37,11 +37,11 @@ class TabBarObject: NSObject {
         let messagesVC = MessagesVC()
         let meVC = MeVC()
         
-         homeVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "lesson_未选中"), selectedImage: UIImage(named: "lesson_选中"))
-         discoverVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "Dialogue_未选中"), selectedImage: UIImage(named: "Dialogue_选中"))
+         homeVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "tab_icon_home_default"), selectedImage: UIImage(named: "tab_icon_home_selected"))
+         discoverVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "tab_icon_dynamic_default"), selectedImage: UIImage(named: "tab_icon_dynamic_selected"))
         
-         messagesVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "Skills_未选中"), selectedImage: UIImage(named: "Skills_选中"))
-         meVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "me_未选中"), selectedImage: UIImage(named: "me_选中"))
+         messagesVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "tab_icon_information_default"), selectedImage: UIImage(named: "tab_icon_information_selected"))
+         meVC.tabBarItem = ESTabBarItem.init(TabBarIrregularityBasicContentView(), title: "", image: UIImage(named: "tab_icon_mine_default"), selectedImage: UIImage(named: "tab_icon_mine _selected"))
         
           let homeNav = BaseNavigationController.init(rootViewController: homeVC)
           let discoverNav = BaseNavigationController.init(rootViewController: discoverVC)

@@ -13,12 +13,10 @@ import Moya
 
 
 #if DEBUG
-    let HOSTURL = "http://192.168.5.24:8000"
-    let HOSTWEBURL = "http://221.7.181.199:19301"
+    let HOSTURL = "http://taozhi.dbf4.top/api/"
 
 #else
-    let HOSTURL = "http://221.7.181.199:19303"
-    let HOSTWEBURL = "http://221.7.181.199:19303"
+    let HOSTURL = "http://taozhi.dbf4.top/api/"
 #endif
 
 
@@ -38,7 +36,7 @@ extension NetAPIManager: TargetType {
             "Content-Type" : "application/x-www-form-urlencoded;charset=UTF-8",
             //application/x-www-form-urlencoded;charset=UTF-8
             "Accept": "application/json;application/octet-stream;text/html,text/json;text/plain;text/javascript;text/xml;application/x-www-form-urlencoded;image/png;image/jpeg;image/jpg;image/gif;image/bmp;image/*",
-//            "authorization":(UserDefaults.standard.object(forKey: Auth) as? String) ?? ""
+            "token":UserInfoModel.loadUserInfo()?.token ?? ""
         ]
     }
     
@@ -154,20 +152,8 @@ extension NetAPIManager: TargetType {
                            
                            return .requestPlain
                        }
-            return .requestParameters(parameters: postDict!, encoding: JSONEncoding.default)
+            return .requestParameters(parameters: postDict!, encoding: URLEncoding.default)
         case  .getRequest(_, _, let postDict, _, _):
-//
-//            let myClass = NSClassFromString("_iAide."+apiName) as! APIBasicClass.Type
-//            var postString = myClass.getRequest(postDict) as String
-//
-//            postString = postString.replacingOccurrences(of: "\n", with: "")
-//
-//            //加密
-//            let md5String = APIMessage.desHexString(postString, withEncrypt: true) as String
-//            //压缩
-//            let gzipString = APIMessage.getBase64String(md5String) as String
-            
-//            let jsonDic = ["msg":"gzipString"] as [String: Any]
             
             
             guard postDict != nil else {
@@ -175,7 +161,7 @@ extension NetAPIManager: TargetType {
                 return .requestPlain
             }
    
-            return .requestParameters(parameters: postDict!, encoding: JSONEncoding.default)
+            return .requestParameters(parameters: postDict!, encoding: URLEncoding.default)
             
         default:
             let string = "{\"@class\":\"com.ailk.gx.mapp.model.GXCDatapackage\",\"header\":{\"@class\":\"com.ailk.gx.mapp.model.GXCHeader\",\"bizCode\":\"cg0004\",\"identityId\":null,\"respCode\":null,\"respMsg\":null,\"mode\":\"1\",\"sign\":null},\"body\":{\n  \"expand\" : null,\n  \"@class\" : \"com.ailk.gx.mapp.model.req.CG0004Request\",\n  \"phoneNo\" : \"13213451345\"\n}}"

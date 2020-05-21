@@ -18,6 +18,9 @@ target 'TaoZ' do
   #自动布局
   pod 'SnapKit'
   pod 'SDAutoLayout', '~> 2.1.3'
+
+  pod 'Toast-Swift', '~> 5.0.1'
+  pod 'CryptoSwift', '~> 1.0'
   
   #tabbar样式
   pod 'ESTabBarController-swift'

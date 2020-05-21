@@ -76,7 +76,7 @@ class BaseViewController: UIViewController {
 //        navBar.wr_setBottomLineHidden(hidden: true)
         
         if self.navigationController?.children.count != 1 {
-//            navBar.wr_setLeftButton(with: UIImage.init(named: "back")!)
+            navBar.wr_setLeftButton(with: UIImage.init(named: "navbar_back")!)
             navBar.onClickLeftButton = {
                 self.navigationController?.popViewController(animated: true)
             }
@@ -147,14 +147,6 @@ class BaseViewController: UIViewController {
         self.view.addSubview(background)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }

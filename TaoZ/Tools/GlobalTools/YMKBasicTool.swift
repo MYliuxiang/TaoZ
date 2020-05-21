@@ -20,16 +20,16 @@ class YMKBasicTool: NSObject {
     }
     
 //    //跳转登录页
-//    func gotoLogin()-> Bool?
-//    {
-//         let isLogin:Bool = UserDefaults.standard.bool(forKey: userDefaults_isLogin)
-//         if !isLogin {
-//            let rootVC = BaseNavigationController.init(rootViewController:  LoginVC())
-//            rootVC.modalPresentationStyle = .fullScreen
-//            UIViewController.currentViewController()?.present(rootVC, animated: true, completion: nil)
-//        }
-//        return isLogin
-//    }
+    func gotoLogin()-> Bool?
+    {
+         let iss:Bool = UserDefaults.standard.bool(forKey: isLogin)
+         if !iss {
+            let rootVC = BaseNavigationController.init(rootViewController:  LoginVC())
+            rootVC.modalPresentationStyle = .fullScreen
+            UIViewController.currentViewController()?.present(rootVC, animated: true, completion: nil)
+        }
+        return iss
+    }
     
     ///获取APP缓存
     func getCacheSize()-> String {

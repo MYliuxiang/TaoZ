@@ -320,7 +320,19 @@ public func sendGetRequest(_ name: String, touch:Bool? = true, show: Bool? = tru
                 }
                 
                 let dict = JSONResponseFormatter(data)
-                success((dict))
+                if dict!["code"] as! Int == 103 || dict!["code"] as! Int == 402 {
+                    //需要去登录
+                    UserDefaults.standard.set(false, forKey: isLogin)
+                    let rootVC = BaseNavigationController.init(rootViewController:LoginVC())
+                    rootVC.modalPresentationStyle = .fullScreen
+                    rootVC.view.makeToast("亲请重新登录！", duration: 0.35, position: .center)
+                    TabBarObject.shareInstance.tabBarController.present(rootVC, animated: true, completion: nil)
+                    UserInfoModel.removeUserInfo()
+                }else{
+                    success((dict))
+
+                }
+                
             
         case let .failure(error):
             

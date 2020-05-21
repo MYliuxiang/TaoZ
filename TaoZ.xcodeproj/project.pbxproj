@@ -72,6 +72,12 @@
 		2266B39A24665B19009675D8 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2266B38124665B19009675D8 /* LICENSE */; };
 		2266B39B24665B19009675D8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2266B38224665B19009675D8 /* README.md */; };
 		226EA09124504D1200DE3640 /* VolumeCongit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226EA09024504D1200DE3640 /* VolumeCongit.swift */; };
+		2282490A24765A7D00B30C25 /* UrlConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2282490924765A7D00B30C25 /* UrlConst.swift */; };
+		2282490D24765DE100B30C25 /* BindePhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2282490B24765DE100B30C25 /* BindePhoneVC.swift */; };
+		2282490E24765DE100B30C25 /* BindePhoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2282490C24765DE100B30C25 /* BindePhoneVC.xib */; };
+		2282491124765E5500B30C25 /* VerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2282490F24765E5500B30C25 /* VerificationCodeVC.swift */; };
+		2282491224765E5500B30C25 /* VerificationCodeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2282491024765E5500B30C25 /* VerificationCodeVC.xib */; };
+		2282491624768CB600B30C25 /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2282491524768CB600B30C25 /* UserInfoModel.swift */; };
 		2283A934246A54B6001A5B65 /* MeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283A932246A54B6001A5B65 /* MeCell.swift */; };
 		2283A935246A54B6001A5B65 /* MeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2283A933246A54B6001A5B65 /* MeCell.xib */; };
 		2283A938246A58EF001A5B65 /* PersonalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283A936246A58EF001A5B65 /* PersonalVC.swift */; };
@@ -254,6 +260,12 @@
 		2266B38124665B19009675D8 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2266B38224665B19009675D8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		226EA09024504D1200DE3640 /* VolumeCongit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeCongit.swift; sourceTree = "<group>"; };
+		2282490924765A7D00B30C25 /* UrlConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConst.swift; sourceTree = "<group>"; };
+		2282490B24765DE100B30C25 /* BindePhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindePhoneVC.swift; sourceTree = "<group>"; };
+		2282490C24765DE100B30C25 /* BindePhoneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BindePhoneVC.xib; sourceTree = "<group>"; };
+		2282490F24765E5500B30C25 /* VerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeVC.swift; sourceTree = "<group>"; };
+		2282491024765E5500B30C25 /* VerificationCodeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerificationCodeVC.xib; sourceTree = "<group>"; };
+		2282491524768CB600B30C25 /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		2283A932246A54B6001A5B65 /* MeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeCell.swift; sourceTree = "<group>"; };
 		2283A933246A54B6001A5B65 /* MeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeCell.xib; sourceTree = "<group>"; };
 		2283A936246A58EF001A5B65 /* PersonalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalVC.swift; sourceTree = "<group>"; };
@@ -642,6 +654,7 @@
 			children = (
 				229FE1A5243F07EB003160CF /* AppDelegate.swift */,
 				229FE22A243F10F5003160CF /* AppService.swift */,
+				2282491524768CB600B30C25 /* UserInfoModel.swift */,
 				22D068922463F6D8002BBBB5 /* Helpers */,
 				229FE20C243F0DC9003160CF /* Base */,
 				229FE20A243F0DA9003160CF /* Login */,
@@ -687,6 +700,7 @@
 				229FE1DB243F0D4B003160CF /* LXTool */,
 				229FE1D6243F0A87003160CF /* Brdging-Header.h */,
 				229FE1D7243F0ABC003160CF /* AppConst.swift */,
+				2282490924765A7D00B30C25 /* UrlConst.swift */,
 				226EA09024504D1200DE3640 /* VolumeCongit.swift */,
 			);
 			path = Tools;
@@ -755,6 +769,10 @@
 			children = (
 				229FE216243F1080003160CF /* LoginVC.swift */,
 				229FE217243F1080003160CF /* LoginVC.xib */,
+				2282490B24765DE100B30C25 /* BindePhoneVC.swift */,
+				2282490C24765DE100B30C25 /* BindePhoneVC.xib */,
+				2282490F24765E5500B30C25 /* VerificationCodeVC.swift */,
+				2282491024765E5500B30C25 /* VerificationCodeVC.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1091,6 +1109,7 @@
 				223ACE5C246E8A6A003788C7 /* FollowCell.xib in Resources */,
 				2283A93D246A74BC001A5B65 /* PersonalCell.xib in Resources */,
 				2283A941246A7855001A5B65 /* PersonalImgCell.xib in Resources */,
+				2282491224765E5500B30C25 /* VerificationCodeVC.xib in Resources */,
 				2283A949246A7943001A5B65 /* LabelCell.xib in Resources */,
 				2283A945246A78BA001A5B65 /* PersonalTextFieldCell.xib in Resources */,
 				2266B39A24665B19009675D8 /* LICENSE in Resources */,
@@ -1100,6 +1119,7 @@
 				2237718324640EE100C5AFDF /* VideoSubVC.xib in Resources */,
 				222FEB61246D462400B923D2 /* CommentVC.xib in Resources */,
 				229FE215243F0E81003160CF /* BaseViewController.xib in Resources */,
+				2282490E24765DE100B30C25 /* BindePhoneVC.xib in Resources */,
 				22B5034F246535DF00348E05 /* DiscoverCell.xib in Resources */,
 				22377177246403FB00C5AFDF /* PrivatePhotoVC.xib in Resources */,
 				22209E5F246BF1B80001ED6A /* MobileView.xib in Resources */,
@@ -1321,6 +1341,7 @@
 				2283A94C246A7974001A5B65 /* TextViewCell.swift in Sources */,
 				2237718224640EE100C5AFDF /* VideoSubVC.swift in Sources */,
 				2266B38D24665B19009675D8 /* SKDetectingView.swift in Sources */,
+				2282491124765E5500B30C25 /* VerificationCodeVC.swift in Sources */,
 				22D0688B2463AAD2002BBBB5 /* DiscoverVC.swift in Sources */,
 				2283A97B246AAD70001A5B65 /* CustomerVC.swift in Sources */,
 				2283A967246AACF5001A5B65 /* MyCollectionVC.swift in Sources */,
@@ -1330,6 +1351,7 @@
 				229FE200243F0D5D003160CF /* LLog.swift in Sources */,
 				229FE233243F1114003160CF /* TabBarBouncesContentView.swift in Sources */,
 				229FE1F2243F0D56003160CF /* Bundle+Extension.swift in Sources */,
+				2282491624768CB600B30C25 /* UserInfoModel.swift in Sources */,
 				2266B38824665B19009675D8 /* SKAnimator.swift in Sources */,
 				2283A963246AACDA001A5B65 /* MyAlbumVC.swift in Sources */,
 				22209E52246BD3520001ED6A /* VideoDetailVC.swift in Sources */,
@@ -1362,6 +1384,8 @@
 				229FE1D8243F0ABC003160CF /* AppConst.swift in Sources */,
 				2266B39024665B19009675D8 /* UIView+Radius.swift in Sources */,
 				2283A977246AAD55001A5B65 /* SetVC.swift in Sources */,
+				2282490D24765DE100B30C25 /* BindePhoneVC.swift in Sources */,
+				2282490A24765A7D00B30C25 /* UrlConst.swift in Sources */,
 				2266B39524665B19009675D8 /* SKToolbar.swift in Sources */,
 				225F7C69246503E1001B15E2 /* VideoCell.swift in Sources */,
 				229FE1F6243F0D56003160CF /* YMKBasicTool.swift in Sources */,

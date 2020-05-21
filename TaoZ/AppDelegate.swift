@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
     
         let tabBar = TabBarObject.shareInstance.setupTabBarStyle(delegate: self as? UITabBarControllerDelegate)
-                self.window?.rootViewController = tabBar
+        self.window?.rootViewController = tabBar
         
            
         self.window?.makeKeyAndVisible()
@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !UserDefaultsStandard.bool(forKey: isLogin) {
            let nav = BaseNavigationController(rootViewController: LoginVC())
             nav.modalPresentationStyle = .fullScreen
-
             tabBar.present(nav, animated: false, completion: nil)
         }
         

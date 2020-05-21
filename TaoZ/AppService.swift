@@ -68,6 +68,13 @@ class AppService: NSObject {
         SVProgressHUD.setMaximumDismissTimeInterval(1)
         SVProgressHUD.setMinimumDismissTimeInterval(0.35)
         
+        var style = ToastStyle()
+        style.messageFont = .systemFont(ofSize: 14)
+        
+        ToastManager.shared.style = style
+
+        
+        
         DispatchQueue.main.asyncAfter(deadline: .now()+0.35, execute:
             {
                 //检测更新 大于等于两个版本会强制更新

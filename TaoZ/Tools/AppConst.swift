@@ -22,6 +22,11 @@ import UIKit
 @_exported import RxCocoa
 @_exported import InputKitSwift
 @_exported import NSObject_Rx
+@_exported import Toast_Swift
+@_exported import CryptoSwift
+
+
+
 
 
 
@@ -85,6 +90,9 @@ let NotiCenter = NotificationCenter.default
 let UserDefaultsStandard = UserDefaults.standard
 
 let isLogin = "islogin"
+
+let userDefaults_userInfo = "userDefaults_userInfo"//用户信息
+
 
 //颜色
 
