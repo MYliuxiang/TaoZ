@@ -74,11 +74,12 @@ class BaseViewController: UIViewController {
         // 设置自定义导航栏左右按钮字体颜色
         navBar.wr_setTintColor(.black)
 //        navBar.wr_setBottomLineHidden(hidden: true)
-        
+        weak var weakSelf = self
         if self.navigationController?.children.count != 1 {
             navBar.wr_setLeftButton(with: UIImage.init(named: "navbar_back")!)
+            
             navBar.onClickLeftButton = {
-                self.navigationController?.popViewController(animated: true)
+                weakSelf?.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -146,6 +147,13 @@ class BaseViewController: UIViewController {
         background.image = UIImage.init(named: imageName)
         self.view.addSubview(background)
     }
+    
+    deinit {
+           
+           LLog( "销毁了" )
+           
+
+       }
     
   
 

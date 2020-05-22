@@ -44,6 +44,8 @@
 		225F7C66246503D1001B15E2 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225F7C64246503D1001B15E2 /* PhotoCell.xib */; };
 		225F7C69246503E1001B15E2 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F7C67246503E1001B15E2 /* VideoCell.swift */; };
 		225F7C6A246503E1001B15E2 /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225F7C68246503E1001B15E2 /* VideoCell.xib */; };
+		226468DC2477E21B00207687 /* PasswordLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226468DA2477E21B00207687 /* PasswordLoginVC.swift */; };
+		226468DD2477E21B00207687 /* PasswordLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 226468DB2477E21B00207687 /* PasswordLoginVC.xib */; };
 		2266B36324664DAF009675D8 /* LxBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B36124664DAF009675D8 /* LxBrowser.swift */; };
 		2266B36424664DAF009675D8 /* LxBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2266B36224664DAF009675D8 /* LxBrowser.xib */; };
 		2266B38324665B19009675D8 /* SKPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2266B36924665B19009675D8 /* SKPhotoBrowser.swift */; };
@@ -231,6 +233,8 @@
 		225F7C64246503D1001B15E2 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		225F7C67246503E1001B15E2 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		225F7C68246503E1001B15E2 /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		226468DA2477E21B00207687 /* PasswordLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLoginVC.swift; sourceTree = "<group>"; };
+		226468DB2477E21B00207687 /* PasswordLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PasswordLoginVC.xib; sourceTree = "<group>"; };
 		2266B36124664DAF009675D8 /* LxBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LxBrowser.swift; sourceTree = "<group>"; };
 		2266B36224664DAF009675D8 /* LxBrowser.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LxBrowser.xib; sourceTree = "<group>"; };
 		2266B36824665B19009675D8 /* SKPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKPhotoBrowser.h; sourceTree = "<group>"; };
@@ -773,6 +777,8 @@
 				2282490C24765DE100B30C25 /* BindePhoneVC.xib */,
 				2282490F24765E5500B30C25 /* VerificationCodeVC.swift */,
 				2282491024765E5500B30C25 /* VerificationCodeVC.xib */,
+				226468DA2477E21B00207687 /* PasswordLoginVC.swift */,
+				226468DB2477E21B00207687 /* PasswordLoginVC.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1107,6 +1113,7 @@
 				2266B36424664DAF009675D8 /* LxBrowser.xib in Resources */,
 				2283A978246AAD55001A5B65 /* SetVC.xib in Resources */,
 				223ACE5C246E8A6A003788C7 /* FollowCell.xib in Resources */,
+				226468DD2477E21B00207687 /* PasswordLoginVC.xib in Resources */,
 				2283A93D246A74BC001A5B65 /* PersonalCell.xib in Resources */,
 				2283A941246A7855001A5B65 /* PersonalImgCell.xib in Resources */,
 				2282491224765E5500B30C25 /* VerificationCodeVC.xib in Resources */,
@@ -1334,6 +1341,7 @@
 				2266B39624665B19009675D8 /* SKPhotoBrowserDelegate.swift in Sources */,
 				2283A973246AAD45001A5B65 /* MyDynamicVC.swift in Sources */,
 				226EA09124504D1200DE3640 /* VolumeCongit.swift in Sources */,
+				226468DC2477E21B00207687 /* PasswordLoginVC.swift in Sources */,
 				22D068A92463F856002BBBB5 /* ShareItem.swift in Sources */,
 				229FE1EC243F0D56003160CF /* UIColor+Extension.swift in Sources */,
 				22D068AB2463F856002BBBB5 /* ShareItemCell.swift in Sources */,

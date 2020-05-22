@@ -30,16 +30,19 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbJ-SP-0uT">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbJ-SP-0uT">
                     <rect key="frame" x="36" y="262" width="342" height="44"/>
                     <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="bs5-jB-ilF"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="重新发送">
                         <color key="titleColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
                     </state>
+                    <connections>
+                        <action selector="aginAC:" destination="-1" eventType="touchUpInside" id="MJ9-9y-rx1"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入4位验证码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5c-qY-aVD">
                     <rect key="frame" x="36" y="148" width="149" height="27"/>

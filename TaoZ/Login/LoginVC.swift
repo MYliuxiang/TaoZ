@@ -52,6 +52,7 @@ class LoginVC: BaseViewController {
     
     @IBAction func loaginAC(_ sender: Any) {
         
+       
         view.endEditing(true)
         if !(phoneTextField.text?.ex_isPhoneNumber ?? false){
             
@@ -64,6 +65,7 @@ class LoginVC: BaseViewController {
                 
                 let vc = VerificationCodeVC()
                 vc.phoneStr = self.phoneTextField.text!
+                vc.type = "mobilelogin"
                 self.navigationController?.pushViewController(vc, animated: true)
 
             }else{
@@ -76,10 +78,6 @@ class LoginVC: BaseViewController {
             self.view.makeToast("系统异常", duration: 0.35, position: .center)
 
         })
-        
-       
-        
-        
         
     }
     
@@ -102,6 +100,50 @@ class LoginVC: BaseViewController {
     @IBAction func weiLoginAC(_ sender: Any) {
         
         ThirdloginHelper.defaultIAPHelper.loginGetUserInfo(loginType: .weixin, successHandler: { (response, iDCredential) in
+            
+            let postDic = ["sdkid":(response?.uid)! as String,"type":"wechat","ts":Date().timeStamp]
+            
+            _ = sendPostRequest(User_sdklogin,postDict:postDic, success: { (result) in
+            if result!["code"] as! Int == 0{
+                //实例对象转换成Data
+                let dic = result!["data"] as? [String:Any]
+                if dic == nil{
+
+                    let vc = BindePhoneVC()
+                    vc.type = "wechat"
+                    vc.sdkid = (response?.uid)! as String
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                }else{
+                    
+                    let modelData = NSKeyedArchiver.archivedData(withRootObject: dic!["userinfo"] as Any)
+                                   //存储Data对象
+                                    UserDefaults.standard.set(modelData, forKey: userDefaults_userInfo)
+                                    UserDefaults.standard.set(true, forKey: isLogin)
+                                    UserDefaults.standard.synchronize()
+                                   TabBarObject.shareInstance.tabBarController.selectedIndex = 0
+                                   let vcs = TabBarObject.shareInstance.tabBarController.viewControllers ?? []
+                                   for vc in vcs  {
+                                      let navVC = vc as? BaseNavigationController
+                                       navVC?.popToRootViewController(animated: true)
+                                   }
+                                   
+                                   self.navigationController?.dismiss(animated: true, completion: nil)
+                }
+               
+               
+
+            }else{
+                
+                self.view.makeToast(result?["msg"] as? String, duration: 0.35, position: .center)
+
+            }
+        }, failure: { (error) in
+              self.view.makeToast("系统异常", duration: 0.35, position: .center)
+        })
+            
+            
+            
             
         }) { (erroe) in
             
