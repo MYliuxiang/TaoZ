@@ -52,12 +52,12 @@ class LoginVC: BaseViewController {
     @IBAction func loaginAC(_ sender: Any) {
         
        
-        view.endEditing(true)
-        if !(phoneTextField.text?.ex_isPhoneNumber ?? false){
-
-            MBProgressHUD.showError("请输入正确的手机号码", to: keywindow)
-            return
-        }
+//        view.endEditing(true)
+//        if !(phoneTextField.text?.ex_isPhoneNumber ?? false){
+//
+//            MBProgressHUD.showError("请输入正确的手机号码", to: keywindow)
+//            return
+//        }
         
         TZRequest(Sms_send, method: .post, bodyDict: ["mobile":phoneTextField.text!,"event":"mobilelogin"]) { (result, code) in
             if code == 0{

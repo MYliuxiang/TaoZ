@@ -106,8 +106,21 @@ let requestClosure = { (endpoint: Endpoint, done: @escaping MoyaProvider<NetAPIM
 
 public typealias SuccessCompletion = (_ result: Dictionary<String, Any>?,_ code:Int) -> Void
 
+//let myNetworkLoggerPlugin = NetworkLoggerPlugin(verbose: true, responseDataFormatter: { (data: Data) -> Data in
+//    //            return Data()
+//    do {
+//        let dataAsJSON = try JSONSerialization.jsonObject(with: data)// Data 转 JSON
+//        let prettyData =  try JSONSerialization.data(withJSONObject: dataAsJSON, options: .prettyPrinted)// JSON 转 Data，格式化输出。
+//        return prettyData
+//    } catch {
+//        return data
+//    }
+//})
+let myNetworkLoggerPlugin = NetworkLoggerPlugin(configuration: NetworkLoggerPlugin.Configuration.init(logOptions:[.verbose]))
 
-let MyAPIProvider = MoyaProvider<NetAPIManager>(endpointClosure: myEndpointClosure,requestClosure: requestClosure, plugins: [NetworkLoggerPlugin(configuration: NetworkLoggerPlugin.Configuration()),myNetworkPlugin])
+
+
+let MyAPIProvider = MoyaProvider<NetAPIManager>(endpointClosure: myEndpointClosure,requestClosure: requestClosure, plugins: [myNetworkLoggerPlugin,myNetworkPlugin])
 
 
 
