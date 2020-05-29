@@ -1,6 +1,0 @@
-framework module AlamofireLogbook {
-  umbrella header "AlamofireLogbook-umbrella.h"
-
-  export *
-  module * { export * }
-}

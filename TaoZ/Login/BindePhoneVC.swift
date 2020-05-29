@@ -25,28 +25,28 @@ class BindePhoneVC: BaseViewController {
         navBar.isHidden = true
         
         phoneTextField.rx.text.orEmpty.asObservable()
-                          .subscribe(onNext: { [weak self] in
-                          
-                            if $0.count == 11{
-                               if $0.ex_isPhoneNumber{
-                               //是手机号码正确
-                                   self?.tipImg.isHidden = false
-                                   self?.tipLab.isHidden = true
-                               }else{
-                                   self?.tipImg.isHidden = true
-                                   self?.tipLab.isHidden = false
-                               }
-                           }else if($0.count > 11){
-                               self?.phoneTextField.text = $0.ex_substring(to: 11)
-                           }else{
-                               self?.tipImg.isHidden = true
-                               self?.tipLab.isHidden = true
-                           }
-                           
-                         
-                          })
-                   .disposed(by: rx.disposeBag)
-                       
+            .subscribe(onNext: { [weak self] in
+                
+                if $0.count == 11{
+                    if $0.ex_isPhoneNumber{
+                        //是手机号码正确
+                        self?.tipImg.isHidden = false
+                        self?.tipLab.isHidden = true
+                    }else{
+                        self?.tipImg.isHidden = true
+                        self?.tipLab.isHidden = false
+                    }
+                }else if($0.count > 11){
+                    self?.phoneTextField.text = $0.ex_substring(to: 11)
+                }else{
+                    self?.tipImg.isHidden = true
+                    self?.tipLab.isHidden = true
+                }
+                
+                
+            })
+            .disposed(by: rx.disposeBag)
+        
 
     }
 
@@ -58,27 +58,17 @@ class BindePhoneVC: BaseViewController {
             self.view.makeToast("请输入正确的手机号码", duration: 0.35, position: .center)
             return
         }
-
-        _ = sendPostRequest(Sms_send,postDict:["mobile":phoneTextField.text!,"event":"sdkbindphone"],  success: { (result) in
-            if result!["code"] as! Int == 0{
-                
+        
+        TZRequest(Sms_send,bodyDict: ["mobile":phoneTextField.text!,"event":"sdkbindphone"]) { (result, code) in
+            if code == 0{
                 let vc = VerificationCodeVC()
                 vc.phoneStr = self.phoneTextField.text!
                 vc.type = "sdkbindphone"
                 vc.sdkid = self.sdkid
                 vc.sdkType = self.type
                 self.navigationController?.pushViewController(vc, animated: true)
-
-            }else{
-                self.view.makeToast(result?["msg"] as? String, duration: 0.35, position: .center)
-                
             }
-            
-        }, failure: { (error) in
-            
-            self.view.makeToast("系统异常", duration: 0.35, position: .center)
-
-        })
+        }
         
     }
     

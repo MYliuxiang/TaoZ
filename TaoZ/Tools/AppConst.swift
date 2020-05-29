@@ -13,10 +13,10 @@ import UIKit
 @_exported import JXPagingView
 //@_exported import ActiveLabel
 //@_exported import HandyJSON
-//@_exported import Kingfisher
+@_exported import Kingfisher
 @_exported import SnapKit
 //@_exported import LXFProtocolTool
-//@_exported import SwiftyJSON
+@_exported import SwiftyJSON
 //@_exported import TextAttributes
 @_exported import RxSwift
 @_exported import RxCocoa
@@ -24,6 +24,9 @@ import UIKit
 @_exported import NSObject_Rx
 @_exported import Toast_Swift
 @_exported import CryptoSwift
+@_exported import Moya
+@_exported import Alamofire
+
 
 
 

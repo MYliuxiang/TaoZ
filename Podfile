@@ -10,8 +10,6 @@ target 'TaoZ' do
   pod 'SVProgressHUD'
   pod 'MJRefresh'
   pod 'Kingfisher','5.3.0'#图片加载类似SDWebImage
-  pod 'Alamofire','4.8.1' #网络请求框架
-  pod 'AlamofireLogbook'  #请求打印工具
   pod 'Moya'
   pod 'SwiftyJSON' #josn解析
   pod 'YYText'

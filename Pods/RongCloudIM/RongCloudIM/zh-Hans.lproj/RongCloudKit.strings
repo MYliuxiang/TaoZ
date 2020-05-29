@@ -33,6 +33,7 @@
 "SendReadReceiptRequestFailed"="当前网络不可用，请检查你的网络设置";
 "PreviewFile"="文件预览";
 "StartDownloadingFile"="开始下载";
+"StartDownloadFile"="下载";
 "FileIsDownloading"="下载中...";
 "FileDownloadFailed"="下载失败";
 "FileDownloadCanceled"="下载已取消";
@@ -237,9 +238,9 @@
 "CombineAndForward" = "合并转发";
 "OneByOneForward" = "逐条转发";
 "ChatHistory" = "聊天记录";
-"ChatHistoryTitleXAndY" = "%@和%@";
-"ChatHistoryTitleX" = "%@";
-"GroupChatHistoryTitle" = "群聊";
+"ChatHistoryTitleXAndY" = "%@和%@的聊天记录";
+"ChatHistoryTitleX" = "%@的聊天记录";
+"GroupChatHistoryTitle" = "群聊的聊天记录";
 "RC:StkMsg" = "[动态表情]";
 "RC:FileMsg" = "[文件]";
 "RC:VCSummary" = "[音视频通话]";

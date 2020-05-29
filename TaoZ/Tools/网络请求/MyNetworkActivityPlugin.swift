@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Result
-import Moya
 
 
 /// Network activity change notification type.
@@ -23,7 +21,7 @@ public final class LxCustomPlugin: PluginType {
     
     public typealias MyNetworkActivityClosure = (_ change: MyNetworkActivityChangeType, _ target: TargetType) -> Void
     let myNetworkActivityClosure: MyNetworkActivityClosure
-    
+    var hud:MBProgressHUD?
     public init(newNetworkActivityClosure: @escaping MyNetworkActivityClosure) {
         self.myNetworkActivityClosure = newNetworkActivityClosure
     }
@@ -32,12 +30,22 @@ public final class LxCustomPlugin: PluginType {
     
     /// Called by the provider as soon as the request is about to start
     public func willSend(_ request: RequestType, target: TargetType) {
+        
+        let api = target as! NetAPIManager
+
+        if api.show{
+                   DispatchQueue.main.async {
+                    self.hud =  MBProgressHUD.showAdded(to: keywindow, animated: true)
+                   }
+               }
+        
         myNetworkActivityClosure(.began,target)
     }
       
     
-    public func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {
+    public func didReceive(_ result: Swift.Result<Response, MoyaError>, target: TargetType) {
         
+        self.hud?.hide(true)
         myNetworkActivityClosure(.ended,target)
     }
     

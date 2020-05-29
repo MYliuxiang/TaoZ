@@ -20,6 +20,11 @@
 #import <BRPickerView.h>
 #import <YYText/YYText.h>
 
+#import "MBProgressHUD.h"
+#import "MBProgressHUD+Add.h"
+#import "UIViewController+HUD.h"
+
+
 #import <ZFPlayer/ZFPlayerControlView.h>
 #import <ZFPlayer/ZFPlayer.h>
 #import <ZFPlayer/ZFAVPlayerManager.h>

@@ -407,13 +407,15 @@
     @weakify(self)
     if (direction == ZFPanDirectionH && self.sumTime >= 0 && self.player.totalTime > 0) {
         [self.player seekToTime:self.sumTime completionHandler:^(BOOL finished) {
-            @strongify(self)
-            /// 左右滑动调节播放进度
-            [self.portraitControlView sliderChangeEnded];
-            [self.landScapeControlView sliderChangeEnded];
-            self.bottomPgrogress.isdragging = NO;
-            if (self.controlViewAppeared) {
-                [self autoFadeOutControlView];
+            if (finished) {
+                @strongify(self)
+                /// 左右滑动调节播放进度
+                [self.portraitControlView sliderChangeEnded];
+                [self.landScapeControlView sliderChangeEnded];
+                self.bottomPgrogress.isdragging = NO;
+                if (self.controlViewAppeared) {
+                    [self autoFadeOutControlView];
+                }
             }
         }];
         if (self.seekToPlay) {

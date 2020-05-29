@@ -9,12 +9,8 @@
 import Foundation
 import Moya
 
-
-
-
 #if DEBUG
     let HOSTURL = "http://taozhi.dbf4.top/api/"
-
 #else
     let HOSTURL = "http://taozhi.dbf4.top/api/"
 #endif
@@ -25,6 +21,7 @@ enum NetAPIManager {
     case download
     case getRequest(APIName: String ,isTouch: Bool, body: Dictionary<String, Any>? ,isShow: Bool,title: String?)
     case postRequest(APIName: String ,isTouch: Bool, body: Dictionary<String, Any>? ,isShow: Bool,title: String?)
+    case request(APIName: String ,method:Moya.Method, body: Dictionary<String, Any>? ,isShow: Bool)
 }
 
 
@@ -57,7 +54,8 @@ extension NetAPIManager: TargetType {
             return  apiName
         case .download:
             return ""
-       
+        case  .request(let apiName, _, _, _):
+            return apiName
         }
     }
     
@@ -68,6 +66,10 @@ extension NetAPIManager: TargetType {
             return .get
         case .postRequest(_,_, _, _, _):
             return .post
+        case .request(_, let method, _, _):
+            return method
+           
+            
         default:
             return .post
         }
@@ -77,13 +79,12 @@ extension NetAPIManager: TargetType {
         switch self {
         
         case .upload(_,_,  let postDict,_, _, _, _):
-                       
             return postDict
         case .postRequest(_, _, let postDict, _, _):
             return postDict
-            
         case .getRequest(_, _, let postDict, _, _):
-                        
+            return postDict
+        case .request(_, _, let postDict, _):
             return postDict
             
         default:
@@ -99,68 +100,45 @@ extension NetAPIManager: TargetType {
     var task: Task {
         switch self {
             
-            // **********  两种方式都可以  ********** //
-            
-//            let gifData = MultipartFormData(provider: .data(data), name: "file", fileName: "gif.gif", mimeType: "image/gif")
-//            let descriptionData = MultipartFormData(provider: .data(description.data(using: .utf8)!), name: "description")
-//            let multipartData = [gifData, descriptionData]
-//            
-//            return .uploadMultipart(multipartData)
-        
-//        case .upload(let data):
-//        return .uploadMultipart([MultipartFormData(provider: .data(data), name: "file", fileName: "gif.gif", mimeType: "image/gif")])
+
         case .upload(_,_, let postDic, let filePath, let fileType, _, _):
-            
             let url = URL(string: filePath)
             let fileName = url?.lastPathComponent
-            
             do {
-               let data = try Data(contentsOf: url!)
+                let data = try Data(contentsOf: url!)
                 if postDic == nil {
-                    
                     return .uploadMultipart([MultipartFormData(provider: .data(data), name: "file", fileName: fileName, mimeType: fileType)])
-                   
                 }else{
-                    
                     var datas = [MultipartFormData(provider: .data(data), name: "file", fileName: fileName, mimeType: fileType)]
-                    
                     for (key, value) in postDic! {
-                        
                         let vStr = value as! String
                         let vData = vStr.data(using: String.Encoding.utf8)!
                         let mData = MultipartFormData(provider: .data(vData), name: key)
                         datas.append(mData)
                     }
-                    
                     return .uploadMultipart(datas)
-
-                    
                 }
                 
             } catch {
-                
                 return .requestPlain
             }
             
-
-            
-            
-       
         case  .postRequest(_, _, let postDict, _, _):
-            
             guard postDict != nil else {
-                           
-                           return .requestPlain
-                       }
+                return .requestPlain
+            }
             return .requestParameters(parameters: postDict!, encoding: URLEncoding.default)
         case  .getRequest(_, _, let postDict, _, _):
             
-            
             guard postDict != nil else {
-                
                 return .requestPlain
             }
-   
+            return .requestParameters(parameters: postDict!, encoding: URLEncoding.default)
+        case  .request(_, _, let postDict, _):
+            
+            guard postDict != nil else {
+                return .requestPlain
+            }
             return .requestParameters(parameters: postDict!, encoding: URLEncoding.default)
             
         default:
@@ -169,23 +147,14 @@ extension NetAPIManager: TargetType {
             let jsonDic = ["msg":string]
             let data = try? JSONSerialization.data(withJSONObject: jsonDic, options: [])
             return .requestData(data!)
-
        }
 
      }
     
     var parameterEncoding: ParameterEncoding {
-        switch self {
-        case .upload(_, _, body: _, filePath: _, fileType: _, isShow: _, title: _):
-            return URLEncoding.default
-        case .getRequest(_,_, _, _, _):
-            return URLEncoding.default
-            
-        case .postRequest(_,_, _, _, _):
-            return URLEncoding.default
-        default:
-            return URLEncoding.default
-        }
+                    
+        return URLEncoding.default
+
         
     }
     
@@ -210,6 +179,8 @@ extension NetAPIManager: TargetType {
             return isShow
         case .postRequest( _, _, _, let isShow, _):
             return isShow
+        case .request(_, _, _, let isShow):
+            return isShow
         default:
             return true
         }
@@ -226,7 +197,5 @@ extension NetAPIManager: TargetType {
         default:
             return nil
         }
-        
     }
-    
 }

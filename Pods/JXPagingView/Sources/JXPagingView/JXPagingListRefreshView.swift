@@ -19,8 +19,10 @@ open class JXPagingListRefreshView: JXPagingView {
 
     override open func preferredProcessMainTableViewDidScroll(_ scrollView: UIScrollView) {
         if pinSectionHeaderVerticalOffset != 0 {
-            if scrollView.contentOffset.y == 0 {
+            if scrollView.contentOffset.y <= 0 {
                 mainTableView.bounces = false
+                mainTableView.contentOffset = CGPoint.zero
+                return
             }else {
                 mainTableView.bounces = true
             }

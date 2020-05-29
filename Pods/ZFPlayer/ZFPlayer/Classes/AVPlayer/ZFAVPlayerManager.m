@@ -194,7 +194,9 @@ static NSString *const kPresentationSize         = @"presentationSize";
     @weakify(self)
     [self seekToTime:0 completionHandler:^(BOOL finished) {
         @strongify(self)
-        [self play];
+        if (finished) {
+            [self play];
+        }
     }];
 }
 

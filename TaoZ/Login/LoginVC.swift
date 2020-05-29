@@ -22,7 +22,6 @@ class LoginVC: BaseViewController {
         navBar.isHidden = true
         // Do any additional setup after loading the view.
         setUI()
-    
                 
         phoneTextField.rx.text.orEmpty.asObservable()
                    .subscribe(onNext: { [weak self] in
@@ -55,30 +54,21 @@ class LoginVC: BaseViewController {
        
         view.endEditing(true)
         if !(phoneTextField.text?.ex_isPhoneNumber ?? false){
-            
-            self.view.makeToast("请输入正确的手机号码", duration: 0.35, position: .center)
+
+            MBProgressHUD.showError("请输入正确的手机号码", to: keywindow)
             return
         }
-
-        _ = sendPostRequest(Sms_send,postDict:["mobile":phoneTextField.text!,"event":"mobilelogin"],  success: { (result) in
-            if result!["code"] as! Int == 0{
-                
+        
+        TZRequest(Sms_send, method: .post, bodyDict: ["mobile":phoneTextField.text!,"event":"mobilelogin"]) { (result, code) in
+            if code == 0{
                 let vc = VerificationCodeVC()
                 vc.phoneStr = self.phoneTextField.text!
                 vc.type = "mobilelogin"
                 self.navigationController?.pushViewController(vc, animated: true)
-
-            }else{
-                self.view.makeToast(result?["msg"] as? String, duration: 0.35, position: .center)
-                
             }
             
-        }, failure: { (error) in
-            
-            self.view.makeToast("系统异常", duration: 0.35, position: .center)
-
-        })
-        
+        }
+ 
     }
     
     func setUI(){
@@ -103,45 +93,38 @@ class LoginVC: BaseViewController {
             
             let postDic = ["sdkid":(response?.uid)! as String,"type":"wechat","ts":Date().timeStamp]
             
-            _ = sendPostRequest(User_sdklogin,postDict:postDic, success: { (result) in
-            if result!["code"] as! Int == 0{
-                //实例对象转换成Data
-                let dic = result!["data"] as? [String:Any]
-                if dic == nil{
-
-                    let vc = BindePhoneVC()
-                    vc.type = "wechat"
-                    vc.sdkid = (response?.uid)! as String
-                    self.navigationController?.pushViewController(vc, animated: true)
-                    
-                }else{
-                    
-                    let modelData = NSKeyedArchiver.archivedData(withRootObject: dic!["userinfo"] as Any)
-                                   //存储Data对象
-                                    UserDefaults.standard.set(modelData, forKey: userDefaults_userInfo)
-                                    UserDefaults.standard.set(true, forKey: isLogin)
-                                    UserDefaults.standard.synchronize()
-                                   TabBarObject.shareInstance.tabBarController.selectedIndex = 0
-                                   let vcs = TabBarObject.shareInstance.tabBarController.viewControllers ?? []
-                                   for vc in vcs  {
-                                      let navVC = vc as? BaseNavigationController
-                                       navVC?.popToRootViewController(animated: true)
-                                   }
-                                   
-                                   self.navigationController?.dismiss(animated: true, completion: nil)
+            TZRequest(User_sdklogin, method: .post ,bodyDict: postDic) { (result, code) in
+                if code == 0{
+                    let dic = result!["data"] as? [String:Any]
+                    if dic == nil{
+                        
+                        let vc = BindePhoneVC()
+                        vc.type = "wechat"
+                        vc.sdkid = (response?.uid)! as String
+                        self.navigationController?.pushViewController(vc, animated: true)
+                        
+                    }else{
+                        
+                        guard let model = UserInfoModel.deserialize(from: dic?["userinfo"] as? NSDictionary ) else {
+                                           
+                            return
+                                       
+                        }
+                        UserInfoModel.saveUserInfo(model)
+                     
+                        
+                        TabBarObject.shareInstance.tabBarController.selectedIndex = 0
+                        let vcs = TabBarObject.shareInstance.tabBarController.viewControllers ?? []
+                        for vc in vcs  {
+                            let navVC = vc as? BaseNavigationController
+                            navVC?.popToRootViewController(animated: true)
+                        }
+                        
+                        self.navigationController?.dismiss(animated: true, completion: nil)
+                    }
                 }
-               
-               
-
-            }else{
                 
-                self.view.makeToast(result?["msg"] as? String, duration: 0.35, position: .center)
-
             }
-        }, failure: { (error) in
-              self.view.makeToast("系统异常", duration: 0.35, position: .center)
-        })
-            
             
             
             

@@ -1,21 +1,19 @@
 PODS:
-  - Alamofire (4.8.1)
-  - AlamofireLogbook (0.1.1):
-    - Alamofire
+  - Alamofire (5.2.1)
   - AlipaySDK-iOS (15.5.9)
-  - BRPickerView (2.6.0):
-    - BRPickerView/AddressPickerView (= 2.6.0)
-    - BRPickerView/Base (= 2.6.0)
-    - BRPickerView/DatePickerView (= 2.6.0)
-    - BRPickerView/StringPickerView (= 2.6.0)
-  - BRPickerView/AddressPickerView (2.6.0):
+  - BRPickerView (2.6.2):
+    - BRPickerView/AddressPickerView (= 2.6.2)
+    - BRPickerView/Base (= 2.6.2)
+    - BRPickerView/DatePickerView (= 2.6.2)
+    - BRPickerView/StringPickerView (= 2.6.2)
+  - BRPickerView/AddressPickerView (2.6.2):
     - BRPickerView/Base
-  - BRPickerView/Base (2.6.0)
-  - BRPickerView/DatePickerView (2.6.0):
+  - BRPickerView/Base (2.6.2)
+  - BRPickerView/DatePickerView (2.6.2):
     - BRPickerView/Base
-  - BRPickerView/StringPickerView (2.6.0):
+  - BRPickerView/StringPickerView (2.6.2):
     - BRPickerView/Base
-  - Bugly (2.5.2)
+  - Bugly (2.5.4)
   - CryptoSwift (1.3.1)
   - DZNEmptyDataSet (1.8.1)
   - ESTabBarController-swift (2.8.0)
@@ -27,34 +25,32 @@ PODS:
   - JCore (2.1.4-noidfa)
   - JPush (3.2.4-noidfa):
     - JCore (< 3.0.0, >= 2.0.0)
-  - JXPagingView/Paging (2.0.1)
-  - JXSegmentedView (1.0.5)
+  - JXPagingView/Paging (2.0.6)
+  - JXSegmentedView (1.0.6)
   - Kingfisher (5.3.0)
-  - LXFProtocolTool/AssociatedObjectStore (1.1.3)
-  - LXFProtocolTool/Base (1.1.3)
-  - LXFProtocolTool/EmptyDataSetable (1.1.3):
+  - LXFProtocolTool/AssociatedObjectStore (2.0.0)
+  - LXFProtocolTool/Base (2.0.0)
+  - LXFProtocolTool/EmptyDataSetable (2.0.0):
     - DZNEmptyDataSet (>= 1.8.1)
     - LXFProtocolTool/AssociatedObjectStore
     - LXFProtocolTool/Base
-  - MJRefresh (3.3.1)
-  - Moya (13.0.1):
-    - Moya/Core (= 13.0.1)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
+  - MJRefresh (3.4.3)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
   - "NSObject+Rx (5.1.0)":
     - RxSwift (~> 5.1)
   - ReachabilitySwift (5.0.0)
-  - Result (4.1.0)
-  - RongCloudIM/IMKit (2.10.5):
+  - RongCloudIM/IMKit (2.10.6):
     - RongCloudIM/IMLib
-  - RongCloudIM/IMLib (2.10.5)
-  - RxCocoa (5.1.0):
+  - RongCloudIM/IMLib (2.10.6)
+  - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
-  - RxRelay (5.1.0):
+  - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.1.0)
+  - RxSwift (5.1.1)
   - SDAutoLayout (2.1.9)
   - SnapKit (5.0.1)
   - SVProgressHUD (2.2.5)
@@ -81,15 +77,13 @@ PODS:
     - UMCShare/Core
   - WechatOpenSDK (1.8.3)
   - YYText (1.0.7)
-  - ZFPlayer/AVPlayer (3.3.1):
+  - ZFPlayer/AVPlayer (3.3.2):
     - ZFPlayer/Core
-  - ZFPlayer/ControlView (3.3.1):
+  - ZFPlayer/ControlView (3.3.2):
     - ZFPlayer/Core
-  - ZFPlayer/Core (3.3.1)
+  - ZFPlayer/Core (3.3.2)
 
 DEPENDENCIES:
-  - Alamofire (= 4.8.1)
-  - AlamofireLogbook
   - AlipaySDK-iOS (= 15.5.9)
   - BRPickerView
   - Bugly
@@ -135,7 +129,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
-    - AlamofireLogbook
     - AlipaySDK-iOS
     - BRPickerView
     - Bugly
@@ -157,7 +150,6 @@ SPEC REPOS:
     - Moya
     - "NSObject+Rx"
     - ReachabilitySwift
-    - Result
     - RongCloudIM
     - RxCocoa
     - RxRelay
@@ -177,11 +169,10 @@ SPEC REPOS:
     - ZFPlayer
 
 SPEC CHECKSUMS:
-  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  AlamofireLogbook: 7e18aa9c6ab7c0c75e2a4a294a2c390c1d6335d9
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   AlipaySDK-iOS: 1c5283b30977a24acecc0114662697f7dc78f618
-  BRPickerView: 3c7bb7ccaefec74ba0ef8d2c771b9be769f5c81b
-  Bugly: dbac48b55ad469a97cc4321045cd50df8f63d44f
+  BRPickerView: ed57c158a1e5e6b71b98347a03d1227a70f674d4
+  Bugly: 4edda9bb0e3017fd453612189069757195fa23ca
   CryptoSwift: f12f037f6d0fcd6d48c96db0071b653de64e6c4d
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
@@ -192,19 +183,18 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c75366f1f19590e8caeae45fcd5815c9289d6099
   JCore: 2f15311e6889ab43ed5d629802ef793cac566465
   JPush: 2ff11d3013b360bc1b7da16741027e88f12fe3e6
-  JXPagingView: cacaf7512d223e21133bd71ca245126acc5f535a
-  JXSegmentedView: 46262e0ec86c951fd1be4a0b91de3d9b10cb9fff
+  JXPagingView: 5851fb8cc964d0cbd93e9611077f7bc1fca05fee
+  JXSegmentedView: ceb6fb3a12716408bcd5c4210b93d947d079de25
   Kingfisher: 4692c783ffb99e9e2e40a6eb3e518c3b96c6fa8c
-  LXFProtocolTool: 107e5dcd7b9567cbe6dce9b75a8453a06a58f505
-  MJRefresh: eeda70fbf0ad277f3178cef1cd0c3532591d6237
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
+  LXFProtocolTool: aab099acf3bd70f6cf1b915c5f5cb6bb0646485d
+  MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   "NSObject+Rx": fa6bbcc1ab1faa06b01466bc09b1e0692bbc5946
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  RongCloudIM: 667bd00a302c84fe93ce63ef04fca4ffd28063b8
-  RxCocoa: 13d2a4d7546a34b8ececae8c281e4ea1dbb94f2b
-  RxRelay: a168bd6caf712d00c676ac344e9295afc93b418e
-  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
+  RongCloudIM: b1768dcb3af90d00ce621f7de4f787285435fbe3
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SDAutoLayout: 6b6f4db0d009dfc46cef14ef710dbb164e86616c
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
@@ -217,8 +207,8 @@ SPEC CHECKSUMS:
   UMCShare: a250203b34a56cde25cc4c28335449b542f0255d
   WechatOpenSDK: 3117412f8aafde4758cac1e8d20b93c67cafcfef
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
-  ZFPlayer: 8a6021a3c45e281f2abd24dca5c88915af770a7e
+  ZFPlayer: 88e8abd393ccbd8684e62cf557d25c8009b9dd70
 
-PODFILE CHECKSUM: 40d4b0775b8593843850c508cb8c6d499cb57cd6
+PODFILE CHECKSUM: ae045a996bdb764767d1485c61784c5ab76e8c8f
 
 COCOAPODS: 1.9.1

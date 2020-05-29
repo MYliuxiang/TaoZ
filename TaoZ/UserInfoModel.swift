@@ -46,6 +46,15 @@ class UserInfoModel: BaseModel {
 
 extension UserInfoModel {
     
+    static func saveUserInfo(_ model:UserInfoModel?) {
+         let josn = model?.toJSON()
+         let modelData = NSKeyedArchiver.archivedData(withRootObject: josn ?? [:])
+         UserDefaults.standard.set(modelData, forKey: userDefaults_userInfo)
+         UserDefaults.standard.set(true, forKey: isLogin)
+         UserDefaults.standard.synchronize()
+         
+     }
+    
     class func loadUserInfo() -> UserInfoModel? {
         
         let user_data = UserDefaults.standard.data(forKey: userDefaults_userInfo)

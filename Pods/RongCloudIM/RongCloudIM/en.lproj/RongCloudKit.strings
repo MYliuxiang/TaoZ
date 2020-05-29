@@ -34,6 +34,7 @@
 "SendReadReceiptRequestFailed"="Network unavailable, check network";
 "PreviewFile"="File preview";
 "StartDownloadingFile"="Start download";
+"StartDownloadFile"="Download";
 "FileIsDownloading"="Downloding...";
 "FileDownloadFailed"="Download failed";
 "FileDownloadCanceled"="Download has been canceled";

@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
            
         self.window?.makeKeyAndVisible()
+   
         
         UserDefaultsStandard.set(false, forKey: isLogin)
         if !UserDefaultsStandard.bool(forKey: isLogin) {

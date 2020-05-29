@@ -13,6 +13,13 @@
 		22209E55246BE5840001ED6A /* LxPlayerControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22209E54246BE5840001ED6A /* LxPlayerControlView.swift */; };
 		22209E5D246BF1A70001ED6A /* MobileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22209E5C246BF1A70001ED6A /* MobileView.swift */; };
 		22209E5F246BF1B80001ED6A /* MobileView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22209E5E246BF1B80001ED6A /* MobileView.xib */; };
+		2227FA1D2480DE3A003768F7 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227FA132480DE39003768F7 /* UIViewController+HUD.m */; };
+		2227FA1E2480DE3A003768F7 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227FA142480DE39003768F7 /* MBProgressHUD.m */; };
+		2227FA1F2480DE3A003768F7 /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 2227FA152480DE39003768F7 /* MBProgressHUD+Add.m */; };
+		2227FA202480DE3A003768F7 /* error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2227FA162480DE39003768F7 /* error@2x.png */; };
+		2227FA212480DE3A003768F7 /* success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2227FA172480DE39003768F7 /* success@2x.png */; };
+		2227FA222480DE3A003768F7 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 2227FA1A2480DE39003768F7 /* error.png */; };
+		2227FA232480DE3A003768F7 /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = 2227FA1B2480DE39003768F7 /* success.png */; };
 		222FEB60246D462400B923D2 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222FEB5E246D462400B923D2 /* CommentVC.swift */; };
 		222FEB61246D462400B923D2 /* CommentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 222FEB5F246D462400B923D2 /* CommentVC.xib */; };
 		22377172246403DC00C5AFDF /* RecommendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22377170246403DC00C5AFDF /* RecommendVC.swift */; };
@@ -38,7 +45,6 @@
 		223ACE70246E9D24003788C7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 223ACE6F246E9D24003788C7 /* libz.tbd */; };
 		225A6E5F2462FE9400E4DE93 /* NetServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5B2462FE9100E4DE93 /* NetServiceManager.swift */; };
 		225A6E602462FE9400E4DE93 /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5C2462FE9100E4DE93 /* NetAPIManager.swift */; };
-		225A6E612462FE9400E4DE93 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5D2462FE9300E4DE93 /* NetworkHelper.swift */; };
 		225A6E622462FE9400E4DE93 /* MyNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5E2462FE9300E4DE93 /* MyNetworkActivityPlugin.swift */; };
 		225F7C65246503D1001B15E2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F7C63246503D1001B15E2 /* PhotoCell.swift */; };
 		225F7C66246503D1001B15E2 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225F7C64246503D1001B15E2 /* PhotoCell.xib */; };
@@ -202,6 +208,16 @@
 		22209E54246BE5840001ED6A /* LxPlayerControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LxPlayerControlView.swift; sourceTree = "<group>"; };
 		22209E5C246BF1A70001ED6A /* MobileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileView.swift; sourceTree = "<group>"; };
 		22209E5E246BF1B80001ED6A /* MobileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MobileView.xib; sourceTree = "<group>"; };
+		2227FA132480DE39003768F7 /* UIViewController+HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+HUD.m"; sourceTree = "<group>"; };
+		2227FA142480DE39003768F7 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		2227FA152480DE39003768F7 /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
+		2227FA162480DE39003768F7 /* error@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "error@2x.png"; sourceTree = "<group>"; };
+		2227FA172480DE39003768F7 /* success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "success@2x.png"; sourceTree = "<group>"; };
+		2227FA182480DE39003768F7 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		2227FA192480DE39003768F7 /* UIViewController+HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+HUD.h"; sourceTree = "<group>"; };
+		2227FA1A2480DE39003768F7 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
+		2227FA1B2480DE39003768F7 /* success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = success.png; sourceTree = "<group>"; };
+		2227FA1C2480DE39003768F7 /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
 		222FEB5E246D462400B923D2 /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		222FEB5F246D462400B923D2 /* CommentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentVC.xib; sourceTree = "<group>"; };
 		22377170246403DC00C5AFDF /* RecommendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendVC.swift; sourceTree = "<group>"; };
@@ -227,7 +243,6 @@
 		223ACE6F246E9D24003788C7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		225A6E5B2462FE9100E4DE93 /* NetServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetServiceManager.swift; sourceTree = "<group>"; };
 		225A6E5C2462FE9100E4DE93 /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
-		225A6E5D2462FE9300E4DE93 /* NetworkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		225A6E5E2462FE9300E4DE93 /* MyNetworkActivityPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNetworkActivityPlugin.swift; sourceTree = "<group>"; };
 		225F7C63246503D1001B15E2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		225F7C64246503D1001B15E2 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
@@ -422,7 +437,6 @@
 		2205BC1D24405B1900146C47 /* 网络请求 */ = {
 			isa = PBXGroup;
 			children = (
-				225A6E5D2462FE9300E4DE93 /* NetworkHelper.swift */,
 				225A6E5E2462FE9300E4DE93 /* MyNetworkActivityPlugin.swift */,
 				225A6E5C2462FE9100E4DE93 /* NetAPIManager.swift */,
 				225A6E5B2462FE9100E4DE93 /* NetServiceManager.swift */,
@@ -448,6 +462,31 @@
 				22209E5E246BF1B80001ED6A /* MobileView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2227FA112480DE18003768F7 /* 第三方 */ = {
+			isa = PBXGroup;
+			children = (
+				2227FA122480DE39003768F7 /* MBProgressHUD */,
+			);
+			path = "第三方";
+			sourceTree = "<group>";
+		};
+		2227FA122480DE39003768F7 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				2227FA1A2480DE39003768F7 /* error.png */,
+				2227FA162480DE39003768F7 /* error@2x.png */,
+				2227FA182480DE39003768F7 /* MBProgressHUD.h */,
+				2227FA142480DE39003768F7 /* MBProgressHUD.m */,
+				2227FA1C2480DE39003768F7 /* MBProgressHUD+Add.h */,
+				2227FA152480DE39003768F7 /* MBProgressHUD+Add.m */,
+				2227FA1B2480DE39003768F7 /* success.png */,
+				2227FA172480DE39003768F7 /* success@2x.png */,
+				2227FA192480DE39003768F7 /* UIViewController+HUD.h */,
+				2227FA132480DE39003768F7 /* UIViewController+HUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		222FEB5D246D45FA00B923D2 /* 评论 */ = {
@@ -696,6 +735,7 @@
 		229FE1D5243F0A61003160CF /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				2227FA112480DE18003768F7 /* 第三方 */,
 				2266B36624665B19009675D8 /* SKPhotoBrowser */,
 				2205BC1D24405B1900146C47 /* 网络请求 */,
 				229FE202243F0D6F003160CF /* lib */,
@@ -1098,6 +1138,7 @@
 				229FE219243F1080003160CF /* LoginVC.xib in Resources */,
 				2283A974246AAD45001A5B65 /* MyDynamicVC.xib in Resources */,
 				2283A981246AAEB0001A5B65 /* MyWalletVC.xib in Resources */,
+				2227FA222480DE3A003768F7 /* error.png in Resources */,
 				229FE1B2243F07ED003160CF /* LaunchScreen.storyboard in Resources */,
 				2283A960246AA956001A5B65 /* MyFlollowCell.xib in Resources */,
 				2266B39B24665B19009675D8 /* README.md in Resources */,
@@ -1110,6 +1151,7 @@
 				2283A939246A58EF001A5B65 /* PersonalVC.xib in Resources */,
 				2283A935246A54B6001A5B65 /* MeCell.xib in Resources */,
 				2237717F24640BB100C5AFDF /* PriVatePhotoSubVC.xib in Resources */,
+				2227FA212480DE3A003768F7 /* success@2x.png in Resources */,
 				2266B36424664DAF009675D8 /* LxBrowser.xib in Resources */,
 				2283A978246AAD55001A5B65 /* SetVC.xib in Resources */,
 				223ACE5C246E8A6A003788C7 /* FollowCell.xib in Resources */,
@@ -1123,6 +1165,7 @@
 				2283A97C246AAD70001A5B65 /* CustomerVC.xib in Resources */,
 				22B5035724654A1C00348E05 /* DiscoverSubVC.xib in Resources */,
 				2283A95C246AA927001A5B65 /* MyFollow.xib in Resources */,
+				2227FA202480DE3A003768F7 /* error@2x.png in Resources */,
 				2237718324640EE100C5AFDF /* VideoSubVC.xib in Resources */,
 				222FEB61246D462400B923D2 /* CommentVC.xib in Resources */,
 				229FE215243F0E81003160CF /* BaseViewController.xib in Resources */,
@@ -1134,6 +1177,7 @@
 				229FE1AF243F07ED003160CF /* Assets.xcassets in Resources */,
 				2266B39824665B19009675D8 /* SKPhotoBrowser.bundle in Resources */,
 				229FE1AD243F07EB003160CF /* Main.storyboard in Resources */,
+				2227FA232480DE3A003768F7 /* success.png in Resources */,
 				2283A970246AAD2A001A5B65 /* MyWorksVC.xib in Resources */,
 				2237717B2464041700C5AFDF /* VideoVC.xib in Resources */,
 			);
@@ -1371,6 +1415,7 @@
 				22D068872463AABF002BBBB5 /* HomeVC.swift in Sources */,
 				229FE1F1243F0D56003160CF /* UIImage+Extension.swift in Sources */,
 				225A6E622462FE9400E4DE93 /* MyNetworkActivityPlugin.swift in Sources */,
+				2227FA1F2480DE3A003768F7 /* MBProgressHUD+Add.m in Sources */,
 				229FE214243F0E81003160CF /* BaseViewController.swift in Sources */,
 				2266B39324665B19009675D8 /* SKPhoto.swift in Sources */,
 				2283A93C246A74BC001A5B65 /* PersonalCell.swift in Sources */,
@@ -1398,7 +1443,6 @@
 				225F7C69246503E1001B15E2 /* VideoCell.swift in Sources */,
 				229FE1F6243F0D56003160CF /* YMKBasicTool.swift in Sources */,
 				229FE1A6243F07EB003160CF /* AppDelegate.swift in Sources */,
-				225A6E612462FE9400E4DE93 /* NetworkHelper.swift in Sources */,
 				2283A944246A78BA001A5B65 /* PersonalTextFieldCell.swift in Sources */,
 				229FE22B243F10F5003160CF /* AppService.swift in Sources */,
 				2266B39724665B19009675D8 /* SKCacheable.swift in Sources */,
@@ -1419,11 +1463,13 @@
 				2283A948246A7943001A5B65 /* LabelCell.swift in Sources */,
 				229FE1EE243F0D56003160CF /* Date+Extension.swift in Sources */,
 				2283A95B246AA927001A5B65 /* MyFollow.swift in Sources */,
+				2227FA1D2480DE3A003768F7 /* UIViewController+HUD.m in Sources */,
 				22B503532465382500348E05 /* DiscoverModel.swift in Sources */,
 				229FE232243F1114003160CF /* TabBarBasicContentView.swift in Sources */,
 				2283A934246A54B6001A5B65 /* MeCell.swift in Sources */,
 				2266B38424665B19009675D8 /* SKMesurement.swift in Sources */,
 				2266B38524665B19009675D8 /* SKZoomingScrollView.swift in Sources */,
+				2227FA1E2480DE3A003768F7 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1619,7 +1665,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liuxiang/Desktop/TaoZ/TaoZ/Tools/Brdging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1651,7 +1697,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liuxiang/Desktop/TaoZ/TaoZ/Tools/Brdging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

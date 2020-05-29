@@ -125,18 +125,14 @@ class VerificationCodeVC: BaseViewController {
     }
     
     func loadCode(){
-        _ = sendPostRequest(Sms_send,postDict:["mobile":phoneStr!,"event":type!],  success: { (result) in
-                   if result!["code"] as! Int == 0{
-                    
-                    self.daojishiAC()
-
-                   }else{
-                       self.view.makeToast(result?["msg"] as? String, duration: 0.35, position: .center)
-                   }
-
-               }, failure: { (error) in
-                   self.view.makeToast("系统异常", duration: 0.35, position: .center)
-               })
+        
+        
+        TZRequest(Sms_send,bodyDict:["mobile":phoneStr!,"event":type!] ) { (result, code) in
+            if code == 0{
+                self.daojishiAC()
+            }
+        }
+       
     }
     
     func mobileloginAC(){
@@ -150,36 +146,30 @@ class VerificationCodeVC: BaseViewController {
         
         let hmac = try! HMAC(key: SignKey.bytes, variant: .sha256).authenticate(signStr.bytes).toHexString()
         postDic["sign"] = hmac
-                
-        _ = sendPostRequest(User_mobilelogin,postDict: postDic, success: { (result) in
-            if result!["code"] as! Int == 0{
-                //实例对象转换成Data
+        
+        
+        TZRequest(User_mobilelogin,bodyDict: postDic) { (result, code) in
+            if code == 0{
                 let dic = result!["data"] as? [String:Any]
-                let modelData = NSKeyedArchiver.archivedData(withRootObject: dic!["userinfo"] as Any)
-                //存储Data对象
-                 UserDefaults.standard.set(modelData, forKey: userDefaults_userInfo)
-                 UserDefaults.standard.set(true, forKey: isLogin)
-                 UserDefaults.standard.synchronize()
+                guard let model = UserInfoModel.deserialize(from: dic?["userinfo"] as? NSDictionary ) else {
+                    return
+                }
+                
+                UserInfoModel.saveUserInfo(model)
                 TabBarObject.shareInstance.tabBarController.selectedIndex = 0
                 let vcs = TabBarObject.shareInstance.tabBarController.viewControllers ?? []
                 for vc in vcs  {
-                   let navVC = vc as? BaseNavigationController
+                    let navVC = vc as? BaseNavigationController
                     navVC?.popToRootViewController(animated: true)
                 }
                 
                 self.navigationController?.dismiss(animated: true, completion: nil)
-                
-
             }else{
-                
                 self.tipLab.isHidden = false
-                self.view.makeToast(result?["msg"] as? String, duration: 0.35, position: .center)
-
             }
-        }, failure: { (error) in
-            self.view.makeToast("系统异常", duration: 0.35, position: .center)
-
-        })
+        }
+                
+        
         
     }
     
@@ -188,35 +178,33 @@ class VerificationCodeVC: BaseViewController {
 
         let postDic:[String:String] = ["mobile":phoneStr!,"type":self.sdkType!,"sdkid":self.sdkid!,"ts":Date().timeStamp]
        
-        _ = sendPostRequest(User_sdkbindphone,postDict: postDic, success: { (result) in
-            if result!["code"] as! Int == 0{
-                //实例对象转换成Data
+        
+        
+        TZRequest(User_sdkbindphone,bodyDict:postDic ) { (result, code) in
+            if code == 0{
                 let dic = result!["data"] as? [String:Any]
-                let modelData = NSKeyedArchiver.archivedData(withRootObject: dic!["userinfo"] as Any)
-                //存储Data对象
-                 UserDefaults.standard.set(modelData, forKey: userDefaults_userInfo)
-                 UserDefaults.standard.set(true, forKey: isLogin)
-                 UserDefaults.standard.synchronize()
+                guard let model = UserInfoModel.deserialize(from: dic?["userinfo"] as? NSDictionary ) else {
+                    return
+                }
+                UserInfoModel.saveUserInfo(model)
                 TabBarObject.shareInstance.tabBarController.selectedIndex = 0
                 let vcs = TabBarObject.shareInstance.tabBarController.viewControllers ?? []
                 for vc in vcs  {
-                   let navVC = vc as? BaseNavigationController
+                    let navVC = vc as? BaseNavigationController
                     navVC?.popToRootViewController(animated: true)
                 }
                 
                 self.navigationController?.dismiss(animated: true, completion: nil)
                 
-
+                
             }else{
                 
                 self.tipLab.isHidden = false
                 self.view.makeToast(result?["msg"] as? String, duration: 0.35, position: .center)
-
+                
             }
-        }, failure: { (error) in
-            self.view.makeToast("系统异常", duration: 0.35, position: .center)
-
-        })
+        }
+      
     }
 
 

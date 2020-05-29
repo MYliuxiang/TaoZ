@@ -7,9 +7,8 @@
 //
 
 import Foundation
-import Moya
-import Alamofire
 
+let code_succes           = 0   //请求成功
 
 
 // MARK: - Provider setup系统方法转换json数据
@@ -50,30 +49,25 @@ let spinerPlugin = NetworkActivityPlugin { (state,target) in
 // MARK: - 自定义的网络提示请求插件
 let myNetworkPlugin = LxCustomPlugin { (state,target) in
     
-    let api = target as! NetAPIManager
-    
-    if state == .began {
-        //        SwiftSpinner.show("Connecting...")
-        
-        if api.show {
-            
-            if !api.touch {
-                SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.black)
-            }
-                
-                SVProgressHUD.show()
-
-        }
-        
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-    } else {
-     
-        if api.show {
-            SVProgressHUD.dismiss()
-            SVProgressHUD.setDefaultMaskType(SVProgressHUDMaskType.none)
-        }
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-    }
+//    var api = target as! NetAPIManager
+//    
+//    
+//    if state == .began {
+//        
+//        if api.show{
+//            DispatchQueue.main.async {
+//               MBProgressHUD.showAdded(to: keywindow, animated: true)
+//            }
+//        }
+//        
+//        
+//    } else {
+//     
+//        if api.show{
+//           
+//            MBProgressHUD.hideAllHUDs(for: keywindow, animated: true)
+//        }
+//    }
 }
 
 
@@ -89,37 +83,16 @@ let myEndpointClosure = { (target: NetAPIManager) -> Endpoint in
 
     return endpoint.adding(newHTTPHeaderFields: [
         "Content-Type" : "application/x-www-form-urlencoded;charset=UTF-8",
-//        "COOKIE" : "JSESSIONID=\(sessionId)",
         "Accept": "application/json;application/octet-stream;text/html,text/json;text/plain;text/javascript;text/xml;application/x-www-form-urlencoded;image/png;image/jpeg;image/jpg;image/gif;image/bmp;image/*"
         ])
     
 }
 
-// MARK: - 设置请求头部信息
-var endpointClosure = { (target: NetAPIManager) -> Endpoint in
-    let sessionId =  ""
-    let url = target.baseURL.appendingPathComponent(target.path).absoluteString
-    var endpoint: Endpoint = Endpoint(
-        url: url,
-        sampleResponseClosure: {.networkResponse(200, target.sampleData)},
-        method: target.method,
-        task: target.task,
-        httpHeaderFields: target.headers
-    )
-    return endpoint.adding(newHTTPHeaderFields: [
-        "Content-Type" : "application/json",
-        "COOKIE" : "JSESSIONID=\(sessionId)",
-        "Accept": "application/json;application/octet-stream;text/html,text/json;text/plain;text/javascript;text/xml;application/x-www-form-urlencoded;image/png;image/jpeg;image/jpg;image/gif;image/bmp;image/*"
-        ])
-
-}
 
 // MARK: - 设置请求超时时间
 let requestClosure = { (endpoint: Endpoint, done: @escaping MoyaProvider<NetAPIManager>.RequestResultClosure) in
     
-//    guard var request = endpoint.urlRequest else { return }
-//    request.timeoutInterval = 30    //设置请求超时时间
-//    done(.success(request))
+
     do {
         var request: URLRequest = try endpoint.urlRequest()
         request.timeoutInterval = 30    //设置请求超时时间
@@ -131,133 +104,19 @@ let requestClosure = { (endpoint: Endpoint, done: @escaping MoyaProvider<NetAPIM
     
 }
 
-// MARK: - 设置请求超时时间
-//let RxRequestClosure = { (endpoint: Endpoint<NetAPIManager>, done: @escaping ReactiveSwiftMoyaProvider<NetAPIManager>.RequestResultClosure) in
-//
-//    guard var request = endpoint.urlRequest else { return }
-//
-//    request.timeoutInterval = 40    //设置请求超时时间
-//    done(.success(request))
-//}
-
-/// 关闭https认证
-
-let serverTrustPolicies: [String: ServerTrustPolicy] = [
-
-      "172.16.88.106": .pinCertificates(certificates: ServerTrustPolicy.certificates(), validateCertificateChain: true, validateHost: true),
-      "insecure.expired-apis.com": .disableEvaluation
-
-]
-
-//performDefaultEvaluation：使用默认的server trust评估，允许我们控制是否验证challenge提供的host。
-//pinCertificates：使用pinned certificates来验证server trust。如果pinned certificates匹配其中一个服务器证书，那么认为server trust是有效的。
-//pinPublicKeys：使用pinned public keys来验证server trust。如果pinned public keys匹配其中一个服务器证书公钥，那么认为server trust是有效的。
-//disableEvaluation：禁用所有评估，总是认为server trust是有效的。
-//customEvaluation：使用相关的闭包来评估server trust的有效性，我们可以完全控制整个验证过程。但是要谨慎使用。
-
-let configuration: URLSessionConfiguration = {
-    let configuration = URLSessionConfiguration.default
-    configuration.httpAdditionalHeaders = Manager.defaultHTTPHeaders
-    return configuration
-
-}()
-
-let delegate: SessionDelegate = {
-    let delegate = SessionDelegate()
-    delegate.sessionDidReceiveChallenge = { session, challenge in
-        //认证服务器证书
-        if challenge.protectionSpace.authenticationMethod
-            == NSURLAuthenticationMethodServerTrust {
-            print("服务端证书认证！")
-            let serverTrust:SecTrust = challenge.protectionSpace.serverTrust!
-            let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0)!
-            let remoteCertificateData
-                = CFBridgingRetain(SecCertificateCopyData(certificate))!
-            let cerPath = Bundle.main.path(forResource: "tomcat", ofType: "cer")!
-            let cerUrl = URL(fileURLWithPath:cerPath)
-            let localCertificateData = try! Data(contentsOf: cerUrl)
-            
-            if (remoteCertificateData.isEqual(localCertificateData) == true) {
-                
-                let credential = URLCredential(trust: serverTrust)
-                challenge.sender?.use(credential, for: challenge)
-                return (URLSession.AuthChallengeDisposition.useCredential,
-                        URLCredential(trust: challenge.protectionSpace.serverTrust!))
-                
-            } else {
-                return (.cancelAuthenticationChallenge, nil)
-            }
-        }
-            //认证客户端证书
-        else if challenge.protectionSpace.authenticationMethod
-            == NSURLAuthenticationMethodClientCertificate {
-            print("客户端证书认证！")
-            //获取客户端证书相关信息
-            let identityAndTrust:IdentityAndTrust = extractIdentity();
-            
-            let urlCredential:URLCredential = URLCredential(
-                identity: identityAndTrust.identityRef,
-                certificates: identityAndTrust.certArray as? [AnyObject],
-                persistence: URLCredential.Persistence.forSession);
-            
-            return (.useCredential, urlCredential);
-        }
-            // 其它情况（不接受认证）
-        else {
-            print("其它情况（不接受认证）")
-            return (.cancelAuthenticationChallenge, nil)
-        }
-    }
-    
-    return delegate
-
-}()
-
-let myManager = Manager(
-    
-    configuration: configuration,
-    delegate:delegate,
-    serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)
-
-//    let configuration = URLSessionConfiguration.default
-//    configuration.httpAdditionalHeaders = Manager.defaultHTTPHeaders
-//
-//    let manager = Manager(configuration: configuration)
-//    manager.startRequestsImmediately = false
-//    return manager
-
-)
+public typealias SuccessCompletion = (_ result: Dictionary<String, Any>?,_ code:Int) -> Void
 
 
+let MyAPIProvider = MoyaProvider<NetAPIManager>(endpointClosure: myEndpointClosure,requestClosure: requestClosure, plugins: [NetworkLoggerPlugin(configuration: NetworkLoggerPlugin.Configuration()),myNetworkPlugin])
 
-let provider = MoyaProvider<NetAPIManager>(requestClosure: requestClosure,                manager:myManager)
-
-let MyAPIProvider = MoyaProvider<NetAPIManager>(endpointClosure: myEndpointClosure,requestClosure: requestClosure, plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter),myNetworkPlugin])
-
-
-
-//let RxAPIProvider = RsAPIProvider<NetAPIManager>(endpointClosure: endpointClosure,requestClosure: requestClosure, plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter),myNetworkPlugin])
-
-//let RsAPIProvider = ReactiveSwiftMoyaProvider<NetAPIManager>(endpointClosure: myEndpointClosure,requestClosure: requestClosure,stubClosure: MoyaProvider.immediatelyStub, plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter),myNetworkPlugin])
 
 
 // MARK: -取消所有请求
 func cancelAllRequest() {
-//    MyAPIProvider.manager.session.invalidateAndCancel()  //取消所有请求
-    MyAPIProvider.manager.session.getTasksWithCompletionHandler { dataTasks, uploadTasks, downloadTasks in
-        dataTasks.forEach { $0.cancel() }
-        uploadTasks.forEach { $0.cancel() }
-        downloadTasks.forEach { $0.cancel() }
-    }
-    
-    //let sessionManager = Alamofire.SessionManager.default
-    //sessionManager.session.getTasksWithCompletionHandler { dataTasks, uploadTasks, downloadTasks in
-    //    dataTasks.forEach { $0.cancel() }
-    //    uploadTasks.forEach { $0.cancel() }
-    //    downloadTasks.forEach { $0.cancel() }
-    //}
 
-    
+    MyAPIProvider.session.cancelAllRequests(completingOnQueue: DispatchQueue.main) {
+                 
+             }
    
 }
 
@@ -271,9 +130,7 @@ public func uploadFile(_ name:String, touch:Bool? = true,show:Bool? = true, titl
                        failure:@escaping (MoyaError)->()) -> Cancellable?{
     
  
-//    let reques = MyAPIProvider.re
-//    let request = MyAPIProvider.
-//    let request =
+
     let request = MyAPIProvider.request(.upload(APIName: name, isTouch: touch!, body: postDic, filePath: filePath, fileType: fileType, isShow: show!, title: titleString), callbackQueue: DispatchQueue.main, progress: { (moyaprogress) in
         progress(moyaprogress.progress)
     }) { (result) in
@@ -368,40 +225,73 @@ public func sendPostRequest(_ name: String, touch:Bool? = true, show: Bool? = tr
     return request
 }
 
-// MARK: -创建一个ReactiveSwiftMoyaProvider请求
-//func sendReactiveSwiftRequest(_ name: String, touch:Bool? = true, show: Bool? = true, titleString: String? = nil, postDict: Dictionary<String, Any>? = nil,
-//                              success:@escaping (Dictionary<String, Any>)->(),
-//                              failure:@escaping (MoyaError)->()) -> Disposable? {
-//
-//    let request = MyAPIProvider.reactive.request(.postRequest(APIName:name,isTouch: touch!, body:postDict ,isShow: show!, title: titleString)).start { event in
-//        switch event {
-//        case let .value(response):
-//             do {
-//                let any = try response.mapJSON()
-//                let string = try response.mapString()
-//
-//                print("ReactiveSwift  : \(any) --- \(string)")
-//                
-//                success(any as! Dictionary<String, Any>)
-//             }
-//             catch {
-//
-//            }
-//
-//        case let .failed(error):
-//            print(error)
-//            failure(error)
-//        default:
-//            break
-//        }
-//    }
-//
-////    request.dispose()   释放信号
-//
-//    return request
-//}
-//
-//
+public enum TZMethod {
+    case get,post,put,delete
+    var method:Moya.Method{
+        switch self {
+        case .get:
+           return .get
+        case .put:
+           return .put
+        case .delete:
+           return .delete
+        default:
+           return .post
+        }
+    }
+}
+
+@discardableResult
+public func TZRequest(_ name: String, method:TZMethod = .post, bodyDict: Dictionary<String, Any>? = nil, show: Bool = true,logError:Bool = true,completion: @escaping SuccessCompletion)-> Cancellable? {
+    
+    let request = MyAPIProvider.request(.request(APIName: name, method: method.method, body: bodyDict, isShow: show)) { result in
+        
+        switch result {
+        case let .success(moyaResponse):
+            
+            if moyaResponse.statusCode == 200, let code = JSON(moyaResponse.data)["code"].int {
+                switch code {
+                case code_succes:
+                    if let  dic = JSON(moyaResponse.data).dictionaryObject {
+                        completion(dic,code)
+                    }
+                default:
+                    if let  dic = JSON(moyaResponse.data).dictionaryObject {
+                        if dic["code"] as! Int == 103 || dic["code"] as! Int == 402 {
+                            //需要去登录
+                            let rootVC = BaseNavigationController.init(rootViewController:LoginVC())
+                            rootVC.modalPresentationStyle = .fullScreen
+                            rootVC.view.makeToast("亲请重新登录！", duration: 0.35, position: .center)
+                            TabBarObject.shareInstance.tabBarController.present(rootVC, animated: true, completion: nil)
+                            UserInfoModel.removeUserInfo()
+                            completion(nil,-1)
+                            
+                        }else{
+                            completion(dic,code)
+                        }
+                        if logError {
+                            MBProgressHUD.showError(JSON(moyaResponse.data)["msg"].stringValue, to: keywindow)
+                        }
+                    }
+                }
+            }else {
+                completion(nil,-1)
+                MBProgressHUD.showError("请求失败,请重试", to: keywindow)
+            }
+            break
+        case .failure(_):
+            MBProgressHUD.showError("系统异常,请重试", to: keywindow)
+            completion(nil,-1)
+            break
+        }
+        
+    }
+    return request
+
+}
+
+
+
 //// MARK: -创建一个RxSwiftMoyaProvider请求
 //func sendRxSwiftRequest(_ name: String, touch:Bool? = true, show: Bool? = true, titleString: String? = nil, postDict: Dictionary<String, Any>? = nil,
 //                              success:@escaping (Dictionary<String, Any>)->(),
@@ -438,139 +328,12 @@ public func sendPostRequest(_ name: String, touch:Bool? = true, show: Bool? = tr
 //    return request as? Disposable
 //}
 
-// MARK: -Alamofire原生用法
-func sendAlamofireRequest(){
-        //POST request
-    let postsEndpoint: String = "http://ny.gx10010.com/mobile-service/mapp/json_in_plain.do"
-    let jsonDic = ["msg":"{\"@class\":\"com.ailk.gx.mapp.model.GXCDatapackage\",\"header\":{\"@class\":\"com.ailk.gx.mapp.model.GXCHeader\",\"bizCode\":\"cg0004\",\"identityId\":null,\"respCode\":null,\"respMsg\":null,\"mode\":\"1\",\"sign\":null},\"body\":{\n  \"expand\" : null,\n  \"@class\" : \"com.ailk.gx.mapp.model.req.CG0004Request\",\n  \"phoneNo\" : \"13213451345\"\n}}"]
-    Alamofire.request(postsEndpoint, method: .post, parameters: jsonDic, encoding: URLEncoding.default,headers:[
-        "Content-Type" : "application/x-www-form-urlencoded",
-        "COOKIE" : "",
-        "Accept": "application/json;application/octet-stream;text/html,text/json;text/plain;text/javascript;text/xml;application/x-www-form-urlencoded;image/png;image/jpeg;image/jpg;image/gif;image/bmp;image/*"
-        ]).responseJSON { response in
-            //do something with response
-
-            print("Alamofire 原生 \(response)")
-        }.responseString { (responseString) in
-             print("Alamofire 原生 \(responseString)")
-    }
-}
 
 
-func configureAlamofireManager() {
-    let manager = Manager.default
-    manager.delegate.sessionDidReceiveChallenge = { session, challenge in
-        var disposition: URLSession.AuthChallengeDisposition = .performDefaultHandling
-        var credential: URLCredential?
-        
-        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
-            disposition = URLSession.AuthChallengeDisposition.useCredential
-            credential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
-        } else {
-            if challenge.previousFailureCount > 0 {
-                disposition = .cancelAuthenticationChallenge
-            } else {
-                credential = manager.session.configuration.urlCredentialStorage?.defaultCredential(for: challenge.protectionSpace)
-                
-                if credential != nil {
-                    disposition = .useCredential
-                }
-            }
-        }
-        return (disposition, credential)
-    }
-}
 
-//客户端,服务端证书双向认证
-func twoAlamofireManager() {
-    //认证相关设置
-    let manager = SessionManager.default
-    manager.delegate.sessionDidReceiveChallenge = { session, challenge in
-        //认证服务器证书
-        if challenge.protectionSpace.authenticationMethod
-            == NSURLAuthenticationMethodServerTrust {
-            print("服务端证书认证！")
-            let serverTrust:SecTrust = challenge.protectionSpace.serverTrust!
-            let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0)!
-            let remoteCertificateData
-                = CFBridgingRetain(SecCertificateCopyData(certificate))!
-            let cerPath = Bundle.main.path(forResource: "tomcat", ofType: "cer")!
-            let cerUrl = URL(fileURLWithPath:cerPath)
-            let localCertificateData = try! Data(contentsOf: cerUrl)
-            
-            if (remoteCertificateData.isEqual(localCertificateData) == true) {
-                
-                let credential = URLCredential(trust: serverTrust)
-                challenge.sender?.use(credential, for: challenge)
-                return (URLSession.AuthChallengeDisposition.useCredential,
-                        URLCredential(trust: challenge.protectionSpace.serverTrust!))
-                
-            } else {
-                return (.cancelAuthenticationChallenge, nil)
-            }
-        }
-            //认证客户端证书
-        else if challenge.protectionSpace.authenticationMethod
-            == NSURLAuthenticationMethodClientCertificate {
-            print("客户端证书认证！")
-            //获取客户端证书相关信息
-            let identityAndTrust:IdentityAndTrust = extractIdentity();
-            
-            let urlCredential:URLCredential = URLCredential(
-                identity: identityAndTrust.identityRef,
-                certificates: identityAndTrust.certArray as? [AnyObject],
-                persistence: URLCredential.Persistence.forSession);
-            
-            return (.useCredential, urlCredential);
-        }
-            // 其它情况（不接受认证）
-        else {
-            print("其它情况（不接受认证）")
-            return (.cancelAuthenticationChallenge, nil)
-        }
-    }
-    
-   
-}
 
-//客户端证书单向认证
-func alamofireManager() {
-     //自签名网站地址
-    let selfSignedHosts = ["192.168.1.112", "www.hangge.com"]
-    //认证相关设置
-    let manager = SessionManager.default
-    manager.delegate.sessionDidReceiveChallenge = { session, challenge in
-        //认证服务器（这里不使用服务器证书认证，只需地址是我们定义的几个地址即可信任）
-        if challenge.protectionSpace.authenticationMethod
-            == NSURLAuthenticationMethodServerTrust
-            && selfSignedHosts.contains(challenge.protectionSpace.host) {
-            print("服务器认证！")
-            let credential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
-            return (.useCredential, credential)
-        }
-            //认证客户端证书
-        else if challenge.protectionSpace.authenticationMethod
-            == NSURLAuthenticationMethodClientCertificate {
-            print("客户端证书认证！")
-            //获取客户端证书相关信息
-            let identityAndTrust:IdentityAndTrust = extractIdentity();
-            
-            let urlCredential:URLCredential = URLCredential(
-                identity: identityAndTrust.identityRef,
-                certificates: identityAndTrust.certArray as? [AnyObject],
-                persistence: URLCredential.Persistence.forSession);
-            
-            return (.useCredential, urlCredential);
-        }
-            // 其它情况（不接受认证）
-        else {
-            print("其它情况（不接受认证）")
-            return (.cancelAuthenticationChallenge, nil)
-        }
-    }
-    
-    
-}
+
+
 
 //获取客户端证书相关信息
 func extractIdentity() -> IdentityAndTrust {

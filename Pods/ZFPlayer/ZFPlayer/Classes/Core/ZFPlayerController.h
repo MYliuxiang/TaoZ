@@ -436,37 +436,74 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)zf_filterShouldPlayCellWhileScrolling:(void (^ __nullable)(NSIndexPath *indexPath))handler;
 
 /**
- Play the indexPath of url, while the `assetURLs` or `sectionAssetURLs` is not NULL.
-
+ Play the indexPath of url without scroll postion,  while the `assetURLs` or `sectionAssetURLs` is not NULL.
+ 
  @param indexPath Play the indexPath of url.
  */
 - (void)playTheIndexPath:(NSIndexPath *)indexPath;
 
 /**
- Play the indexPath of url ,while the `assetURLs` or `sectionAssetURLs` is not NULL.
- 
- @param indexPath Play the indexPath of url
- @param scrollToTop Scroll the current cell to top with animations.
+ Play the indexPath of url, while the `assetURLs` or `sectionAssetURLs` is not NULL.
+
+ @param indexPath Play the indexPath of url.
+ @param scrollPosition scroll position.
+ @param animated scroll animation.
  */
-- (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop;
+- (void)playTheIndexPath:(NSIndexPath *)indexPath
+          scrollPosition:(ZFPlayerScrollViewScrollPosition)scrollPosition
+                animated:(BOOL)animated;
 
 /**
- Play the indexPath of url ,while the `assetURLs` or `sectionAssetURLs` is not NULL.
+ Play the indexPath of url with scroll postion, while the `assetURLs` or `sectionAssetURLs` is not NULL.
+ 
+ @param indexPath Play the indexPath of url.
+ @param scrollPosition scroll position.
+ @param animated scroll animation.
+ @param completionHandler Scroll completion callback.
+ */
+- (void)playTheIndexPath:(NSIndexPath *)indexPath
+          scrollPosition:(ZFPlayerScrollViewScrollPosition)scrollPosition
+                animated:(BOOL)animated
+       completionHandler:(void (^ __nullable)(void))completionHandler;
+
+
+/**
+ Play the indexPath of url with scroll postion.
  
  @param indexPath Play the indexPath of url
  @param assetURL The player URL.
- @param scrollToTop Scroll the current cell to top with animations.
  */
-- (void)playTheIndexPath:(NSIndexPath *)indexPath assetURL:(NSURL *)assetURL scrollToTop:(BOOL)scrollToTop;
+- (void)playTheIndexPath:(NSIndexPath *)indexPath assetURL:(NSURL *)assetURL;
+
 
 /**
- Play the indexPath of url ,while the `assetURLs` or `sectionAssetURLs` is not NULL.
+ Play the indexPath of url with scroll postion.
  
  @param indexPath Play the indexPath of url
- @param scrollToTop scroll the current cell to top with animations.
+ @param assetURL The player URL.
+ @param scrollPosition  scroll position.
+ @param animated scroll animation.
+ */
+- (void)playTheIndexPath:(NSIndexPath *)indexPath
+                assetURL:(NSURL *)assetURL
+          scrollPosition:(ZFPlayerScrollViewScrollPosition)scrollPosition
+                animated:(BOOL)animated;
+
+/**
+ Play the indexPath of url with scroll postion.
+ 
+ @param indexPath Play the indexPath of url
+ @param assetURL The player URL.
+ @param scrollPosition  scroll position.
+ @param animated scroll animation.
  @param completionHandler Scroll completion callback.
  */
-- (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop completionHandler:(void (^ __nullable)(void))completionHandler;
+- (void)playTheIndexPath:(NSIndexPath *)indexPath
+                assetURL:(NSURL *)assetURL
+          scrollPosition:(ZFPlayerScrollViewScrollPosition)scrollPosition
+                animated:(BOOL)animated
+       completionHandler:(void (^ __nullable)(void))completionHandler;
+
 
 @end
 
@@ -483,6 +520,32 @@ NS_ASSUME_NONNULL_BEGIN
  @param containerView The playerView containerView.
  */
 - (void)updateNoramlPlayerWithContainerView:(UIView *)containerView __attribute__((deprecated("use `addPlayerViewToContainerView:` instead.")));
+
+/**
+ Play the indexPath of url ,while the `assetURLs` or `sectionAssetURLs` is not NULL.
+ 
+ @param indexPath Play the indexPath of url
+ @param scrollToTop Scroll the current cell to top with animations.
+ */
+- (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop  __attribute__((deprecated("use `playTheIndexPath:scrollPosition:animated:` instead.")));
+
+/**
+ Play the indexPath of url with scroll postion.
+ 
+ @param indexPath Play the indexPath of url
+ @param assetURL The player URL.
+ @param scrollToTop Scroll the current cell to top with animations.
+ */
+- (void)playTheIndexPath:(NSIndexPath *)indexPath assetURL:(NSURL *)assetURL scrollToTop:(BOOL)scrollToTop  __attribute__((deprecated("use `playTheIndexPath:assetURL:scrollPosition:animated:` instead.")));
+
+/**
+ Play the indexPath of url ,while the `assetURLs` or `sectionAssetURLs` is not NULL.
+ 
+ @param indexPath Play the indexPath of url
+ @param scrollToTop scroll the current cell to top with animations.
+ @param completionHandler Scroll completion callback.
+ */
+- (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop completionHandler:(void (^ __nullable)(void))completionHandler  __attribute__((deprecated("use `playTheIndexPath:scrollPosition:animated:completionHandler:` instead.")));
 
 @end
 

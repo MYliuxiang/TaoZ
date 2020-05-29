@@ -40,7 +40,8 @@
 
 @implementation UIScrollView (ZFPlayer)
 
-+ (void)load {
++ (void)initialize {
+    [super initialize];
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         SEL selectors[] = {
@@ -73,6 +74,7 @@
 #pragma mark - private method
 
 - (void)_scrollViewDidStopScroll {
+    self.zf_scrollDirection = ZFPlayerScrollDirectionNone;
     @weakify(self)
     [self zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath * _Nonnull indexPath) {
         @strongify(self)
@@ -587,23 +589,74 @@
     return nil;
 }
 
-- (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath completionHandler:(void (^ __nullable)(void))completionHandler {
-    [self zf_scrollToRowAtIndexPath:indexPath animated:YES completionHandler:completionHandler];
+/**
+Scroll to indexPath with position.
+ 
+@param indexPath scroll the  indexPath.
+@param scrollPosition  scrollView scroll position.
+@param animated animate.
+@param completionHandler  Scroll completion callback.
+*/
+- (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath
+                 atScrollPosition:(ZFPlayerScrollViewScrollPosition)scrollPosition
+                         animated:(BOOL)animated
+                completionHandler:(void (^ __nullable)(void))completionHandler {
+    [self zf_scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animateDuration:animated ? 0.4 : 0.0 completionHandler:completionHandler];
 }
 
-- (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated completionHandler:(void (^ __nullable)(void))completionHandler {
-    [self zf_scrollToRowAtIndexPath:indexPath animateWithDuration:animated ? 0.4 : 0.0 completionHandler:completionHandler];
-}
-
-/// Scroll to indexPath with animations duration.
-- (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath animateWithDuration:(NSTimeInterval)duration completionHandler:(void (^ __nullable)(void))completionHandler {
+- (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath
+                 atScrollPosition:(ZFPlayerScrollViewScrollPosition)scrollPosition
+                  animateDuration:(NSTimeInterval)duration
+                completionHandler:(void (^ __nullable)(void))completionHandler {
     BOOL animated = duration > 0.0;
     if ([self _isTableView]) {
         UITableView *tableView = (UITableView *)self;
-        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:animated];
+        UITableViewScrollPosition tableScrollPosition = UITableViewScrollPositionNone;
+        if (scrollPosition <= ZFPlayerScrollViewScrollPositionBottom) {
+            tableScrollPosition = (UITableViewScrollPosition)scrollPosition;
+        }
+        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:tableScrollPosition animated:animated];
     } else if ([self _isCollectionView]) {
         UICollectionView *collectionView = (UICollectionView *)self;
-        [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionTop animated:animated];
+        if (self.zf_scrollViewDirection == ZFPlayerScrollViewDirectionVertical) {
+            UICollectionViewScrollPosition collectionScrollPosition = UICollectionViewScrollPositionNone;
+            switch (scrollPosition) {
+                case ZFPlayerScrollViewScrollPositionNone:
+                    collectionScrollPosition = UICollectionViewScrollPositionNone;
+                    break;
+                case ZFPlayerScrollViewScrollPositionTop:
+                    collectionScrollPosition = UICollectionViewScrollPositionTop;
+                    break;
+                case ZFPlayerScrollViewScrollPositionCenteredVertically:
+                    collectionScrollPosition = UICollectionViewScrollPositionCenteredVertically;
+                    break;
+                case ZFPlayerScrollViewScrollPositionBottom:
+                    collectionScrollPosition = UICollectionViewScrollPositionBottom;
+                    break;
+                default:
+                    break;
+            }
+            [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:collectionScrollPosition animated:animated];
+        } else if (self.zf_scrollViewDirection == ZFPlayerScrollViewDirectionHorizontal) {
+            UICollectionViewScrollPosition collectionScrollPosition = UICollectionViewScrollPositionNone;
+            switch (scrollPosition) {
+                case ZFPlayerScrollViewScrollPositionNone:
+                    collectionScrollPosition = UICollectionViewScrollPositionNone;
+                    break;
+                case ZFPlayerScrollViewScrollPositionLeft:
+                    collectionScrollPosition = UICollectionViewScrollPositionLeft;
+                    break;
+                case ZFPlayerScrollViewScrollPositionCenteredHorizontally:
+                    collectionScrollPosition = UICollectionViewScrollPositionCenteredHorizontally;
+                    break;
+                case ZFPlayerScrollViewScrollPositionRight:
+                    collectionScrollPosition = UICollectionViewScrollPositionRight;
+                    break;
+                default:
+                    break;
+            }
+            [collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:collectionScrollPosition animated:animated];
+        }
     }
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if (completionHandler) completionHandler();
@@ -910,6 +963,21 @@
 
 - (void)setZf_shouldPlayIndexPathCallback:(void (^)(NSIndexPath * _Nonnull))zf_shouldPlayIndexPathCallback {
     objc_setAssociatedObject(self, @selector(zf_shouldPlayIndexPathCallback), zf_shouldPlayIndexPathCallback, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+#pragma mark - method
+
+- (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath completionHandler:(void (^ __nullable)(void))completionHandler {
+    [self zf_scrollToRowAtIndexPath:indexPath animated:YES completionHandler:completionHandler];
+}
+
+- (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath animated:(BOOL)animated completionHandler:(void (^ __nullable)(void))completionHandler {
+    [self zf_scrollToRowAtIndexPath:indexPath animateWithDuration:animated ? 0.4 : 0.0 completionHandler:completionHandler];
+}
+
+/// Scroll to indexPath with animations duration.
+- (void)zf_scrollToRowAtIndexPath:(NSIndexPath *)indexPath animateWithDuration:(NSTimeInterval)duration completionHandler:(void (^ __nullable)(void))completionHandler {
+    [self zf_scrollToRowAtIndexPath:indexPath atScrollPosition:ZFPlayerScrollViewScrollPositionTop animateDuration:duration completionHandler:completionHandler];
 }
 
 @end

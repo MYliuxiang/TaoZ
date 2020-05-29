@@ -169,7 +169,7 @@ extension String {
     /// - Returns: Bool
     func isIncludeChineseIn() -> Bool {
         
-        for (_, value) in self.characters.enumerated() {
+        for (_, value) in self.enumerated() {
             
             if ("\u{4E00}" <= value  && value <= "\u{9FA5}") {
                 return true
@@ -244,8 +244,8 @@ extension String {
         for i in 0 ..< digestLen {
             hash.appendFormat("%02x", result[i])
         }
-        result.deinitialize()
-        
+        result.deinitialize(count: digestLen)
+
         return String(format: hash as String)
     }
 }
