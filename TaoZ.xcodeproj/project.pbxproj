@@ -119,6 +119,10 @@
 		2283A97C246AAD70001A5B65 /* CustomerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2283A97A246AAD70001A5B65 /* CustomerVC.xib */; };
 		2283A980246AAEB0001A5B65 /* MyWalletVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2283A97E246AAEB0001A5B65 /* MyWalletVC.swift */; };
 		2283A981246AAEB0001A5B65 /* MyWalletVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2283A97F246AAEB0001A5B65 /* MyWalletVC.xib */; };
+		2292E6212486319C006ACF8B /* ForgetPwVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E61F2486319C006ACF8B /* ForgetPwVC.swift */; };
+		2292E6222486319C006ACF8B /* ForgetPwVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2292E6202486319C006ACF8B /* ForgetPwVC.xib */; };
+		2292E625248648DE006ACF8B /* NotificationCenter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E624248648DE006ACF8B /* NotificationCenter+Extension.swift */; };
+		2292E6282486514F006ACF8B /* BlankpageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2292E6272486514F006ACF8B /* BlankpageHelper.swift */; };
 		229FE1A6243F07EB003160CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229FE1A5243F07EB003160CF /* AppDelegate.swift */; };
 		229FE1AD243F07EB003160CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229FE1AB243F07EB003160CF /* Main.storyboard */; };
 		229FE1AF243F07ED003160CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229FE1AE243F07ED003160CF /* Assets.xcassets */; };
@@ -318,6 +322,10 @@
 		2283A97A246AAD70001A5B65 /* CustomerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerVC.xib; sourceTree = "<group>"; };
 		2283A97E246AAEB0001A5B65 /* MyWalletVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWalletVC.swift; sourceTree = "<group>"; };
 		2283A97F246AAEB0001A5B65 /* MyWalletVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyWalletVC.xib; sourceTree = "<group>"; };
+		2292E61F2486319C006ACF8B /* ForgetPwVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPwVC.swift; sourceTree = "<group>"; };
+		2292E6202486319C006ACF8B /* ForgetPwVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPwVC.xib; sourceTree = "<group>"; };
+		2292E624248648DE006ACF8B /* NotificationCenter+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationCenter+Extension.swift"; sourceTree = "<group>"; };
+		2292E6272486514F006ACF8B /* BlankpageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlankpageHelper.swift; sourceTree = "<group>"; };
 		229FE1A2243F07EB003160CF /* TaoZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaoZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		229FE1A5243F07EB003160CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		229FE1AC243F07EB003160CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -670,6 +678,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		2292E6262486514F006ACF8B /* BlankpageHelper */ = {
+			isa = PBXGroup;
+			children = (
+				2292E6272486514F006ACF8B /* BlankpageHelper.swift */,
+			);
+			path = BlankpageHelper;
+			sourceTree = "<group>";
+		};
 		229FE199243F07EB003160CF = {
 			isa = PBXGroup;
 			children = (
@@ -762,6 +778,7 @@
 		229FE1E0243F0D56003160CF /* GlobalTools */ = {
 			isa = PBXGroup;
 			children = (
+				2292E624248648DE006ACF8B /* NotificationCenter+Extension.swift */,
 				229FE1E1243F0D56003160CF /* UIColor+Extension.swift */,
 				229FE1E2243F0D56003160CF /* YMKReachability.swift */,
 				229FE1E3243F0D56003160CF /* Date+Extension.swift */,
@@ -819,6 +836,8 @@
 				2282491024765E5500B30C25 /* VerificationCodeVC.xib */,
 				226468DA2477E21B00207687 /* PasswordLoginVC.swift */,
 				226468DB2477E21B00207687 /* PasswordLoginVC.xib */,
+				2292E61F2486319C006ACF8B /* ForgetPwVC.swift */,
+				2292E6202486319C006ACF8B /* ForgetPwVC.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -935,6 +954,7 @@
 		22D068922463F6D8002BBBB5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2292E6262486514F006ACF8B /* BlankpageHelper */,
 				22D0689C2463F6F9002BBBB5 /* PayHelper */,
 				22D068992463F6F3002BBBB5 /* ThirdloginHelper */,
 				22D068962463F6EA002BBBB5 /* ShareHelper */,
@@ -1152,6 +1172,7 @@
 				2283A935246A54B6001A5B65 /* MeCell.xib in Resources */,
 				2237717F24640BB100C5AFDF /* PriVatePhotoSubVC.xib in Resources */,
 				2227FA212480DE3A003768F7 /* success@2x.png in Resources */,
+				2292E6222486319C006ACF8B /* ForgetPwVC.xib in Resources */,
 				2266B36424664DAF009675D8 /* LxBrowser.xib in Resources */,
 				2283A978246AAD55001A5B65 /* SetVC.xib in Resources */,
 				223ACE5C246E8A6A003788C7 /* FollowCell.xib in Resources */,
@@ -1387,6 +1408,7 @@
 				226EA09124504D1200DE3640 /* VolumeCongit.swift in Sources */,
 				226468DC2477E21B00207687 /* PasswordLoginVC.swift in Sources */,
 				22D068A92463F856002BBBB5 /* ShareItem.swift in Sources */,
+				2292E625248648DE006ACF8B /* NotificationCenter+Extension.swift in Sources */,
 				229FE1EC243F0D56003160CF /* UIColor+Extension.swift in Sources */,
 				22D068AB2463F856002BBBB5 /* ShareItemCell.swift in Sources */,
 				2266B39424665B19009675D8 /* SKActionView.swift in Sources */,
@@ -1443,6 +1465,7 @@
 				225F7C69246503E1001B15E2 /* VideoCell.swift in Sources */,
 				229FE1F6243F0D56003160CF /* YMKBasicTool.swift in Sources */,
 				229FE1A6243F07EB003160CF /* AppDelegate.swift in Sources */,
+				2292E6212486319C006ACF8B /* ForgetPwVC.swift in Sources */,
 				2283A944246A78BA001A5B65 /* PersonalTextFieldCell.swift in Sources */,
 				229FE22B243F10F5003160CF /* AppService.swift in Sources */,
 				2266B39724665B19009675D8 /* SKCacheable.swift in Sources */,
@@ -1466,6 +1489,7 @@
 				2227FA1D2480DE3A003768F7 /* UIViewController+HUD.m in Sources */,
 				22B503532465382500348E05 /* DiscoverModel.swift in Sources */,
 				229FE232243F1114003160CF /* TabBarBasicContentView.swift in Sources */,
+				2292E6282486514F006ACF8B /* BlankpageHelper.swift in Sources */,
 				2283A934246A54B6001A5B65 /* MeCell.swift in Sources */,
 				2266B38424665B19009675D8 /* SKMesurement.swift in Sources */,
 				2266B38524665B19009675D8 /* SKZoomingScrollView.swift in Sources */,

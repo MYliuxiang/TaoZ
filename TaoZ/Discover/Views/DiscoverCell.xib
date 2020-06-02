@@ -23,16 +23,15 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L62-ma-1GT">
-                        <rect key="frame" x="257" y="21" width="48" height="28"/>
-                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L62-ma-1GT">
+                        <rect key="frame" x="253" y="21" width="52" height="28"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="28" id="wBr-dC-SbV"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                         <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                        <state key="normal" title="...">
-                            <color key="titleColor" red="1" green="0.56862745100000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" image="dynamic_icon_share">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="am9-72-oKJ">
@@ -44,9 +43,9 @@
                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PvP-ui-pej">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dynamic_icon_vip" translatesAutoresizingMaskIntoConstraints="NO" id="PvP-ui-pej">
                         <rect key="frame" x="137" y="20.5" width="16" height="12"/>
-                        <color key="backgroundColor" red="0.95294117649999999" green="0.35686274509999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="5D2-QI-hhq"/>
                             <constraint firstAttribute="width" constant="16" id="gOg-DZ-Fs6"/>
@@ -129,6 +128,12 @@
                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3G-vq-MKT">
+                        <rect key="frame" x="65" y="62" width="240" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="vuq-cN-H5v" firstAttribute="centerY" secondItem="Joz-dQ-E84" secondAttribute="centerY" id="1dL-aG-k8V"/>
@@ -137,14 +142,17 @@
                     <constraint firstItem="9yP-hX-X9j" firstAttribute="centerY" secondItem="04V-rq-Rfm" secondAttribute="centerY" id="7Vk-C2-fRk"/>
                     <constraint firstItem="am9-72-oKJ" firstAttribute="centerY" secondItem="tCc-c6-LM1" secondAttribute="centerY" id="AWA-Lb-jF7"/>
                     <constraint firstItem="04V-rq-Rfm" firstAttribute="leading" secondItem="Joz-dQ-E84" secondAttribute="leading" id="Ae8-76-wtG"/>
+                    <constraint firstItem="L62-ma-1GT" firstAttribute="trailing" secondItem="q3G-vq-MKT" secondAttribute="trailing" id="BGE-0O-mrD"/>
                     <constraint firstItem="vuq-cN-H5v" firstAttribute="leading" secondItem="Joz-dQ-E84" secondAttribute="trailing" constant="5" id="E0L-qJ-8fo"/>
                     <constraint firstItem="pme-QF-WDZ" firstAttribute="centerY" secondItem="04V-rq-Rfm" secondAttribute="centerY" id="Fbr-2y-L9z"/>
                     <constraint firstItem="fsx-Lv-ORK" firstAttribute="centerY" secondItem="04V-rq-Rfm" secondAttribute="centerY" id="G9w-JK-afr"/>
                     <constraint firstItem="Joz-dQ-E84" firstAttribute="leading" secondItem="tCc-c6-LM1" secondAttribute="leading" id="LEv-Qj-dnT"/>
+                    <constraint firstItem="q3G-vq-MKT" firstAttribute="top" secondItem="Joz-dQ-E84" secondAttribute="bottom" constant="10" id="OOy-Ko-OGv"/>
                     <constraint firstItem="am9-72-oKJ" firstAttribute="leading" secondItem="tCc-c6-LM1" secondAttribute="trailing" constant="5" id="RAq-5C-q4Q"/>
                     <constraint firstItem="fN1-u4-I3C" firstAttribute="leading" secondItem="pme-QF-WDZ" secondAttribute="trailing" constant="20" id="Rhr-Bi-aUC"/>
                     <constraint firstItem="pme-QF-WDZ" firstAttribute="leading" secondItem="04V-rq-Rfm" secondAttribute="trailing" constant="5" id="Slc-sQ-RpD"/>
                     <constraint firstItem="X0W-Vx-HBi" firstAttribute="leading" secondItem="b91-WS-0uf" secondAttribute="trailing" constant="20" id="WWM-c5-kUk"/>
+                    <constraint firstItem="q3G-vq-MKT" firstAttribute="leading" secondItem="Joz-dQ-E84" secondAttribute="leading" id="aFj-MQ-je9"/>
                     <constraint firstItem="mbm-oz-DBd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="asp-7z-lbq"/>
                     <constraint firstItem="b91-WS-0uf" firstAttribute="leading" secondItem="fN1-u4-I3C" secondAttribute="trailing" constant="5" id="fCh-2O-fsa"/>
                     <constraint firstItem="mbm-oz-DBd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="fIE-T5-9Am"/>
@@ -164,8 +172,13 @@
             <connections>
                 <outlet property="avtorImg" destination="mbm-oz-DBd" id="3g2-mf-wez"/>
                 <outlet property="callBtn" destination="9yP-hX-X9j" id="Det-VJ-WOA"/>
+                <outlet property="contentL" destination="q3G-vq-MKT" id="hk5-rp-gC3"/>
             </connections>
             <point key="canvasLocation" x="75" y="96"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="dynamic_icon_share" width="20" height="20"/>
+        <image name="dynamic_icon_vip" width="18" height="18"/>
+    </resources>
 </document>

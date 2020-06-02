@@ -36,6 +36,7 @@ class HomeVC: BaseViewController {
         dataSource.isItemSpacingAverageEnabled = false
         segmentedView.dataSource = dataSource
         segmentedView.contentEdgeInsetLeft = 15
+        segmentedView.defaultSelectedIndex = 1
 
                
         let lineView = JXSegmentedIndicatorLineView()

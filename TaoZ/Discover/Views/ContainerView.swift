@@ -29,13 +29,11 @@ import Kingfisher
                 return
             }
                
-            var itemW = tz_itemWidthForPicPathArray(array: tz_picPathStringsArray!)
+            let itemW = tz_itemWidthForPicPathArray(array: tz_picPathStringsArray!)
             var itemH = 0.0
             if tz_picPathStringsArray!.count == 1 {
-                let image = UIImage(named: tz_picPathStringsArray?.first ?? "")
-//                if image?.size.width {
-//
-//                }
+                _ = UIImage(named: tz_picPathStringsArray?.first ?? "")
+
                 
             }else{
                 itemH = itemW

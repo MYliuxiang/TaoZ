@@ -52,7 +52,7 @@ extension UserInfoModel {
          UserDefaults.standard.set(modelData, forKey: userDefaults_userInfo)
          UserDefaults.standard.set(true, forKey: isLogin)
          UserDefaults.standard.synchronize()
-         
+         NotificationCenter.post(name: .loginSuccess)
      }
     
     class func loadUserInfo() -> UserInfoModel? {
@@ -72,6 +72,8 @@ extension UserInfoModel {
         UserDefaults.standard.set(nil, forKey: userDefaults_userInfo)
         UserDefaults.standard.set(false, forKey: isLogin)
         UserDefaults.standard.synchronize()
+        NotificationCenter.post(name: .logout)
+
 //        AppService.shareInstance.unBind_cloudPush_account()//解绑阿里云推送账号
         
     }

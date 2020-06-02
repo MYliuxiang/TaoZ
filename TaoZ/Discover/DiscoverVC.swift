@@ -47,6 +47,12 @@ class DiscoverVC: BaseViewController {
                         
                segmentedView.listContainer = listContainerView
                       view.addSubview(listContainerView)
+        //dynamic_icon_ information
+        
+        add_rightButton( imageString: "dynamic_icon_ information") {
+            
+        }
+       
     }
 
     override func viewDidLayoutSubviews() {
@@ -92,6 +98,7 @@ extension DiscoverVC: JXSegmentedListContainerViewDataSource {
     func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
         
         let vc = DiscoverSubVC()
+        vc.type = index
         return vc
        
     }

@@ -15,7 +15,7 @@ import UIKit
 //@_exported import HandyJSON
 @_exported import Kingfisher
 @_exported import SnapKit
-//@_exported import LXFProtocolTool
+@_exported import LXFProtocolTool
 @_exported import SwiftyJSON
 //@_exported import TextAttributes
 @_exported import RxSwift
@@ -105,4 +105,13 @@ let color_6 = UIColor.colorWithHexStr("#666666")
 let color_9 = UIColor.colorWithHexStr("#999999")
 
 
+//通知
+enum NotificationName: String {
+    case loginSuccess// 用户登录成功
+    case logout // 用户退出登录
+    case launchAd  //广告
+    case addCart  //广告
+    case orderFresh
+    case searchOrder
+}
 

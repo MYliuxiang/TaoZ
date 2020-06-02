@@ -30,6 +30,7 @@
 #import <ZFPlayer/ZFAVPlayerManager.h>
 #import <ZFPlayer/UIView+ZFFrame.h>
 #import <ZFPlayer/UIImageView+ZFCache.h>
+#import <MJRefresh/MJRefresh.h>
 
 #import "HWPanModal.h"
 //极光推送

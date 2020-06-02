@@ -136,10 +136,14 @@ extension NetAPIManager: TargetType {
             return .requestParameters(parameters: postDict!, encoding: URLEncoding.default)
         case  .request(_, _, let postDict, _):
             
-            guard postDict != nil else {
-                return .requestPlain
-            }
-            return .requestParameters(parameters: postDict!, encoding: URLEncoding.default)
+//            guard postDict != nil else {
+//                return .requestPlain
+//            }
+            var dic = [String:Any]()
+            dic = postDict ?? [String:Any]()
+            dic["user_id"] = UserInfoModel.loadUserInfo()?.user_id ?? ""
+            
+            return .requestParameters(parameters: dic, encoding: URLEncoding.default)
             
         default:
             let string = "{\"@class\":\"com.ailk.gx.mapp.model.GXCDatapackage\",\"header\":{\"@class\":\"com.ailk.gx.mapp.model.GXCHeader\",\"bizCode\":\"cg0004\",\"identityId\":null,\"respCode\":null,\"respMsg\":null,\"mode\":\"1\",\"sign\":null},\"body\":{\n  \"expand\" : null,\n  \"@class\" : \"com.ailk.gx.mapp.model.req.CG0004Request\",\n  \"phoneNo\" : \"13213451345\"\n}}"

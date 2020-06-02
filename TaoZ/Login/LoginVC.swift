@@ -49,17 +49,16 @@ class LoginVC: BaseViewController {
         
     }
     
+    
+    @IBAction func pwLoginAC(_ sender: Any) {
+        
+        navigationController?.pushViewController(PasswordLoginVC(), animated: true)
+        
+    }
+    
     @IBAction func loaginAC(_ sender: Any) {
         
-       
-//        view.endEditing(true)
-//        if !(phoneTextField.text?.ex_isPhoneNumber ?? false){
-//
-//            MBProgressHUD.showError("请输入正确的手机号码", to: keywindow)
-//            return
-//        }
-        
-        TZRequest(Sms_send, method: .post, bodyDict: ["mobile":phoneTextField.text!,"event":"mobilelogin"]) { (result, code) in
+        TZRequest(url_Sms_send, method: .post, bodyDict: ["mobile":phoneTextField.text!,"event":"mobilelogin"]) { (result, code) in
             if code == 0{
                 let vc = VerificationCodeVC()
                 vc.phoneStr = self.phoneTextField.text!
@@ -93,12 +92,13 @@ class LoginVC: BaseViewController {
             
             let postDic = ["sdkid":(response?.uid)! as String,"type":"wechat","ts":Date().timeStamp]
             
-            TZRequest(User_sdklogin, method: .post ,bodyDict: postDic) { (result, code) in
+            TZRequest(url_User_sdklogin, method: .post ,bodyDict: postDic) { (result, code) in
                 if code == 0{
                     let dic = result!["data"] as? [String:Any]
                     if dic == nil{
                         
                         let vc = BindePhoneVC()
+                        vc.typeStr = "请绑定手机号"
                         vc.type = "wechat"
                         vc.sdkid = (response?.uid)! as String
                         self.navigationController?.pushViewController(vc, animated: true)
@@ -125,9 +125,7 @@ class LoginVC: BaseViewController {
                 }
                 
             }
-            
-            
-            
+                        
         }) { (erroe) in
             
         }

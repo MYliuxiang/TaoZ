@@ -120,7 +120,7 @@ let myNetworkLoggerPlugin = NetworkLoggerPlugin(configuration: NetworkLoggerPlug
 
 
 
-let MyAPIProvider = MoyaProvider<NetAPIManager>(endpointClosure: myEndpointClosure,requestClosure: requestClosure, plugins: [myNetworkLoggerPlugin,myNetworkPlugin])
+let MyAPIProvider = MoyaProvider<NetAPIManager>(endpointClosure: myEndpointClosure,requestClosure: requestClosure, plugins: [myNetworkPlugin])
 
 
 
@@ -255,12 +255,14 @@ public enum TZMethod {
 }
 
 @discardableResult
-public func TZRequest(_ name: String, method:TZMethod = .post, bodyDict: Dictionary<String, Any>? = nil, show: Bool = true,logError:Bool = true,completion: @escaping SuccessCompletion)-> Cancellable? {
+public func TZRequest(_ name: String, method:TZMethod = .post, bodyDict: [String: Any]? = nil, show: Bool = true,logError:Bool = true,completion: @escaping SuccessCompletion)-> Cancellable? {
     
-    let request = MyAPIProvider.request(.request(APIName: name, method: method.method, body: bodyDict, isShow: show)) { result in
+    let target = NetAPIManager.request(APIName: name, method: method.method, body: bodyDict, isShow: show)
+    let request = MyAPIProvider.request(target) { result in
         
         switch result {
         case let .success(moyaResponse):
+             LLog("\n[REQUEST PATH]:\n  \(method):\(moyaResponse.request?.url?.absoluteString ?? "")\n[REQUEST HEADERS]:\n  \(target.headers!)\n[REQUEST BODY]:\n  \(target.task)\n[REQUEST CALLBACK]:\n  [RESULT:\(moyaResponse.statusCode)]\n  \((JSON(moyaResponse.data).dictionary) ?? [:])\n")
             
             if moyaResponse.statusCode == 200, let code = JSON(moyaResponse.data)["code"].int {
                 switch code {

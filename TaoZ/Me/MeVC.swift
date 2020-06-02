@@ -13,14 +13,36 @@ class MeVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var headerView: UIView!
     var titles:[String]?
+    var model:UserInfoModel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navBar.isHidden = true
         // Do any additional setup after loading the view.
+        model = UserInfoModel.loadUserInfo()
         headerView.height = 64 + 44 + 92
         self.tableView.tableHeaderView = headerView
         titles = ["关注","相册","收藏","钱包","作品","动态","客服","设置"]
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
+    }
+    
+    func loadData(){
+        TZRequest(url_user_userinfo, bodyDict: ["user_id":model.user_id ?? "","friend_id":model.user_id ?? ""],show:false) { (result, code) in
+            if code == 0{
+                let dic = result?["data"] as? [String : Any]
+                guard let model = UserInfoModel.deserialize(from: dic?["userInfo"] as? [String:Any]) else {
+                    return
+                }
+                self.model  = model
+                UserInfoModel.saveUserInfo(model)
+                self.tableView.reloadData()
+            }
+        }
+        
     }
 
 

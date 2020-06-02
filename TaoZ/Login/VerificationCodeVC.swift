@@ -68,7 +68,7 @@ class VerificationCodeVC: BaseViewController {
         daojishiAC()
         
 
-        codeTextField.rx.text.orEmpty.throttle(DispatchTimeInterval.seconds(1),scheduler: MainScheduler.instance).subscribe(onNext: { [weak self](text) in
+        codeTextField.rx.text.orEmpty.throttle(DispatchTimeInterval.seconds(1),scheduler: MainScheduler.instance).observeOn(MainScheduler.asyncInstance).subscribe(onNext: { [weak self](text) in
             if text.count == 4{
 //                self?.doneAC()
             }else if text.count > 4{
@@ -98,6 +98,10 @@ class VerificationCodeVC: BaseViewController {
             mobileloginAC()
         }else if type == "sdkbindphone"{
             sdkBindPhone()
+        }else{
+            let vc = ForgetPwVC()
+            vc.phone = phoneStr
+            navigationController?.pushViewController(vc, animated: true)
         }
         
     }
@@ -111,7 +115,7 @@ class VerificationCodeVC: BaseViewController {
         countDownStopped.accept(false)
         
        
-        self.timer.takeUntil(self.countDownStopped.asObservable().filter{$0}).subscribe(onNext: { [weak self](timer) in
+        self.timer.takeUntil(self.countDownStopped.asObservable().filter{$0}).observeOn(MainScheduler.asyncInstance).subscribe(onNext: { [weak self](timer) in
             self?.aginBtn.setTitle("重新发送 (\(5 - timer)s)", for: .normal)
             if timer == 5{
                 self!.countDownStopped.accept(true)
@@ -127,7 +131,7 @@ class VerificationCodeVC: BaseViewController {
     func loadCode(){
         
         
-        TZRequest(Sms_send,bodyDict:["mobile":phoneStr!,"event":type!] ) { (result, code) in
+        TZRequest(url_Sms_send,bodyDict:["mobile":phoneStr!,"event":type!] ) { (result, code) in
             if code == 0{
                 self.daojishiAC()
             }
@@ -148,7 +152,7 @@ class VerificationCodeVC: BaseViewController {
         postDic["sign"] = hmac
         
         
-        TZRequest(User_mobilelogin,bodyDict: postDic) { (result, code) in
+        TZRequest(url_User_mobilelogin,bodyDict: postDic) { (result, code) in
             if code == 0{
                 let dic = result!["data"] as? [String:Any]
                 guard let model = UserInfoModel.deserialize(from: dic?["userinfo"] as? NSDictionary ) else {
@@ -177,10 +181,9 @@ class VerificationCodeVC: BaseViewController {
         view.endEditing(true)
 
         let postDic:[String:String] = ["mobile":phoneStr!,"type":self.sdkType!,"sdkid":self.sdkid!,"ts":Date().timeStamp]
-       
         
         
-        TZRequest(User_sdkbindphone,bodyDict:postDic ) { (result, code) in
+        TZRequest(url_User_sdkbindphone,bodyDict:postDic ) { (result, code) in
             if code == 0{
                 let dic = result!["data"] as? [String:Any]
                 guard let model = UserInfoModel.deserialize(from: dic?["userinfo"] as? NSDictionary ) else {

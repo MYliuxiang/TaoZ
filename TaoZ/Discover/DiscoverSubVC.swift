@@ -9,81 +9,93 @@
 import UIKit
 
 class DiscoverSubVC: BaseViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     var tz_dataList:[DiscoverModel]! = [DiscoverModel]()
+    var pageNum = 1
+    public var type:Int!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navBar.isHidden = true
         // Do any additional setup after loading the view.
-        var model1 = DiscoverModel()
-        model1.type = 0
-        model1.images = ["",""]
-        model1.videopath = "s"
-        
-        var model2 = DiscoverModel()
-        model2.type = 1
-        model2.images = ["",""]
-        model2.videopath = "s"
-        
-        var model3 = DiscoverModel()
-        model3.type = 1
-        model3.images = ["","",""]
-        model3.videopath = "s"
-        
-        
-        var model4 = DiscoverModel()
-        model4.type = 1
-        model4.images = ["","","",""]
-        model4.videopath = "s"
-        
-        
-        var model5 = DiscoverModel()
-        model5.type = 1
-        model5.images = ["https://placehold.jp/151x151.png","https://placehold.jp/151x151.png","https://placehold.jp/151x151.png","https://placehold.jp/151x151.png","https://placehold.jp/151x151.png","https://placehold.jp/151x151.png","https://placehold.jp/151x151.png","https://placehold.jp/151x151.png","https://placehold.jp/151x151.png"]
-        model5.videopath = "s"
-        
-        var model6 = DiscoverModel()
-        model6.type = 1
-        model6.images = ["https://placehold.jp/151x151.png","https://placehold.jp/151x151.png","https://placehold.jp/151x151.png","https://placehold.jp/151x151.png"]
-        model6.videopath = "s"
-        
-        
-        tz_dataList?.append(model1)
-        tz_dataList?.append(model2)
-        tz_dataList?.append(model3)
-        tz_dataList?.append(model4)
-        tz_dataList?.append(model5)
-        tz_dataList?.append(model5)
-        tz_dataList?.append(model5)
-        tz_dataList?.append(model5)
-        tz_dataList?.append(model5)
-        tz_dataList?.append(model5)
-        tz_dataList?.append(model5)
-        tz_dataList?.append(model5)
-        tz_dataList?.append(model6)
-
-
         
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.reloadData()
-
+        
+        
+        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {[weak self] in
+            self?.pageNum = 1
+            self?.load_data()
+        })
+        
+        tableView.mj_footer = MJRefreshBackNormalFooter(refreshingBlock: {[weak self] in
+            self?.load_data()
+        })
+        
+        tableView.mj_header?.beginRefreshing()
+        
+        
+        
     }
-
+    
+    func load_data() {
+        
+        var typeStr = "attention"
+        if type == 1{
+            typeStr = "all"
+        }
+        
+        TZRequest(url_dynamic_selectdynamic,bodyDict: ["type":typeStr,"page":"\(pageNum)","pagesize":"20"],show: false) { (result, code) in
+            if code == 0{
+//                guard let models = [DiscoverModel].deserialize(from: result?["rows"] as? NSArray)  else {
+//                    return
+//                }
+                 let models =  [DiscoverModel].deserialize(from: result?["data"] as? NSArray) as! [DiscoverModel]
+                
+                if self.pageNum == 1 {
+                    
+                    self.tz_dataList = models
+                }else{
+                    self.tz_dataList += models
+                }
+                
+                self.pageNum += 1
+                self.tableView.mj_footer?.endRefreshing()
+                self.tableView.mj_header?.endRefreshing()
+                //                               if self.dataList.count == 0 {
+                //                                   self.tableView.mj_footer?.endRefreshingWithNoMoreData()
+                //                               }
+                
+                
+                //添加空白页
+//                BlankpageHelper.addDateEmpty(self.tableView, config: BlankpageHelper.emptyaSetConfig())
+                self.tableView.reloadData()
+                
+            }else{
+                
+                self.tableView.mj_header?.endRefreshing()
+                self.tableView.mj_footer?.endRefreshing()
+                
+            }
+        
+        
+    }
+    
 }
+}
+
 
 extension DiscoverSubVC: JXSegmentedListContainerViewListDelegate {
     
     func listView() -> UIView {
         return view
     }
-   
+    
     func listScrollView() -> UIScrollView {
         return self.tableView
     }
-
+    
 }
 
 extension DiscoverSubVC: UITableViewDataSource, UITableViewDelegate {
@@ -99,19 +111,19 @@ extension DiscoverSubVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //说明是图片
-            let indentifier = "DiscoverCellID"
-            var cell:DiscoverCell! = tableView.dequeueReusableCell(withIdentifier: indentifier) as? DiscoverCell
-            if cell == nil {
-                cell = Bundle.main.loadNibNamed("DiscoverCell", owner: nil, options: nil)?.last as? DiscoverCell
-                cell.selectionStyle = .none
-                
-            }
-//        cell.model = tz_dataList[indexPath.row]
+        let indentifier = "DiscoverCellID"
+        var cell:DiscoverCell! = tableView.dequeueReusableCell(withIdentifier: indentifier) as? DiscoverCell
+        if cell == nil {
+            cell = Bundle.main.loadNibNamed("DiscoverCell", owner: nil, options: nil)?.last as? DiscoverCell
+            cell.selectionStyle = .none
+            
+        }
+        //        cell.model = tz_dataList[indexPath.row]
         cell.tz_configCell(model: tz_dataList[indexPath.row])
-//        cell.model = "3"
-
+        //        cell.model = "3"
+        
         return cell
-       
+        
         
     }
     
@@ -121,8 +133,8 @@ extension DiscoverSubVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView()
-       
-                
+        
+        
         return view
     }
     
@@ -134,15 +146,15 @@ extension DiscoverSubVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let model = tz_dataList[indexPath.row]
-////        let model = "3"
-//
-//        let height = tableView.cellHeight(for: indexPath, model: model, keyPath:"model", cellClass:DiscoverCell.self , contentViewWidth: ScreenWidth)
-////       let H = Int(self.cellHeight(for: indexPath, cellContentViewWidth: ScreenWidth, tableView: tableView))
-//        return height;
-//    }
+    //
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        let model = tz_dataList[indexPath.row]
+    ////        let model = "3"
+    //
+    //        let height = tableView.cellHeight(for: indexPath, model: model, keyPath:"model", cellClass:DiscoverCell.self , contentViewWidth: ScreenWidth)
+    ////       let H = Int(self.cellHeight(for: indexPath, cellContentViewWidth: ScreenWidth, tableView: tableView))
+    //        return height;
+    //    }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

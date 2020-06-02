@@ -10,6 +10,7 @@ import UIKit
 
 class DiscoverCell: UITableViewCell {
     
+    @IBOutlet weak var contentL: UILabel!
     @IBOutlet weak var callBtn: UIButton!
     
     @IBOutlet weak var avtorImg: UIImageView!
@@ -19,11 +20,7 @@ class DiscoverCell: UITableViewCell {
         {
            didSet{
 
-            containView.sd_layout().topSpaceToView(avtorImg, 10)
-            callBtn.sd_layout()?.topEqualToView(containView)
-               
-            setupAutoHeight(withBottomView: callBtn, bottomMargin: 10)
-           }
+        }
        }
 
     override func awakeFromNib() {
@@ -37,12 +34,29 @@ class DiscoverCell: UITableViewCell {
         
         containView.tz_model = model
         containView.backgroundColor = .red
-               
-        containView.snp.makeConstraints{[weak self](make) in
-                  
-            make.top.equalTo(avtorImg.snp.bottom).offset(10)
-            make.left.equalTo(avtorImg.snp.right).offset(10)
+        if model.content?.count == 0{
+            containView.snp.makeConstraints{(make) in
+                            
+                      make.top.equalTo(avtorImg.snp.bottom).offset(10)
+                      make.left.equalTo(avtorImg.snp.right).offset(10)
+                  }
+            
+        }else{
+            contentL.text = model.content
+            containView.snp.makeConstraints{(make) in
+                            
+                      make.top.equalTo(contentL.snp.bottom).offset(10)
+                      make.left.equalTo(avtorImg.snp.right).offset(10)
+                  }
         }
+               
+//        containView.snp.makeConstraints{(make) in
+//                  
+//            make.top.equalTo(avtorImg.snp.bottom).offset(10)
+//            make.left.equalTo(avtorImg.snp.right).offset(10)
+//        }
+        containView.tz_picPathStringsArray = model.imgArray
+        
         
         self.callBtn.snp.makeConstraints {
             $0.top.equalTo(containView.snp.bottom).offset(10)

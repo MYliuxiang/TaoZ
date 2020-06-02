@@ -14,8 +14,12 @@ class BindePhoneVC: BaseViewController {
     @IBOutlet weak var phonLoginBtn: UIButton!
     @IBOutlet weak var tipLab: UILabel!
     @IBOutlet weak var phoneTextField: LimitedTextField!
+    
+    @IBOutlet weak var titleL: UILabel!
     var sdkid:String?
     var type:String?
+    public var typeStr:String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +27,8 @@ class BindePhoneVC: BaseViewController {
         phonLoginBtn.layer.cornerRadius = 22
         phonLoginBtn.layer.masksToBounds = true
         navBar.isHidden = true
+        
+        titleL.text = typeStr
         
         phoneTextField.rx.text.orEmpty.asObservable()
             .subscribe(onNext: { [weak self] in
@@ -50,7 +56,10 @@ class BindePhoneVC: BaseViewController {
 
     }
 
-   
+    @IBAction func backAC(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func codeAC(_ sender: Any) {
         view.endEditing(true)
         if !(phoneTextField.text?.ex_isPhoneNumber ?? false){
@@ -59,14 +68,31 @@ class BindePhoneVC: BaseViewController {
             return
         }
         
-        TZRequest(Sms_send,bodyDict: ["mobile":phoneTextField.text!,"event":"sdkbindphone"]) { (result, code) in
+        var dic = [String:Any]()
+        if typeStr == "请绑定手机号" {
+            dic = ["mobile":phoneTextField.text!,"event":"sdkbindphone"]
+        }else{
+            dic = ["mobile":phoneTextField.text!,"event":"changepwd"]
+        }
+        
+        TZRequest(url_Sms_send,bodyDict: dic) { (result, code) in
             if code == 0{
-                let vc = VerificationCodeVC()
-                vc.phoneStr = self.phoneTextField.text!
-                vc.type = "sdkbindphone"
-                vc.sdkid = self.sdkid
-                vc.sdkType = self.type
-                self.navigationController?.pushViewController(vc, animated: true)
+                if self.typeStr == "请绑定手机号" {
+                    let vc = VerificationCodeVC()
+                    vc.phoneStr = self.phoneTextField.text!
+                    vc.type = "sdkbindphone"
+                    vc.sdkid = self.sdkid
+                    vc.sdkType = self.type
+                    self.navigationController?.pushViewController(vc, animated: true)
+                }else{
+                    let vc = VerificationCodeVC()
+                    vc.phoneStr = self.phoneTextField.text!
+                    vc.type = "changepwd"
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                    
+                }
+              
             }
         }
         

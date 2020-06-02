@@ -10,10 +10,15 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    public typealias OnClickRightButton = (() -> Void)
+    public typealias OnClickLeftButton = (() -> Void)
+    
     lazy var navBar:WRCustomNavigationBar = WRCustomNavigationBar.init(frame: CGRect.init(x: 0, y: 0, width: ScreenWidth, height: YMKDvice.navBarHeight()))
     
-    var rightButton:UIButton?
-    var onClickRightButton:(()->Void)?
+     var rightButton:UIButton?
+       var onClickRightButton:OnClickRightButton?
+       var leftButton:UIButton?
+       var onClickLeftButton:OnClickLeftButton?
     let dispossBag = DisposeBag()
 
 //    lazy var appNoNetView:AppNoNetView = AppNoNetView(frame: CGRect.init(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight))
@@ -52,7 +57,8 @@ class BaseViewController: UIViewController {
         // 设置自定义导航栏背景颜色
         navBar.barBackgroundColor = .white
         navBar.wr_setBottomLineHidden(true)
-        
+        navBar.titleLabelFont = .systemFont(ofSize: 17)
+        navBar.titleLabelColor = color_3
         
         
         let blurEffect = UIBlurEffect.init(style: .extraLight)
@@ -85,36 +91,62 @@ class BaseViewController: UIViewController {
     }
     
     
-    func add_rightButton(titleString:String,textColor:UIColor,backgroundColor:UIColor,font:UIFont,radius:CGFloat) {
-        
-        self.add_rightButton(titleString: titleString, textColor: textColor, backgroundColor: backgroundColor, font: font, radius: radius, btnWidth: 50, btnHeight: 26)
-    }
-    
-    func add_rightButton(titleString:String,textColor:UIColor,backgroundColor:UIColor,font:UIFont,radius:CGFloat,btnWidth:CGFloat,btnHeight:CGFloat) {
-        
-        self.add_rightButton(titleString: titleString, imageString: "", style: .none, space: 0, textColor: textColor, backgroundColor: backgroundColor, font: font, radius: radius, btnWidth: btnWidth, btnHeight: btnHeight)
-    }
-        
-    func add_rightButton(titleString:String,imageString:String,style:ButtonEdgeInsetsStyle,space:CGFloat,textColor:UIColor,backgroundColor:UIColor,font:UIFont,radius:CGFloat,btnWidth:CGFloat,btnHeight:CGFloat) {
-        
-        rightButton = UIButton(type: .custom)
-        rightButton?.frame = CGRect(x: navBar.width - btnWidth - 15, y: YMKDvice.statusBarHeight() + (44 - btnHeight) / 2.0 , width: btnWidth, height: btnHeight)
-        rightButton?.layer.cornerRadius = radius
-        rightButton?.backgroundColor = backgroundColor
-        rightButton?.setTitleColor(textColor, for: .normal)
-        rightButton?.setTitle(titleString, for: .normal)
-        rightButton?.titleLabel?.font = font
-        rightButton?.setImage(UIImage(named: imageString), for: .normal)
-        rightButton?.addTarget(self, action: #selector(rightButton_action), for: .touchDown)
-        rightButton?.layoutButtonWithEdgeInsetsStyle(style:style, space: space)
-        self.navBar.addSubview(rightButton!)
-    }
-    
-    @objc func rightButton_action() {
-        if onClickRightButton != nil {
-            onClickRightButton!()
-        }
-    }
+    func add_rightButton(titleString:String = "",imageString:String = "",style:ButtonEdgeInsetsStyle = .none,space:CGFloat = 0,textColor:UIColor = color_3,backgroundColor:UIColor = .clear,font:UIFont = UIFont.systemFont(ofSize: 14),radius:CGFloat = 0,btnWidth:CGFloat = 44,btnHeight:CGFloat = 44,onClickRightButton:OnClickRightButton?) {
+           
+           self.onClickRightButton = onClickRightButton
+           rightButton = UIButton(type: .custom)
+           rightButton?.frame = CGRect(x: navBar.width - btnWidth - 10, y: YMKDvice.statusBarHeight() + (44 - btnHeight) / 2.0 , width: btnWidth, height: btnHeight)
+           rightButton?.layer.cornerRadius = radius
+           rightButton?.backgroundColor = backgroundColor
+           rightButton?.setTitleColor(textColor, for: .normal)
+           rightButton?.setTitle(titleString, for: .normal)
+           rightButton?.titleLabel?.font = font
+           rightButton?.setImage(UIImage(named: imageString), for: .normal)
+           rightButton?.addTarget(self, action: #selector(rightButton_action), for: .touchDown)
+           rightButton?.layoutButtonWithEdgeInsetsStyle(style:style, space: space)
+           self.navBar.addSubview(rightButton!)
+       }
+       
+       @objc func rightButton_action() {
+           if onClickRightButton != nil {
+               onClickRightButton!()
+           }
+       }
+       
+       
+       func add_leftButton(titleString:String = "",imageString:String = "",style:ButtonEdgeInsetsStyle = .none,space:CGFloat = 0,textColor:UIColor = color_3,backgroundColor:UIColor = .clear,font:UIFont = UIFont.systemFont(ofSize: 14),radius:CGFloat = 0,btnWidth:CGFloat = 50,btnHeight:CGFloat = 26,onClickLeftButton:OnClickLeftButton?) {
+           
+           self.onClickLeftButton = onClickLeftButton
+           leftButton = UIButton(type: .custom)
+           leftButton?.frame = CGRect(x: 15, y: YMKDvice.statusBarHeight() + (44 - btnHeight) / 2.0 , width: btnWidth, height: btnHeight)
+           leftButton?.layer.cornerRadius = radius
+           leftButton?.backgroundColor = backgroundColor
+           leftButton?.setTitleColor(textColor, for: .normal)
+           leftButton?.setTitle(titleString, for: .normal)
+           leftButton?.titleLabel?.font = font
+           leftButton?.setImage(UIImage(named: imageString), for: .normal)
+           leftButton?.addTarget(self, action: #selector(leftButton_action), for: .touchDown)
+           leftButton?.layoutButtonWithEdgeInsetsStyle(style:style, space: space)
+           self.navBar.addSubview(leftButton!)
+       }
+       
+       @objc func leftButton_action() {
+           if onClickLeftButton != nil {
+               onClickLeftButton!()
+           }
+       }
+       
+       // *************************** 屏幕旋转 ****************
+       override var shouldAutorotate : Bool
+       {
+           return false
+       }
+       
+       override var prefersStatusBarHidden: Bool
+       {
+           return false
+       }
+           
     
     //添加无网视图
     func add_noNetView() {
@@ -123,16 +155,7 @@ class BaseViewController: UIViewController {
     }
 
     
-    // *************************** 屏幕旋转 ****************
-    override var shouldAutorotate : Bool
-    {
-        return false
-    }
-    
-    override var prefersStatusBarHidden: Bool
-    {
-        return false
-    }
+   
         
     override var preferredStatusBarStyle: UIStatusBarStyle{
         
