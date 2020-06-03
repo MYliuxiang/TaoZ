@@ -409,13 +409,16 @@ extension String
         let formatter = DateFormatter()
         formatter.locale = Locale.init(identifier: "zh_CN")
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let date = formatter.date(from: self)
-        
-        let stamp = date?.timeIntervalSince1970
+//        let date = formatter.date(from: self)
+//        let dateT = Double(self)
+        let stamp = Double(self) ?? 0
+
+        let date = Date(timeIntervalSince1970: stamp)
+//        let stamp = date.timeIntervalSince1970
         
         let currentStamp = Date().timeIntervalSince1970
         
-        let gap = Int(currentStamp - (stamp ?? 0))
+        let gap = Int(currentStamp - stamp)
         
         if gap < 60
         {
@@ -431,23 +434,23 @@ extension String
         {
             
             //当天
-            if Calendar.current.isDate(date!, inSameDayAs: Date()) {
+            if Calendar.current.isDate(date, inSameDayAs: Date()) {
                 
                 formatter.dateFormat = "HH:mm"
-                let dateString = formatter.string(from: date!)
+                let dateString = formatter.string(from: date)
                 return "今天 \(dateString)"
                 
             } else {
                 
                 formatter.dateFormat = "HH:mm"
-                let dateString = formatter.string(from: date!)
+                let dateString = formatter.string(from: date)
                 return "昨天 \(dateString)"
             }
         }
         else
         {
             formatter.dateFormat = "yyyy-MM-dd"
-            let dateString = formatter.string(from: date!)
+            let dateString = formatter.string(from: date)
             return "\(dateString)"
         }
     }

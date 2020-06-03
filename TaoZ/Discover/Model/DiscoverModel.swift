@@ -9,9 +9,6 @@
 import UIKit
 
 class DiscoverModel: BaseModel {
-    var type:Int?
-    var images:[String]?
-    var videopath:String?
     var id:String? //动态ID
     var dynamic_id:String? //动态ID
     var user_id:String? //用户ID
@@ -36,6 +33,7 @@ class DiscoverModel: BaseModel {
     var is_click:Int? //0未点赞1已点赞
     var is_collect:Int? ////0未收藏1已收藏
     var userinfo:Userinfo? ////0未收藏1已收藏
+    var type:Int? ////动态类型:1图片2视频
     
 }
 

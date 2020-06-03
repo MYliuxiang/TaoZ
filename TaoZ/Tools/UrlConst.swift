@@ -11,6 +11,7 @@ import UIKit
 
 
 
+let imageBaseUrl = "http://taozhi.dbf4.top"
 
 //签名signKey
 let SignKey = "MDc2OWJkYWI0ZGJiMmMxMzBjNzA3MGQ5NTU0MDVkODE="

@@ -43,6 +43,7 @@
 		223ACE6C246E9CFF003788C7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223ACE6B246E9CFF003788C7 /* SystemConfiguration.framework */; };
 		223ACE6E246E9D07003788C7 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 223ACE6D246E9D07003788C7 /* CoreTelephony.framework */; };
 		223ACE70246E9D24003788C7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 223ACE6F246E9D24003788C7 /* libz.tbd */; };
+		225700F724877B6500D5F818 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225700F624877B6500D5F818 /* Global.swift */; };
 		225A6E5F2462FE9400E4DE93 /* NetServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5B2462FE9100E4DE93 /* NetServiceManager.swift */; };
 		225A6E602462FE9400E4DE93 /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5C2462FE9100E4DE93 /* NetAPIManager.swift */; };
 		225A6E622462FE9400E4DE93 /* MyNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5E2462FE9300E4DE93 /* MyNetworkActivityPlugin.swift */; };
@@ -245,6 +246,7 @@
 		223ACE6B246E9CFF003788C7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		223ACE6D246E9D07003788C7 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		223ACE6F246E9D24003788C7 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		225700F624877B6500D5F818 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		225A6E5B2462FE9100E4DE93 /* NetServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetServiceManager.swift; sourceTree = "<group>"; };
 		225A6E5C2462FE9100E4DE93 /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
 		225A6E5E2462FE9300E4DE93 /* MyNetworkActivityPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNetworkActivityPlugin.swift; sourceTree = "<group>"; };
@@ -762,6 +764,7 @@
 				229FE1D7243F0ABC003160CF /* AppConst.swift */,
 				2282490924765A7D00B30C25 /* UrlConst.swift */,
 				226EA09024504D1200DE3640 /* VolumeCongit.swift */,
+				225700F624877B6500D5F818 /* Global.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1423,6 +1426,7 @@
 				222FEB60246D462400B923D2 /* CommentVC.swift in Sources */,
 				22D068952463F6E1002BBBB5 /* JPushHelper.swift in Sources */,
 				229FE200243F0D5D003160CF /* LLog.swift in Sources */,
+				225700F724877B6500D5F818 /* Global.swift in Sources */,
 				229FE233243F1114003160CF /* TabBarBouncesContentView.swift in Sources */,
 				229FE1F2243F0D56003160CF /* Bundle+Extension.swift in Sources */,
 				2282491624768CB600B30C25 /* UserInfoModel.swift in Sources */,

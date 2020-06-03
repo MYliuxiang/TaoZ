@@ -34,7 +34,6 @@ import UIKit
 
 
 //@_exported import CommonCrypto
-import Kingfisher
 
 
 
