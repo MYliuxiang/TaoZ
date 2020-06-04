@@ -1675,7 +1675,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 49RMD2WMA5;
+				DEVELOPMENT_TEAM = 8K7K2N5WND;
 				INFOPLIST_FILE = TaoZ/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1688,7 +1688,7 @@
 					"$(PROJECT_DIR)/TaoZ/mylib",
 					"$(PROJECT_DIR)/TaoZ/mylib/include/encode",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lx.com.TaoZ;
+				PRODUCT_BUNDLE_IDENTIFIER = lx.com.TaoZ2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liuxiang/Desktop/TaoZ/TaoZ/Tools/Brdging-Header.h";
@@ -1707,7 +1707,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 49RMD2WMA5;
+				DEVELOPMENT_TEAM = 8K7K2N5WND;
 				INFOPLIST_FILE = TaoZ/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1720,7 +1720,7 @@
 					"$(PROJECT_DIR)/TaoZ/mylib",
 					"$(PROJECT_DIR)/TaoZ/mylib/include/encode",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = lx.com.TaoZ;
+				PRODUCT_BUNDLE_IDENTIFIER = lx.com.TaoZ2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/liuxiang/Desktop/TaoZ/TaoZ/Tools/Brdging-Header.h";

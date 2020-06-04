@@ -54,10 +54,14 @@ class BlankpageHelper: NSObject,EmptyDataSetable {
     ///   - tipColor: 提示语颜色  UIColor
     ///   - tipImage: 提示图 UIImage
     ///   - spaceHeight: 各元素之间的间距(5)
-    class func emptyaSetConfig(emptyConfigType:EmptyConfigType = .noData,verticalOffset:CGFloat = -50,tipStr:String = "",tipFont:UIFont = UIFont.systemFont(ofSize: 14), tipColor:UIColor = UIColor.colorWithHex(hexColor: 0x3471D5, alpha: 0.65),tipImage:UIImage = UIImage(named: def_noDataimage)!,spaceHeight:CGFloat = 5) -> EmptyDataSetConfigure {
+    class func emptyaSetConfig(emptyConfigType:EmptyConfigType = .noData,verticalOffset:CGFloat = -50,tipStr:String = "",tipFont:UIFont = UIFont.systemFont(ofSize: 16), tipColor:UIColor = UIColor.colorWithHex(hexColor: 0x333333, alpha: 0.65),tipImage:UIImage? = UIImage(named: def_noDataimage) ,spaceHeight:CGFloat = 5) -> EmptyDataSetConfigure {
     
         let normal = EmptyDataSetConfigure(verticalOffset:verticalOffset,tipStr:tipStr,tipFont: tipFont, tipColor: tipColor, tipImage: tipImage, spaceHeight: spaceHeight)
         var config = normal
+        if tipStr.count > 0 {
+            
+            return config
+        }
         switch emptyConfigType {
         case .noData:
             config.tipStr = "暂无数据"

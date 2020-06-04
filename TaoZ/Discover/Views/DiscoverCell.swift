@@ -142,7 +142,49 @@ class DiscoverCell: UITableViewCell {
         
         
     }
-
+    
+    @IBAction func commentAC(_ sender: Any) {
+        
+    }
+    
+    @IBAction func collecAC(_ sender: Any) {
+        if model.is_collect == 0{
+            //未收藏
+            TZRequest(url_basic_addattention,bodyDict: ["friend_id":self.model.userinfo?.id ?? ""]) { (result, code) in
+                if code == 0{
+                    self.model.is_collect = 1
+                    self.collecB.isSelected = true
+                }
+            }
+            
+        }else{
+            
+            TZRequest(url_basic_outattention,bodyDict: ["friend_id":self.model.userinfo?.id ?? ""]) { (result, code) in
+                           if code == 0{
+                              self.model.is_collect = 0
+                                                  
+                            self.collecB.isSelected = false
+                           }
+                       }
+            
+        }
+        
+    }
+    
+    @IBAction func zanAC(_ sender: Any) {
+        
+        if model.is_click == 0{
+                   //未收藏
+            TZRequest(url_basic_userclick,bodyDict: ["type":"1","content_id":self.model.id ?? ""]) { (result, code) in
+                       if code == 0{
+                           self.model.is_click = 1
+                           self.zanB.isSelected = true
+                       }
+                   }
+                   
+               }
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

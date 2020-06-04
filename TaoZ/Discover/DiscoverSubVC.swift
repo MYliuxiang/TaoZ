@@ -10,6 +10,7 @@ import UIKit
 
 class DiscoverSubVC: BaseViewController {
     
+    @IBOutlet weak var uploadB: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var tz_dataList:[DiscoverModel]! = [DiscoverModel]()
     var pageNum = 1
@@ -35,9 +36,21 @@ class DiscoverSubVC: BaseViewController {
         
         tableView.mj_header?.beginRefreshing()
         
+        self.uploadB.layer.cornerRadius = 27
+        self.uploadB.layer.masksToBounds = true
+        if type == 0{
+            self.uploadB.isHidden = true
+        }else{
+            self.uploadB.isHidden = false
+        }
+        
         
         
     }
+    
+    @IBAction func uploadAC(_ sender: Any) {
+    }
+    
     
     func load_data() {
         
@@ -69,7 +82,7 @@ class DiscoverSubVC: BaseViewController {
                 
                 
                 //添加空白页
-//                BlankpageHelper.addDateEmpty(self.tableView, config: BlankpageHelper.emptyaSetConfig())
+                BlankpageHelper.addDateEmpty(self.tableView, config: BlankpageHelper.emptyaSetConfig(tipStr: "桃妹们正忙着拍图，没空发动态了~"))
                 self.tableView.reloadData()
                 
             }else{
