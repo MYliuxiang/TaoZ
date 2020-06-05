@@ -3,13 +3,16 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MeVC" customModule="TaoZ" customModuleProvider="target">
             <connections>
+                <outlet property="btn1" destination="dWB-Ac-AsZ" id="4d0-UL-YHz"/>
+                <outlet property="btn2" destination="XtO-Ai-hkI" id="fDc-0o-bho"/>
+                <outlet property="btn3" destination="o2l-Fj-J2u" id="UK2-CJ-F4d"/>
                 <outlet property="headerView" destination="ycK-ca-Vq5" id="oFq-yx-uxm"/>
                 <outlet property="tableView" destination="xJa-mK-Qi1" id="K7e-2G-hiP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -54,9 +57,9 @@
                                 <constraint firstAttribute="height" constant="64" id="u0g-CB-ohS"/>
                             </constraints>
                         </imageView>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rOh-9K-8XT">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mine_icon_more" translatesAutoresizingMaskIntoConstraints="NO" id="rOh-9K-8XT">
                             <rect key="frame" x="392" y="26" width="7" height="12"/>
-                            <color key="backgroundColor" red="0.14901960780000001" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="7" id="Mgj-i1-u9I"/>
                                 <constraint firstAttribute="height" constant="12" id="f5p-ow-cXI"/>
@@ -83,9 +86,9 @@
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RWr-OR-uPJ">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dynamic_icon_vip" translatesAutoresizingMaskIntoConstraints="NO" id="RWr-OR-uPJ">
                             <rect key="frame" x="182" y="12" width="19" height="14"/>
-                            <color key="backgroundColor" red="0.95294117649999999" green="0.35686274509999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="14" id="BLf-Vt-Da6"/>
                                 <constraint firstAttribute="width" constant="19" id="YcW-fI-D2D"/>
@@ -113,20 +116,38 @@
                         <outletCollection property="gestureRecognizers" destination="6CG-TE-vQZ" appends="YES" id="vn2-4R-pk5"/>
                     </connections>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWB-Ac-AsZ">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWB-Ac-AsZ">
                     <rect key="frame" x="0.0" y="128" width="138" height="72"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="72" id="92j-Tp-BNw"/>
                     </constraints>
-                    <state key="normal" title="会员"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="会员" image="mine_icon_member">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btn1AC:" destination="-1" eventType="touchUpInside" id="tn8-vM-eLs"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtO-Ai-hkI">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtO-Ai-hkI">
                     <rect key="frame" x="138" y="128" width="138" height="72"/>
-                    <state key="normal" title="已购"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="已购" image="mine_icon_purchased">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btn2AC:" destination="-1" eventType="touchUpInside" id="7k7-zb-awy"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2l-Fj-J2u">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2l-Fj-J2u">
                     <rect key="frame" x="276" y="128" width="138" height="72"/>
-                    <state key="normal" title="关注"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="关注" image="mine_icon_follow">
+                        <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="btn3AC:" destination="-1" eventType="touchUpInside" id="DoF-Ga-smL"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -156,4 +177,11 @@
             </connections>
         </tapGestureRecognizer>
     </objects>
+    <resources>
+        <image name="dynamic_icon_vip" width="18" height="18"/>
+        <image name="mine_icon_follow" width="24" height="24"/>
+        <image name="mine_icon_member" width="24" height="24"/>
+        <image name="mine_icon_more" width="14" height="14"/>
+        <image name="mine_icon_purchased" width="24" height="24"/>
+    </resources>
 </document>

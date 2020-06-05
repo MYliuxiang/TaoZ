@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "TextAttributes.h"
 
-FOUNDATION_EXPORT double TextAttributesVersionNumber;
-FOUNDATION_EXPORT const unsigned char TextAttributesVersionString[];
+FOUNDATION_EXPORT double GrowingTextViewVersionNumber;
+FOUNDATION_EXPORT const unsigned char GrowingTextViewVersionString[];
 

@@ -67,10 +67,10 @@ target 'TaoZ' do
   pod 'NSObject+Rx'
   #空白视图
   pod 'LXFProtocolTool/EmptyDataSetable'
-  #NSAttributedString的框架
-  pod 'TextAttributes'
 
   pod 'InputKitSwift', '~> 1.1.16'
+ #UITextView Placeholder提示 高度自适应
+  pod 'GrowingTextView'
 
 pod 'RongCloudIM/IMKit', '~> 2.10.4'
 pod 'RongCloudIM/IMLib', '~> 2.10.4'

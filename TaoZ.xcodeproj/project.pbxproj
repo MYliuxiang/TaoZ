@@ -47,6 +47,12 @@
 		225A6E5F2462FE9400E4DE93 /* NetServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5B2462FE9100E4DE93 /* NetServiceManager.swift */; };
 		225A6E602462FE9400E4DE93 /* NetAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5C2462FE9100E4DE93 /* NetAPIManager.swift */; };
 		225A6E622462FE9400E4DE93 /* MyNetworkActivityPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225A6E5E2462FE9300E4DE93 /* MyNetworkActivityPlugin.swift */; };
+		225B97AC248A2A7100C5773B /* ReselseDiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B97AA248A2A7100C5773B /* ReselseDiscoverVC.swift */; };
+		225B97AD248A2A7100C5773B /* ReselseDiscoverVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B97AB248A2A7100C5773B /* ReselseDiscoverVC.xib */; };
+		225B97B0248A2AD200C5773B /* ReleseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B97AE248A2AD200C5773B /* ReleseHeaderView.swift */; };
+		225B97B1248A2AD200C5773B /* ReleseHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B97AF248A2AD200C5773B /* ReleseHeaderView.xib */; };
+		225B97B8248A2D1300C5773B /* ReleseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B97B6248A2D1300C5773B /* ReleseCell.swift */; };
+		225B97B9248A2D1300C5773B /* ReleseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B97B7248A2D1300C5773B /* ReleseCell.xib */; };
 		225F7C65246503D1001B15E2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F7C63246503D1001B15E2 /* PhotoCell.swift */; };
 		225F7C66246503D1001B15E2 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225F7C64246503D1001B15E2 /* PhotoCell.xib */; };
 		225F7C69246503E1001B15E2 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F7C67246503E1001B15E2 /* VideoCell.swift */; };
@@ -250,6 +256,12 @@
 		225A6E5B2462FE9100E4DE93 /* NetServiceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetServiceManager.swift; sourceTree = "<group>"; };
 		225A6E5C2462FE9100E4DE93 /* NetAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetAPIManager.swift; sourceTree = "<group>"; };
 		225A6E5E2462FE9300E4DE93 /* MyNetworkActivityPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNetworkActivityPlugin.swift; sourceTree = "<group>"; };
+		225B97AA248A2A7100C5773B /* ReselseDiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReselseDiscoverVC.swift; sourceTree = "<group>"; };
+		225B97AB248A2A7100C5773B /* ReselseDiscoverVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReselseDiscoverVC.xib; sourceTree = "<group>"; };
+		225B97AE248A2AD200C5773B /* ReleseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleseHeaderView.swift; sourceTree = "<group>"; };
+		225B97AF248A2AD200C5773B /* ReleseHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleseHeaderView.xib; sourceTree = "<group>"; };
+		225B97B6248A2D1300C5773B /* ReleseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleseCell.swift; sourceTree = "<group>"; };
+		225B97B7248A2D1300C5773B /* ReleseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleseCell.xib; sourceTree = "<group>"; };
 		225F7C63246503D1001B15E2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		225F7C64246503D1001B15E2 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		225F7C67246503E1001B15E2 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
@@ -891,6 +903,8 @@
 				22D0688A2463AAD2002BBBB5 /* DiscoverVC.xib */,
 				22B5035424654A1C00348E05 /* DiscoverSubVC.swift */,
 				22B5035524654A1C00348E05 /* DiscoverSubVC.xib */,
+				225B97AA248A2A7100C5773B /* ReselseDiscoverVC.swift */,
+				225B97AB248A2A7100C5773B /* ReselseDiscoverVC.xib */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -950,6 +964,10 @@
 				22B50350246537DC00348E05 /* ContainerView.swift */,
 				2266B36124664DAF009675D8 /* LxBrowser.swift */,
 				2266B36224664DAF009675D8 /* LxBrowser.xib */,
+				225B97AE248A2AD200C5773B /* ReleseHeaderView.swift */,
+				225B97AF248A2AD200C5773B /* ReleseHeaderView.xib */,
+				225B97B6248A2D1300C5773B /* ReleseCell.swift */,
+				225B97B7248A2D1300C5773B /* ReleseCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1182,9 +1200,11 @@
 				226468DD2477E21B00207687 /* PasswordLoginVC.xib in Resources */,
 				2283A93D246A74BC001A5B65 /* PersonalCell.xib in Resources */,
 				2283A941246A7855001A5B65 /* PersonalImgCell.xib in Resources */,
+				225B97AD248A2A7100C5773B /* ReselseDiscoverVC.xib in Resources */,
 				2282491224765E5500B30C25 /* VerificationCodeVC.xib in Resources */,
 				2283A949246A7943001A5B65 /* LabelCell.xib in Resources */,
 				2283A945246A78BA001A5B65 /* PersonalTextFieldCell.xib in Resources */,
+				225B97B9248A2D1300C5773B /* ReleseCell.xib in Resources */,
 				2266B39A24665B19009675D8 /* LICENSE in Resources */,
 				2283A97C246AAD70001A5B65 /* CustomerVC.xib in Resources */,
 				22B5035724654A1C00348E05 /* DiscoverSubVC.xib in Resources */,
@@ -1202,6 +1222,7 @@
 				2266B39824665B19009675D8 /* SKPhotoBrowser.bundle in Resources */,
 				229FE1AD243F07EB003160CF /* Main.storyboard in Resources */,
 				2227FA232480DE3A003768F7 /* success.png in Resources */,
+				225B97B1248A2AD200C5773B /* ReleseHeaderView.xib in Resources */,
 				2283A970246AAD2A001A5B65 /* MyWorksVC.xib in Resources */,
 				2237717B2464041700C5AFDF /* VideoVC.xib in Resources */,
 			);
@@ -1424,8 +1445,10 @@
 				2283A967246AACF5001A5B65 /* MyCollectionVC.swift in Sources */,
 				229FE25F243F2FEF003160CF /* UIFont+Extension.swift in Sources */,
 				222FEB60246D462400B923D2 /* CommentVC.swift in Sources */,
+				225B97AC248A2A7100C5773B /* ReselseDiscoverVC.swift in Sources */,
 				22D068952463F6E1002BBBB5 /* JPushHelper.swift in Sources */,
 				229FE200243F0D5D003160CF /* LLog.swift in Sources */,
+				225B97B8248A2D1300C5773B /* ReleseCell.swift in Sources */,
 				225700F724877B6500D5F818 /* Global.swift in Sources */,
 				229FE233243F1114003160CF /* TabBarBouncesContentView.swift in Sources */,
 				229FE1F2243F0D56003160CF /* Bundle+Extension.swift in Sources */,
@@ -1492,6 +1515,7 @@
 				2283A95B246AA927001A5B65 /* MyFollow.swift in Sources */,
 				2227FA1D2480DE3A003768F7 /* UIViewController+HUD.m in Sources */,
 				22B503532465382500348E05 /* DiscoverModel.swift in Sources */,
+				225B97B0248A2AD200C5773B /* ReleseHeaderView.swift in Sources */,
 				229FE232243F1114003160CF /* TabBarBasicContentView.swift in Sources */,
 				2292E6282486514F006ACF8B /* BlankpageHelper.swift in Sources */,
 				2283A934246A54B6001A5B65 /* MeCell.swift in Sources */,

@@ -13,7 +13,14 @@ class MeVC: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var headerView: UIView!
     var titles:[String]?
+    var imageS:[String]?
+
     var model:UserInfoModel!
+    
+    @IBOutlet weak var btn3: UIButton!
+    @IBOutlet weak var btn1: UIButton!
+    
+    @IBOutlet weak var btn2: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,9 +29,24 @@ class MeVC: BaseViewController {
         model = UserInfoModel.loadUserInfo()
         headerView.height = 64 + 44 + 92
         self.tableView.tableHeaderView = headerView
-        titles = ["关注","相册","收藏","钱包","作品","动态","客服","设置"]
+        btn1.layoutButtonWithEdgeInsetsStyle(style: .top, space: 5)
+        btn2.layoutButtonWithEdgeInsetsStyle(style: .top, space: 5)
+        btn3.layoutButtonWithEdgeInsetsStyle(style: .top, space: 5)
+
+        titles = ["相册","收藏","钱包","作品","动态","客服","设置"]
+        imageS = ["mine_icon_album","mine_icon_collection","mine_icon_wallet","mine_icon_works","mine_icon_dynamic","mine_icon_service","mine_icon_setup"]
     }
     
+    @IBAction func btn1AC(_ sender: Any) {
+    }
+    
+    @IBAction func btn2AC(_ sender: Any) {
+    }
+    
+    @IBAction func btn3AC(_ sender: Any) {
+        
+         navigationController?.pushViewController(MyFollow(), animated: true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadData()
@@ -77,6 +99,7 @@ extension MeVC: UITableViewDataSource, UITableViewDelegate {
             
         }
         cell.contentLab.text = titles?[indexPath.row]
+        cell.iocnImg.image = UIImage(named: (imageS?[indexPath.row])!)
         return cell
         
     }
@@ -117,36 +140,35 @@ extension MeVC: UITableViewDataSource, UITableViewDelegate {
 
         switch indexPath.row {
         case 0:
-            navigationController?.pushViewController(MyFollow(), animated: true)
+           navigationController?.pushViewController(MyAlbumVC(), animated: true)
+
             break
         case 1:
-            navigationController?.pushViewController(MyAlbumVC(), animated: true)
-            break
-        case 2:
             navigationController?.pushViewController(MyCollectionVC(), animated: true)
 
             break
-        case 3:
+        case 2:
             navigationController?.pushViewController(MyWalletVC(), animated: true)
 
             break
-        case 4:
+        case 3:
             navigationController?.pushViewController(MyWorksVC(), animated: true)
 
+
             break
-        case 5:
+        case 4:
             navigationController?.pushViewController(MyDynamicVC(), animated: true)
 
             break
-        case 6:
+        case 5:
             navigationController?.pushViewController(CustomerVC(), animated: true)
 
             break
-        case 7:
+        case 6:
             navigationController?.pushViewController(SetVC(), animated: true)
 
             break
-
+       
         default:
             break
         }
