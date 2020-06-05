@@ -59,6 +59,9 @@
                     <state key="normal" title="会员中心" image="home_icon_member" backgroundImage="home_bg_member">
                         <color key="titleColor" red="0.95295399430000005" green="0.95291823149999999" blue="0.95294243099999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
+                    <connections>
+                        <action selector="vipVC:" destination="-1" eventType="touchUpInside" id="DkV-97-siS"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCS-39-iEf">
                     <rect key="frame" x="284.5" y="196.5" width="114.5" height="45"/>
@@ -69,6 +72,9 @@
                     <state key="normal" title="签到" image="home_icon_signin" backgroundImage="home_bg_signin">
                         <color key="titleColor" red="0.95295399430000005" green="0.95291823149999999" blue="0.95294243099999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
+                    <connections>
+                        <action selector="signAC:" destination="-1" eventType="touchUpInside" id="OBG-q2-Czh"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6l-dW-kfY">
                     <rect key="frame" x="15" y="196.5" width="114.5" height="45"/>
@@ -82,6 +88,9 @@
                     <state key="normal" title="排行榜" image="home_icon_rankinglist" backgroundImage="home_bg_rankinglist">
                         <color key="titleColor" red="0.95295399430000005" green="0.95291823149999999" blue="0.95294243099999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
+                    <connections>
+                        <action selector="paihAC:" destination="-1" eventType="touchUpInside" id="N4N-4n-P91"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

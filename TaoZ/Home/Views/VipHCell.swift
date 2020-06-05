@@ -1,5 +1,5 @@
 //
-//  ReleseCell.swift
+//  VipHCell.swift
 //  TaoZ
 //
 //  Created by liuxiang on 2020/6/5.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ReleseCell: UICollectionViewCell {
+class VipHCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         self.layer.cornerRadius = 5
-        self.layer.masksToBounds = true
+              self.layer.masksToBounds = true
     }
 
 }

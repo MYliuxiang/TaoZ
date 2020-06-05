@@ -53,6 +53,14 @@
 		225B97B1248A2AD200C5773B /* ReleseHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B97AF248A2AD200C5773B /* ReleseHeaderView.xib */; };
 		225B97B8248A2D1300C5773B /* ReleseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B97B6248A2D1300C5773B /* ReleseCell.swift */; };
 		225B97B9248A2D1300C5773B /* ReleseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B97B7248A2D1300C5773B /* ReleseCell.xib */; };
+		225B97BB248A349F00C5773B /* CancleReleseAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B97BA248A349F00C5773B /* CancleReleseAlert.swift */; };
+		225B97BD248A34AA00C5773B /* CancleReleseAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B97BC248A34AA00C5773B /* CancleReleseAlert.xib */; };
+		225B97C0248A3DD600C5773B /* VipCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B97BE248A3DD600C5773B /* VipCenterVC.swift */; };
+		225B97C1248A3DD600C5773B /* VipCenterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B97BF248A3DD600C5773B /* VipCenterVC.xib */; };
+		225B97C4248A41F200C5773B /* VipHCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B97C2248A41F200C5773B /* VipHCell.swift */; };
+		225B97C5248A41F200C5773B /* VipHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B97C3248A41F200C5773B /* VipHCell.xib */; };
+		225B97C8248A420800C5773B /* VipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B97C6248A420700C5773B /* VipCell.swift */; };
+		225B97C9248A420800C5773B /* VipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225B97C7248A420700C5773B /* VipCell.xib */; };
 		225F7C65246503D1001B15E2 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F7C63246503D1001B15E2 /* PhotoCell.swift */; };
 		225F7C66246503D1001B15E2 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 225F7C64246503D1001B15E2 /* PhotoCell.xib */; };
 		225F7C69246503E1001B15E2 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225F7C67246503E1001B15E2 /* VideoCell.swift */; };
@@ -262,6 +270,14 @@
 		225B97AF248A2AD200C5773B /* ReleseHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleseHeaderView.xib; sourceTree = "<group>"; };
 		225B97B6248A2D1300C5773B /* ReleseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleseCell.swift; sourceTree = "<group>"; };
 		225B97B7248A2D1300C5773B /* ReleseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleseCell.xib; sourceTree = "<group>"; };
+		225B97BA248A349F00C5773B /* CancleReleseAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancleReleseAlert.swift; sourceTree = "<group>"; };
+		225B97BC248A34AA00C5773B /* CancleReleseAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CancleReleseAlert.xib; sourceTree = "<group>"; };
+		225B97BE248A3DD600C5773B /* VipCenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipCenterVC.swift; sourceTree = "<group>"; };
+		225B97BF248A3DD600C5773B /* VipCenterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VipCenterVC.xib; sourceTree = "<group>"; };
+		225B97C2248A41F200C5773B /* VipHCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipHCell.swift; sourceTree = "<group>"; };
+		225B97C3248A41F200C5773B /* VipHCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VipHCell.xib; sourceTree = "<group>"; };
+		225B97C6248A420700C5773B /* VipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VipCell.swift; sourceTree = "<group>"; };
+		225B97C7248A420700C5773B /* VipCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VipCell.xib; sourceTree = "<group>"; };
 		225F7C63246503D1001B15E2 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		225F7C64246503D1001B15E2 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		225F7C67246503E1001B15E2 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
@@ -529,6 +545,10 @@
 				225F7C68246503E1001B15E2 /* VideoCell.xib */,
 				223ACE59246E8A69003788C7 /* FollowCell.swift */,
 				223ACE5A246E8A69003788C7 /* FollowCell.xib */,
+				225B97C2248A41F200C5773B /* VipHCell.swift */,
+				225B97C3248A41F200C5773B /* VipHCell.xib */,
+				225B97C6248A420700C5773B /* VipCell.swift */,
+				225B97C7248A420700C5773B /* VipCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -877,6 +897,8 @@
 				223771792464041700C5AFDF /* VideoVC.xib */,
 				2237718024640EE100C5AFDF /* VideoSubVC.swift */,
 				2237718124640EE100C5AFDF /* VideoSubVC.xib */,
+				225B97BE248A3DD600C5773B /* VipCenterVC.swift */,
+				225B97BF248A3DD600C5773B /* VipCenterVC.xib */,
 				225F7C62246503B0001B15E2 /* Views */,
 			);
 			path = Home;
@@ -968,6 +990,8 @@
 				225B97AF248A2AD200C5773B /* ReleseHeaderView.xib */,
 				225B97B6248A2D1300C5773B /* ReleseCell.swift */,
 				225B97B7248A2D1300C5773B /* ReleseCell.xib */,
+				225B97BA248A349F00C5773B /* CancleReleseAlert.swift */,
+				225B97BC248A34AA00C5773B /* CancleReleseAlert.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1180,6 +1204,7 @@
 				2283A974246AAD45001A5B65 /* MyDynamicVC.xib in Resources */,
 				2283A981246AAEB0001A5B65 /* MyWalletVC.xib in Resources */,
 				2227FA222480DE3A003768F7 /* error.png in Resources */,
+				225B97BD248A34AA00C5773B /* CancleReleseAlert.xib in Resources */,
 				229FE1B2243F07ED003160CF /* LaunchScreen.storyboard in Resources */,
 				2283A960246AA956001A5B65 /* MyFlollowCell.xib in Resources */,
 				2266B39B24665B19009675D8 /* README.md in Resources */,
@@ -1187,11 +1212,13 @@
 				2283A968246AACF5001A5B65 /* MyCollectionVC.xib in Resources */,
 				22D068882463AABF002BBBB5 /* HomeVC.xib in Resources */,
 				225F7C66246503D1001B15E2 /* PhotoCell.xib in Resources */,
+				225B97C1248A3DD600C5773B /* VipCenterVC.xib in Resources */,
 				225F7C6A246503E1001B15E2 /* VideoCell.xib in Resources */,
 				22209E53246BD3520001ED6A /* VideoDetailVC.xib in Resources */,
 				2283A939246A58EF001A5B65 /* PersonalVC.xib in Resources */,
 				2283A935246A54B6001A5B65 /* MeCell.xib in Resources */,
 				2237717F24640BB100C5AFDF /* PriVatePhotoSubVC.xib in Resources */,
+				225B97C5248A41F200C5773B /* VipHCell.xib in Resources */,
 				2227FA212480DE3A003768F7 /* success@2x.png in Resources */,
 				2292E6222486319C006ACF8B /* ForgetPwVC.xib in Resources */,
 				2266B36424664DAF009675D8 /* LxBrowser.xib in Resources */,
@@ -1213,6 +1240,7 @@
 				2237718324640EE100C5AFDF /* VideoSubVC.xib in Resources */,
 				222FEB61246D462400B923D2 /* CommentVC.xib in Resources */,
 				229FE215243F0E81003160CF /* BaseViewController.xib in Resources */,
+				225B97C9248A420800C5773B /* VipCell.xib in Resources */,
 				2282490E24765DE100B30C25 /* BindePhoneVC.xib in Resources */,
 				22B5034F246535DF00348E05 /* DiscoverCell.xib in Resources */,
 				22377177246403FB00C5AFDF /* PrivatePhotoVC.xib in Resources */,
@@ -1439,6 +1467,7 @@
 				2283A94C246A7974001A5B65 /* TextViewCell.swift in Sources */,
 				2237718224640EE100C5AFDF /* VideoSubVC.swift in Sources */,
 				2266B38D24665B19009675D8 /* SKDetectingView.swift in Sources */,
+				225B97C8248A420800C5773B /* VipCell.swift in Sources */,
 				2282491124765E5500B30C25 /* VerificationCodeVC.swift in Sources */,
 				22D0688B2463AAD2002BBBB5 /* DiscoverVC.swift in Sources */,
 				2283A97B246AAD70001A5B65 /* CustomerVC.swift in Sources */,
@@ -1473,6 +1502,7 @@
 				2283A980246AAEB0001A5B65 /* MyWalletVC.swift in Sources */,
 				22D0689B2463F6F3002BBBB5 /* ThirdloginHelper.swift in Sources */,
 				229FE1EF243F0D56003160CF /* UIButton+Extension.swift in Sources */,
+				225B97C4248A41F200C5773B /* VipHCell.swift in Sources */,
 				223ACE61246E8A84003788C7 /* FollowVC.swift in Sources */,
 				2283A940246A7855001A5B65 /* PersonalImgCell.swift in Sources */,
 				2266B38624665B19009675D8 /* SKPaginationView.swift in Sources */,
@@ -1484,6 +1514,7 @@
 				229FE208243F0D79003160CF /* WRNavigationBar.m in Sources */,
 				2266B39124665B19009675D8 /* SKCaptionView.swift in Sources */,
 				229FE1D8243F0ABC003160CF /* AppConst.swift in Sources */,
+				225B97C0248A3DD600C5773B /* VipCenterVC.swift in Sources */,
 				2266B39024665B19009675D8 /* UIView+Radius.swift in Sources */,
 				2283A977246AAD55001A5B65 /* SetVC.swift in Sources */,
 				2282490D24765DE100B30C25 /* BindePhoneVC.swift in Sources */,
@@ -1507,6 +1538,7 @@
 				229FE1DE243F0D4B003160CF /* NibView.swift in Sources */,
 				22D0688F2463AAEB002BBBB5 /* MessagesVC.swift in Sources */,
 				229FE1F4243F0D56003160CF /* String+Extension.swift in Sources */,
+				225B97BB248A349F00C5773B /* CancleReleseAlert.swift in Sources */,
 				2283A94F246A99D9001A5B65 /* UIAlertController+TapGesAlertController.swift in Sources */,
 				229FE211243F0E4D003160CF /* BaseNavigationController.swift in Sources */,
 				225A6E602462FE9400E4DE93 /* NetAPIManager.swift in Sources */,

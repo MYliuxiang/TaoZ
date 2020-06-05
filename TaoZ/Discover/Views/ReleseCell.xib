@@ -23,6 +23,7 @@
                     </button>
                 </subviews>
             </view>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="wVr-af-KKF" secondAttribute="bottom" id="KhF-p9-ZmQ"/>
                 <constraint firstItem="wVr-af-KKF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Sjg-X4-RCQ"/>

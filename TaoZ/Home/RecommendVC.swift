@@ -23,9 +23,18 @@ class RecommendVC: BaseViewController {
 
         // Do any additional setup after loading the view.
     }
-
-
- 
+    
+    
+    @IBAction func vipVC(_ sender: Any) {
+        self.navigationController?.pushViewController(VipCenterVC(), animated: true)
+    }
+    
+    @IBAction func signAC(_ sender: Any) {
+    }
+    
+    @IBAction func paihAC(_ sender: Any) {
+    }
+    
 
 }
 

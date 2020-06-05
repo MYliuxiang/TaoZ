@@ -22,7 +22,8 @@ class LxCustomAlert: NibView {
     var offsetBotom:CGFloat! = 0.00
     var topVC:UIViewController?
     var dimissBlcok:(()->())?
-
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setUI()
@@ -46,6 +47,8 @@ class LxCustomAlert: NibView {
         }
         lxmaskView.addSubview(self)
         self.centerX = lxmaskView.centerX
+        lxmaskView.layoutIfNeeded()
+
         showAnimation()
         let lxmisstap:UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(misstap))
         lxmisstap.delegate = self
@@ -74,8 +77,10 @@ class LxCustomAlert: NibView {
         switch type {
         case .alert:
             self.center = lxmaskView.center
-            lxmaskView.layoutIfNeeded()
-            self.alpha = 0;
+//            self.snp.makeConstraints { (make) in
+//                make.center.equalToSuperview()
+//            }
+            self.alpha = 1;
             UIView.animate(withDuration: 0.35) {
                 self.alpha = 1;
                 self.center = self.lxmaskView.center
@@ -138,6 +143,8 @@ class LxCustomAlert: NibView {
     
 
 }
+
+
 
 extension LxCustomAlert:UIGestureRecognizerDelegate{
     

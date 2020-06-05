@@ -14,9 +14,23 @@ class ReselseDiscoverVC: BaseViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        view.backgroundColor = .white
+        navBar.title = "发布动态"
         // Do any additional setup after loading the view.
         creatCollection()
+        
+        navBar.onClickLeftButton = {()in
+            let alert = CancleReleseAlert()
+            alert.btnblock = {[weak self](index) in
+                self?.navigationController?.popViewController(animated: true)
+            }
+            alert.show()
+        }
+    }
+    
+    override func leftButton_action() {
+       
     }
     
     private func creatCollection(){
@@ -24,7 +38,7 @@ class ReselseDiscoverVC: BaseViewController {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets.init(top:0, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets.init(top:0, left: 15, bottom: 0, right: 15)
         layout.headerReferenceSize = CGSize(width: ScreenWidth, height: 140)
         layout.footerReferenceSize = CGSize(width: 0, height: 0)
         collectionView.delegate = self
