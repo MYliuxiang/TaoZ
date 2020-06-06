@@ -26,6 +26,8 @@ import UIKit
 @_exported import CryptoSwift
 @_exported import Moya
 @_exported import Alamofire
+@_exported import GrowingTextView
+
 
 
 

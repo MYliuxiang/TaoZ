@@ -18,6 +18,7 @@ PODS:
   - DZNEmptyDataSet (1.8.1)
   - ESTabBarController-swift (2.8.0)
   - FSPagerView (0.8.3)
+  - GrowingTextView (0.7.2)
   - HandyJSON (5.0.0)
   - HWPanModal (0.6.7)
   - InputKitSwift (1.1.19)
@@ -55,7 +56,6 @@ PODS:
   - SnapKit (5.0.1)
   - SVProgressHUD (2.2.5)
   - SwiftyJSON (5.0.0)
-  - TextAttributes (2.0.2)
   - Toast-Swift (5.0.1)
   - TZImagePickerController (3.2.9)
   - UMCAnalytics (6.1.0):
@@ -90,6 +90,7 @@ DEPENDENCIES:
   - CryptoSwift (~> 1.0)
   - ESTabBarController-swift
   - FSPagerView
+  - GrowingTextView
   - HandyJSON (= 5.0.0)
   - HWPanModal (~> 0.6.0)
   - InputKitSwift (~> 1.1.16)
@@ -112,7 +113,6 @@ DEPENDENCIES:
   - SnapKit
   - SVProgressHUD
   - SwiftyJSON
-  - TextAttributes
   - Toast-Swift (~> 5.0.1)
   - TZImagePickerController (= 3.2.9)
   - UMCAnalytics
@@ -136,6 +136,7 @@ SPEC REPOS:
     - DZNEmptyDataSet
     - ESTabBarController-swift
     - FSPagerView
+    - GrowingTextView
     - HandyJSON
     - HWPanModal
     - InputKitSwift
@@ -158,7 +159,6 @@ SPEC REPOS:
     - SnapKit
     - SVProgressHUD
     - SwiftyJSON
-    - TextAttributes
     - Toast-Swift
     - TZImagePickerController
     - UMCAnalytics
@@ -177,6 +177,7 @@ SPEC CHECKSUMS:
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  GrowingTextView: 876bf42005b5e4a4fd740597db12caaf41f0fe6c
   HandyJSON: 992f2d661716d6a91de82d0056927bc7813b5770
   HWPanModal: 8ce3489c30e2268dafc50acdcde50d34f75f35aa
   InputKitSwift: ceaf0ab41d0dad15537f43f027c6af62a9ebf7e4
@@ -199,7 +200,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
-  TextAttributes: 89905fb52c36de587010f335bd4071463d9c6d9b
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   TZImagePickerController: 1f92968aa0e98a06b9e2eccca8560acc19254257
   UMCAnalytics: 3503f179f7af932b30af9ac161ac11fb48fa72b6
@@ -209,6 +209,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFPlayer: 88e8abd393ccbd8684e62cf557d25c8009b9dd70
 
-PODFILE CHECKSUM: ae045a996bdb764767d1485c61784c5ab76e8c8f
+PODFILE CHECKSUM: 244fb403952cd6fa6d0bacdb4dca55405aff527f
 
 COCOAPODS: 1.9.1
