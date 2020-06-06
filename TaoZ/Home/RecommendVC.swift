@@ -33,6 +33,7 @@ class RecommendVC: BaseViewController {
     }
     
     @IBAction func paihAC(_ sender: Any) {
+        navigationController?.pushViewController(RankingVC(), animated: true)
     }
     
 

@@ -9,7 +9,7 @@
 import UIKit
 
 class VipCenterVC: BaseViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var layout: UICollectionViewFlowLayout!
@@ -19,7 +19,7 @@ class VipCenterVC: BaseViewController {
     @IBOutlet var headerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         navBar.title = "会员中心"
         self.footerView.height = 100
@@ -32,8 +32,8 @@ class VipCenterVC: BaseViewController {
     
     private func creatCollection(){
         layout.itemSize = CGSize(width: 125, height: 60)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets.init(top:15, left: 16, bottom: 15, right: 16)
         layout.headerReferenceSize = CGSize(width: 0, height: 0)
@@ -41,12 +41,12 @@ class VipCenterVC: BaseViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(UINib.init(nibName: "VipHCell", bundle: nil), forCellWithReuseIdentifier: "FollowCellID")
-       
+        
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
     }
-
-
+    
+    
 }
 
 extension VipCenterVC: UITableViewDataSource, UITableViewDelegate {
@@ -75,7 +75,7 @@ extension VipCenterVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 53
+        return 60
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -102,6 +102,54 @@ extension VipCenterVC: UITableViewDataSource, UITableViewDelegate {
         
         
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let rowsCount:Int = tableView.numberOfRows(inSection: indexPath.section)
+        if indexPath.row == 0{
+            let path = UIBezierPath(roundedRect: CGRect(x: 15, y: 0, width: cell.width - 30, height: cell.height), byRoundingCorners: [.topLeft,.topRight], cornerRadii: CGSize(width: 10, height: 0))
+            let shapLayer = CAShapeLayer()
+            shapLayer.lineWidth = 1
+            shapLayer.strokeColor = UIColor.white.cgColor
+            shapLayer.fillColor = UIColor.clear.cgColor
+            shapLayer.path = path.cgPath
+            let maskLayer = CAShapeLayer()
+            maskLayer.path = path.cgPath
+            cell.layer.mask = maskLayer
+            cell.layer.addSublayer(shapLayer)
+           
+        }else if indexPath.row == rowsCount - 1{
+            let path = UIBezierPath(roundedRect: CGRect(x: 15, y: 0, width: cell.width - 30, height: cell.height), byRoundingCorners: [.bottomLeft,.bottomRight], cornerRadii: CGSize(width: 10, height: 0))
+            let shapLayer = CAShapeLayer()
+            shapLayer.lineWidth = 1
+            shapLayer.strokeColor = UIColor.white.cgColor
+            shapLayer.fillColor = UIColor.clear.cgColor
+            shapLayer.path = path.cgPath
+            let maskLayer = CAShapeLayer()
+            maskLayer.path = path.cgPath
+            cell.layer.mask = maskLayer
+            cell.layer.addSublayer(shapLayer)
+            
+        }else{
+            let path = UIBezierPath(roundedRect: CGRect(x: 15, y: 0, width: cell.width - 30, height: cell.height), byRoundingCorners: [.bottomLeft,.bottomRight], cornerRadii: CGSize(width: 0, height: 0))
+                     let shapLayer = CAShapeLayer()
+                     shapLayer.lineWidth = 1
+                     shapLayer.strokeColor = UIColor.white.cgColor
+                     shapLayer.fillColor = UIColor.clear.cgColor
+                     shapLayer.path = path.cgPath
+                     let maskLayer = CAShapeLayer()
+                     maskLayer.path = path.cgPath
+                     cell.layer.mask = maskLayer
+                     cell.layer.addSublayer(shapLayer)
+            
+        }
+       
+    }
+    
+    
+    
+    
+    
+    
 }
 
 extension VipCenterVC: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {

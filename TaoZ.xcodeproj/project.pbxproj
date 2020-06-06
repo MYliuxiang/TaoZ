@@ -199,6 +199,14 @@
 		22D068A92463F856002BBBB5 /* ShareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D068A52463F856002BBBB5 /* ShareItem.swift */; };
 		22D068AA2463F856002BBBB5 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D068A62463F856002BBBB5 /* ShareView.swift */; };
 		22D068AB2463F856002BBBB5 /* ShareItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D068A72463F856002BBBB5 /* ShareItemCell.swift */; };
+		22F496AA248BE7F2009C232D /* RankingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F496A8248BE7F2009C232D /* RankingVC.swift */; };
+		22F496AB248BE7F2009C232D /* RankingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F496A9248BE7F2009C232D /* RankingVC.xib */; };
+		22F496AE248BE86A009C232D /* RankingListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F496AC248BE86A009C232D /* RankingListVC.swift */; };
+		22F496AF248BE86A009C232D /* RankingListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F496AD248BE86A009C232D /* RankingListVC.xib */; };
+		22F496B2248BE884009C232D /* RankSubVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F496B0248BE884009C232D /* RankSubVC.swift */; };
+		22F496B3248BE884009C232D /* RankSubVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F496B1248BE884009C232D /* RankSubVC.xib */; };
+		22F496B7248BE8DA009C232D /* RankSubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F496B5248BE8DA009C232D /* RankSubCell.swift */; };
+		22F496B8248BE8DA009C232D /* RankSubCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F496B6248BE8DA009C232D /* RankSubCell.xib */; };
 		9D0E0B33559306ABBCC28407 /* Pods_TaoZ_TaoZUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995E77145F9A883E994D62C9 /* Pods_TaoZ_TaoZUITests.framework */; };
 		A9CB7C6D00DFBB17DE9F5277 /* Pods_TaoZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE030BDA16FFECB1E8D47C9 /* Pods_TaoZ.framework */; };
 /* End PBXBuildFile section */
@@ -426,6 +434,14 @@
 		22D068A52463F856002BBBB5 /* ShareItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareItem.swift; sourceTree = "<group>"; };
 		22D068A62463F856002BBBB5 /* ShareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		22D068A72463F856002BBBB5 /* ShareItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareItemCell.swift; sourceTree = "<group>"; };
+		22F496A8248BE7F2009C232D /* RankingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingVC.swift; sourceTree = "<group>"; };
+		22F496A9248BE7F2009C232D /* RankingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingVC.xib; sourceTree = "<group>"; };
+		22F496AC248BE86A009C232D /* RankingListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingListVC.swift; sourceTree = "<group>"; };
+		22F496AD248BE86A009C232D /* RankingListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankingListVC.xib; sourceTree = "<group>"; };
+		22F496B0248BE884009C232D /* RankSubVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankSubVC.swift; sourceTree = "<group>"; };
+		22F496B1248BE884009C232D /* RankSubVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankSubVC.xib; sourceTree = "<group>"; };
+		22F496B5248BE8DA009C232D /* RankSubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankSubCell.swift; sourceTree = "<group>"; };
+		22F496B6248BE8DA009C232D /* RankSubCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RankSubCell.xib; sourceTree = "<group>"; };
 		567DA301D1E0331B2A8FE719 /* Pods-TaoZ.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaoZ.debug.xcconfig"; path = "Target Support Files/Pods-TaoZ/Pods-TaoZ.debug.xcconfig"; sourceTree = "<group>"; };
 		746B2208AD961284F6F4B11B /* Pods-TaoZ-TaoZUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaoZ-TaoZUITests.debug.xcconfig"; path = "Target Support Files/Pods-TaoZ-TaoZUITests/Pods-TaoZ-TaoZUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		86EFC1DE6D9995D801FA6318 /* Pods_TaoZTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaoZTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -880,6 +896,7 @@
 		229FE20B243F0DB0003160CF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				22F496A7248BE7C2009C232D /* 排行榜 */,
 				222FEB5D246D45FA00B923D2 /* 评论 */,
 				22209E58246BEEA20001ED6A /* 播放器 */,
 				22D068852463AABF002BBBB5 /* HomeVC.swift */,
@@ -1052,6 +1069,29 @@
 			path = ShareView;
 			sourceTree = "<group>";
 		};
+		22F496A7248BE7C2009C232D /* 排行榜 */ = {
+			isa = PBXGroup;
+			children = (
+				22F496B4248BE8C1009C232D /* Views */,
+				22F496A8248BE7F2009C232D /* RankingVC.swift */,
+				22F496A9248BE7F2009C232D /* RankingVC.xib */,
+				22F496AC248BE86A009C232D /* RankingListVC.swift */,
+				22F496AD248BE86A009C232D /* RankingListVC.xib */,
+				22F496B0248BE884009C232D /* RankSubVC.swift */,
+				22F496B1248BE884009C232D /* RankSubVC.xib */,
+			);
+			path = "排行榜";
+			sourceTree = "<group>";
+		};
+		22F496B4248BE8C1009C232D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22F496B5248BE8DA009C232D /* RankSubCell.swift */,
+				22F496B6248BE8DA009C232D /* RankSubCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		ABD487A21E26664ED2A434AB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1216,6 +1256,7 @@
 				225F7C6A246503E1001B15E2 /* VideoCell.xib in Resources */,
 				22209E53246BD3520001ED6A /* VideoDetailVC.xib in Resources */,
 				2283A939246A58EF001A5B65 /* PersonalVC.xib in Resources */,
+				22F496AF248BE86A009C232D /* RankingListVC.xib in Resources */,
 				2283A935246A54B6001A5B65 /* MeCell.xib in Resources */,
 				2237717F24640BB100C5AFDF /* PriVatePhotoSubVC.xib in Resources */,
 				225B97C5248A41F200C5773B /* VipHCell.xib in Resources */,
@@ -1228,10 +1269,12 @@
 				2283A93D246A74BC001A5B65 /* PersonalCell.xib in Resources */,
 				2283A941246A7855001A5B65 /* PersonalImgCell.xib in Resources */,
 				225B97AD248A2A7100C5773B /* ReselseDiscoverVC.xib in Resources */,
+				22F496AB248BE7F2009C232D /* RankingVC.xib in Resources */,
 				2282491224765E5500B30C25 /* VerificationCodeVC.xib in Resources */,
 				2283A949246A7943001A5B65 /* LabelCell.xib in Resources */,
 				2283A945246A78BA001A5B65 /* PersonalTextFieldCell.xib in Resources */,
 				225B97B9248A2D1300C5773B /* ReleseCell.xib in Resources */,
+				22F496B3248BE884009C232D /* RankSubVC.xib in Resources */,
 				2266B39A24665B19009675D8 /* LICENSE in Resources */,
 				2283A97C246AAD70001A5B65 /* CustomerVC.xib in Resources */,
 				22B5035724654A1C00348E05 /* DiscoverSubVC.xib in Resources */,
@@ -1248,6 +1291,7 @@
 				2283A94D246A7974001A5B65 /* TextViewCell.xib in Resources */,
 				229FE1AF243F07ED003160CF /* Assets.xcassets in Resources */,
 				2266B39824665B19009675D8 /* SKPhotoBrowser.bundle in Resources */,
+				22F496B8248BE8DA009C232D /* RankSubCell.xib in Resources */,
 				229FE1AD243F07EB003160CF /* Main.storyboard in Resources */,
 				2227FA232480DE3A003768F7 /* success.png in Resources */,
 				225B97B1248A2AD200C5773B /* ReleseHeaderView.xib in Resources */,
@@ -1498,6 +1542,7 @@
 				2266B39324665B19009675D8 /* SKPhoto.swift in Sources */,
 				2283A93C246A74BC001A5B65 /* PersonalCell.swift in Sources */,
 				229FE1ED243F0D56003160CF /* YMKReachability.swift in Sources */,
+				22F496B2248BE884009C232D /* RankSubVC.swift in Sources */,
 				22D068A82463F856002BBBB5 /* ShareSheetCell.swift in Sources */,
 				2283A980246AAEB0001A5B65 /* MyWalletVC.swift in Sources */,
 				22D0689B2463F6F3002BBBB5 /* ThirdloginHelper.swift in Sources */,
@@ -1515,7 +1560,9 @@
 				2266B39124665B19009675D8 /* SKCaptionView.swift in Sources */,
 				229FE1D8243F0ABC003160CF /* AppConst.swift in Sources */,
 				225B97C0248A3DD600C5773B /* VipCenterVC.swift in Sources */,
+				22F496AE248BE86A009C232D /* RankingListVC.swift in Sources */,
 				2266B39024665B19009675D8 /* UIView+Radius.swift in Sources */,
+				22F496AA248BE7F2009C232D /* RankingVC.swift in Sources */,
 				2283A977246AAD55001A5B65 /* SetVC.swift in Sources */,
 				2282490D24765DE100B30C25 /* BindePhoneVC.swift in Sources */,
 				2282490A24765A7D00B30C25 /* UrlConst.swift in Sources */,
@@ -1552,6 +1599,7 @@
 				2292E6282486514F006ACF8B /* BlankpageHelper.swift in Sources */,
 				2283A934246A54B6001A5B65 /* MeCell.swift in Sources */,
 				2266B38424665B19009675D8 /* SKMesurement.swift in Sources */,
+				22F496B7248BE8DA009C232D /* RankSubCell.swift in Sources */,
 				2266B38524665B19009675D8 /* SKZoomingScrollView.swift in Sources */,
 				2227FA1E2480DE3A003768F7 /* MBProgressHUD.m in Sources */,
 			);
