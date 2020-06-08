@@ -36,6 +36,15 @@ let url_user_userinfo = "user/userinfo"
 
 let url_dynamic_selectdynamic = "dynamic/selectdynamic"
 
+let url_basic_addattention = "/basic/addattention"
+
+let url_basic_outattention = "/basic/outattention"
+
+let url_basic_userclick = "/basic/userclick"
+
+
+
+
 
 
 

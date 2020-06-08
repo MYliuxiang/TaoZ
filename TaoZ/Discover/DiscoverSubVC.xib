@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DiscoverSubVC" customModule="TaoZ" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="0dF-c4-wXI" id="WM7-ee-vlZ"/>
+                <outlet property="uploadB" destination="44z-c1-Tzg" id="4KQ-OX-SMl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,16 +28,33 @@
                         <outlet property="delegate" destination="-1" id="sJR-lB-MT0"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44z-c1-Tzg">
+                    <rect key="frame" x="345" y="757" width="54" height="54"/>
+                    <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="FSd-Y6-OE3"/>
+                        <constraint firstAttribute="width" constant="54" id="qsT-XL-oxe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="uploadAC:" destination="-1" eventType="touchUpInside" id="58N-bc-6ur"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="44z-c1-Tzg" secondAttribute="trailing" constant="15" id="CZe-ao-BPS"/>
                 <constraint firstItem="0dF-c4-wXI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DNm-R6-LBd"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0dF-c4-wXI" secondAttribute="bottom" id="U07-U8-Bp8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="44z-c1-Tzg" secondAttribute="bottom" constant="51" id="fw8-I5-OZQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0dF-c4-wXI" secondAttribute="trailing" id="rmR-mR-I5z"/>
                 <constraint firstItem="0dF-c4-wXI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="x0b-bj-gYC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="92"/>
+            <point key="canvasLocation" x="-109" y="101"/>
         </view>
     </objects>
 </document>

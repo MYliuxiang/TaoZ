@@ -11,7 +11,7 @@ import UIKit
 class DiscoverVC: BaseViewController {
 
     lazy var segmentedView: JXSegmentedView = JXSegmentedView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: CGFloat(44)))
-          lazy var listContainerView: JXSegmentedListContainerView! = {
+    lazy var listContainerView: JXSegmentedListContainerView! = {
                  return JXSegmentedListContainerView(dataSource: self)
              }()
           var titles = ["关注","全部"]

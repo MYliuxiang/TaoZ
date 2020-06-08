@@ -8,6 +8,7 @@
 
 import UIKit
 
+extension JXPagingListContainerView: JXSegmentedViewListContainer {}
 
 class HomeVC: BaseViewController {
 
